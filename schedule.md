@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       CS 171 - Visualization 
+# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       CS 171 - Visualization | Schedule
 
 Lecture slides will be posted here. The in-class activity worksheet is here. <table>
 <tr>
