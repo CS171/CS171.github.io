@@ -7,3 +7,4 @@
 [Projects]()
 [Resources]()
 [Team]()
+[gimmick:themechooser](Choose theme)
