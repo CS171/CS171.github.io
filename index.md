@@ -1,8 +1,6 @@
-# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       CS 171 - Visualization 
+# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       <u class="cs">CS</u> <u class="rest">1</u><u class="number">7</u><u class="rest">1 - *Visualization*</u> 
 
-![](i/teaser_wind.png)
-![](i/teaser_shift.png)
-![](i/teaser_bundling.png)
+![](i/teaser.png)
 
 **Instructor: Hanspeter Pfister **
 
@@ -12,14 +10,23 @@ In this course you will learn how the human visual system processes and perceive
 
 ## Logistics
 
-**Lectures:** Tu Th 2:30-4 pm
+**Lectures & Design Studios:** Tu, Th 2:30-4 pm
 Maxwell Dworkin G115
 
 **Labs:** F 10-11:30 am
 Maxwell Dworkin G115 
 
 **Online Participation:**
-Adobe Connect Live Classroom
+[Adobe Connect Live Classroom](http://continuinged.adobeconnect.com/cs171/)
 Live Video (alternate)
 Video Archive 
 Lecture Slides
+
+### Preview
+
+[](http://www.youtube.com/watch?v=CEJ20OPdCFg)
+
+### Material
+
+Lecture Slides
+In-Class Activities

@@ -5,3 +5,24 @@ text-align:center;
 font-size:12pt;
 font-weight:bold;
 }
+
+.cs
+{
+color: #AD3D34;
+text-decoration: none;
+font-weight:900;
+vertical-align:text-top;
+}
+
+.number
+{
+font-size:1.3em;
+text-decoration: none;
+vertical-align:text-bottom;
+}
+
+.rest
+{
+text-decoration: none;
+vertical-align:text-top;
+}

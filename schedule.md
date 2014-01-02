@@ -1,45 +1,24 @@
-# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       CS 171 - Visualization | Schedule
-
-Lecture slides will be posted here. The in-class activity worksheet is here. <table>
-<tr>
-<th>Week</th>
-<th>Tuesday</th>
-<th>Thursday</th>
-<th>Friday (Lab)</th>
-<th>Notes</th>
-</tr>
-<tr>
-<td style="text-algin: center;">**1**</td>
-<td>**Jan 27**
- Introduction. What is visualization? Why is it important? Who are we? Course overview.
-</td>
-<td>**Jan 29**
-Graphic Design. Graphical Integrity. Lie Factor. Data-Ink Ratio. Chartjunk. Context. Layering. CRAP. 
-</td>
-<td>**Jan 30**
-Introduction to Git, HTML, CSS
-</td>
-<td>**Jan 29**
- Homework 0 due
-</td>
-</tr>
-</table>
+# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       <u class="cs">CS</u> <u class="rest">1</u><u class="number">7</u><u class="rest">1 - Schedule</u>
 
 
-## Act 1: Foundations				
-### Week 1 (1/27-2/2)
-**Tuesday, 1/29** 
-*Lecture*: Introduction. What is visualization? Why is it important? Who are we? Course overview.	Graphic Design. Graphical Integrity. Lie Factor. Data-Ink Ratio. Chartjunk. Context. Layering. CRAP.
-**Thursday, 2/1**
-*Lecture*: Graphic Design. Graphical Integrity. Lie Factor. Data-Ink Ratio. Chartjunk. Context. Layering. CRAP.
-*Homework 0 due*
 
-**Friday, 2/2**
-Introduction to Python - Ian Stokes	Visualization Process. Design Iterations. Data Types. Visual Variables.	Web Scraping
+ |  Week | Tuesday | Thursday | Labs | Due |
+ | -- |--  | -- | 
+ | Week 1 (1/27-2/2) | Introduction. What is visualization? Why is it important? Who are we? Course overview. | Graphic Design. Graphical Integrity. Lie Factor. Data-Ink Ratio. Chartjunk. Aspect Ratios & Scales. CRAP. | Github. HTML(5). CSS(3). SVG. Javascript. | HW0
+ |Week 2 (2/3-2/9) | Introduction to D3 - Vadim Ogievetsky | Visualization Process. Design Iterations. Sketching. Data Types. Statistical Graphs.  | D3: Loading Data, Selectors, Drawing with Data. | 
+ | Week 3 (2/10-2/16) | Interaction Design. Overview & Detail. Dynamic Queries. Brushing & Linking. Animation. | Trees & Networks. Radial Layouts. Treemaps. Linear Layouts.  | D3: Transitions. Interaction. Scales & Axis. | HW1
+ | Week 4 (2/17-2/23) | Maps. Choropleth Maps. Cartograms. Symbol Maps. Flow Maps. Real-Time Maps. | Design Studio | D3: Layouts | 
+ |Week 5 (2/24-3/2) | High-Dimensional Data. Aggreation. Text. Images & Video. | Data Collection. Web Scraping. Data Cleanup.  | Web scraping with jQuery | HW2
+ |Week 6 (3/3-3/9) | Tableau - Jock Mckinlay | Design Studio | Sketching. | 
+| Week 7 (3/10-3/16) | Perception. Visual Channels. Weber's Law. Preattentive Processing. Visual Channel Rankings. | Patterns. Contours & Textures. Grouping. Gestalt Principles. Spatial Layout. Directing the Eyes. | Advanced JS.  | HW3
+|Week 8 (3/17-3/23) | No Class - Spring Recess | No Class - Spring Recess | No Class - Spring Recess | 
+|Week 9 (3/24-3/30) | Color. Color Processing. Color Spaces. Color Aesthetics. Colors for Visualization. | Design Studio |  | HW4
+|Week 10 (3/31-4/6) | Cognition. Looking vs. Seeing. Image Gist. Gestalt Principles. Visual Attention. Visual Working & Long-Term Memory. | Visual Story Telling. Messaging. Effective Presentations. |  | 
+|Week 11 (4/7-4/13) | Storytelling Guest Lecture - Alberto Cairo | Design Studio |  | FP-MS
+|Week 12 (4/14-4/20) | Project Reviews | Project Reviews |  | 
+|Week 13 (4/21-4/27) | Visualization and Arts - Ben Fry | Social Visualization - Martin & Fernanda |  | 
+|Week 14 (4/28-5/4) | No Class - Reading Period | No Class - Reading Period |  | FP
+|Week 15 (5/5-5/11) | No Class - Reading Period | Final Project Presentations.  |  | 
+|Week 16 (5/12-5/18) | No class Exam Period | No class Exam Period |  | 
 
-| Week | Tuesday        | Thursday           | Friday (Lab)   |
-| ------------- |-------------|-----|-|
-|Week 1 (1/27-2/2)| Introduction. What is visualization? Why is it important? Who are we? Course overview.	      | Graphic Design. Graphical Integrity. Lie Factor. Data-Ink Ratio. Chartjunk. Context. Layering. CRAP. | Homework 0 due |
-| col 2 is      | centered      |   $12 | |
-| zebra stripes | are neat      |    $1 | |
 
