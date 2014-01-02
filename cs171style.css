@@ -14,6 +14,17 @@ font-weight:900;
 vertical-align:text-top;
 }
 
+a:link
+{
+  color: #AD3D34;
+}
+
+a:focus a:focus {
+  color: #7C2C25;
+}
+a:active {color:#7C2C25;}
+a:visited {color:#7C2C25;}
+
 .number
 {
 font-size:1.3em;
