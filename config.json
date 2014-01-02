@@ -1,4 +1,7 @@
 {
-    "Theme" : "spacelab",
-    "Title": "Caleydo Help - Version 3.0"
-}
+{
+    "useSideMenu": true,
+    "lineBreaks": "gfm",
+    "additionalFooterText": "&copy; Harvard University, 2014",
+    "anchorCharacter": "#"
+}}

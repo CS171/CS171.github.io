@@ -1,3 +1,3 @@
-# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       <u class="cs">CS</u> <u class="rest">1</u><u class="number">7</u><u class="rest">1 - Schedule</u>
+# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       <u class="cs">CS</u> <u class="rest">1</u><u class="number">7</u><u class="rest">1 - Homework</u>
 
-Homeworks will be posted here.
+Homework will be posted here.

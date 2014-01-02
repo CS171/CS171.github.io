@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       CS 171 - Visualization | Syllabus
+# ![](i/seas.gif) &nbsp; &nbsp; <u class="cs">CS</u> <u class="rest">1</u><u class="number">7</u><u class="rest">1 - Syllabus</u> <br />
 
 Welcome to CS171 Visualization! This course is an introduction to key design principles and techniques for visualizing data. The major goals of this course are to understand how visual representations can help in the analysis and understanding of complex data, how to use existing tools to make visualizations, and how to create your own interactive visualizations using modern web-based frameworks. 
 

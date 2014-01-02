@@ -1,3 +1,5 @@
+
+[gimmick:theme](readable)
 [CS 171 - Visualization](index.md)
 [Syllabus](syllabus.md)
 [Piazza](https://piazza.com/harvard/cs171)
@@ -7,4 +9,5 @@
 [Projects](project.md)
 [Resources](resources.md)
 [Team](team.md)
-[gimmick:theme](readable)
+
+
