@@ -1,4 +1,3 @@
-[gimmick:themechooser](Choose theme)
 [gimmick:theme](readable)
 [CS 171 - Visualization](index.md)
 [Syllabus](syllabus.md)
