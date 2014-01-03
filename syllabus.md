@@ -46,7 +46,7 @@ These recommended textbooks will allow you to deepen your understanding of speci
 ![](i/visual_thinking.jpg)
 *“All the clanking gears are here: variable resolution image detection, eye movements, environmental information statistics, bottom-up/top-down control structures, working memory, the nexus of meaning, and specialized brain areas and pathways. By the time he’s done, Ware has reconstructed cognitive psychology, perception, information visualization, and design into an integrated modern form. This book is scary good.” - Stuart Card, Senior Research Fellow, and manager of the User Interface Research group at the Palo Alto Research Center*
 
-[The Functional Art: An introduction to information graphics and visualization.](http://www.amazon.com/The-Functional-Art-introduction-visualization/dp/0321834739/), Alberto Cairo, New Riders (2012)
+[The Functional Art: An introduction to information graphics and visualization](http://www.amazon.com/The-Functional-Art-introduction-visualization/dp/0321834739/), Alberto Cairo, New Riders (2012)
 
 ![](i/functional_art.png)
 *“If graphic designer Nigel Holmes and data visualizer Edward Tufte had a child, his name would be Alberto Cairo. In The Functional Art, accomplished graphics journalist Cairo injects the chaotic world of infographics with a mature, thoughtful, and scientifically grounded perspective that it sorely needs. With extraordinary grace and clarity, Cairo seamlessly unites infographic form and function in a design philosophy that should endure for generations.”
@@ -78,9 +78,9 @@ Online-only participants are encouraged to work in online-teams but are allowed 
 Attention: New!
 
 ### Projects
-There is no question that the best way to learn how to create effective visualizations is by creating them. At the core of the course are two month-long iteration of one visualization projects. The goal of the projects is to design interactive visualizations that allow you to answer questions you have about some topic of your own choosing. You will acquire the data, design your visualization method, implement the tool, and analyze the results. At the beginning of each iteration, you will receive a handout that describes the learning goals and evaluation criteria for that project. 
+There is no question that the best way to learn how to create effective visualizations is by creating them. At the core of the course is a final project. The goal of the project is to design interactive visualizations that allow you to answer questions you have about some topic of your own choosing. You will acquire the data, design your visualization method, implement the tool, and analyze the results. The project consists of two milestones (i.e., you will have the cance to iterate over your project), which are independently graded. At the beginning of each iteration, you will receive a handout that describes the learning goals and evaluation criteria for that project. 
 
-In your projects you will work closely with another classmate in a two-person project team. You can come up with your own teams and use Piazza to find prospective team members. If you can’t find a partner we will team you up randomly. We recognize that individual schedules, different time zones, preferences, and other constraints might limit your ability to work in a team. If this the case, ask us for permission to work alone. 
+In your project you will work closely with another classmate in a two-person project team. You can come up with your own teams and use Piazza to find prospective team members. If you can not find a partner we will team you up randomly. We recognize that individual schedules, different time zones, preferences, and other constraints might limit your ability to work in a team. If this the case, ask us for permission to work alone. 
 
 Attention: Two person team OK?
 
@@ -98,26 +98,27 @@ The course schedule includes required weekly readings – you are free to study 
 ### Assessment Procedure
 Your final grade in CS171 will be determined by the number of points you collect. You can collect various amounts of points for the different parts of the class:
 
-Projects: 50%, assessed on meeting the project criteria as described in the project handouts
-Homework: 40%, assessed on your individual submission. 
-Design Studios: 10% assessed on the quality of your design study solutions and reflections.
+ * Projects: 50%, assessed on meeting the project criteria as described in the project handouts. The first milestone will account for 20%, the second for 30% of the overall grade.
+ * Homework: 40%, assessed on your individual submission. 
+ * Design Studios: 10% assessed on the quality of your design study solutions and reflections.
 
-Best Projects: For each project iteration we will elect the top three submissions. In addition to a small price they will get 5 points for their exceptional work.
+
 
 Attention: do we want to do best projects for the first iteration too?
 
-Homework, projects, and participation will be graded on a 5 point scale in 0.5 increments using the following scale:
+Homework, projects, and design studios will be graded on a 4 point scale in 0.5 increments using the following scale:
 
-5 = Exceptional / above and beyond (we will only give out these for best projects)
-4 = Solid / no mistakes (or really minor)
+4 = Excellent / no mistakes (or really minor)
 3 = Good / some mistakes
 2 = Fair / some major conceptual errors
 1 = Poor / did not finish
 0 = Did not participate / did not hand in
 
+In addition, we will elect the top three projects through a review and voting process by the staff. These projects will get a small price, will be mentioned on the website and will get 5 points for their exceptional work. A handful of excellent projects will get a grade of 4.5.
+
 A 4 constitutes a perfect grade, and getting all 4s is equivalent to an A. A combination of 4s and 3s end up being A- to B, and so on. An average of better than 2 is required to pass the course. Teaching Fellows will evaluate your work holistically beyond mechanical correctness and focus on the overall quality of the work. In addition to the scores the Teaching Fellows will give detailed written feedback.
 
-Attention: new: average better than 2...
+Attention: new: average better than 2...; removed 5 from the scale - this caused confusion over the last years
 
 Keep in mind that your grade is also determined by your (genuine) effort, not only on correctness. There are several reasons for this approach. First, in design activities, risk-taking and wrong turns are a fact of life. Penalizing mistakes discourages risk-taking and creativity. Second, this approach allows you to control your effort better compared to trying to get open-ended problems right. Third, any anxiety associated with getting things right interferes with learning. If you enjoy this course, you will learn so much more!
 

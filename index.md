@@ -11,6 +11,8 @@ The amount and complexity of information produced in science, engineering, busin
 
 In this course you will learn how the human visual system processes and perceives images, good design practices for visualization, tools for visualization of data from a variety of fields, collecting data from web sites with Python, and programming of interactive web-based visualizations using D3.
 
+This course is also listed as [CSCI E-171](http://www.extension.harvard.edu/courses/24028). 
+
 ### Logistics
 
 **Lectures & Design Studios:** Tu, Th 2:30-4 pm
@@ -22,11 +24,13 @@ Maxwell Dworkin G115
 
 ### Lecture Reseources
 [Adobe Connect Live Classroom](http://continuinged.adobeconnect.com/cs171/)
-Live Video (alternate)
-2014 Video Archive
+Live Video (alternate) [link will follow]
+2014 Video Archive [link will follow]
 [2013 Video Archive](http://cm.dce.harvard.edu/2013/02/22872/publicationListing.shtml)
 [2012 Video Archive](http://cm.dce.harvard.edu/2012/02/22872/publicationListing.shtml)
-Lecture Slides
+
+2014 Lecture Slides [link will follow]
+[2013 Lecture Slides](https://drive.google.com/folderview?id=0BxYkKyLxfsNVVkFKdnlSRHhRWU0)
 
 ### Preview
 
