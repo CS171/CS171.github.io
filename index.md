@@ -20,7 +20,7 @@ This course is also listed as [CSCI E-171](http://www.extension.harvard.edu/cour
 
 **Labs:** F 10-11:30 am, [Maxwell Dworkin G115](http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=33+Oxford+St,+Cambridge,+MA+02138,+USA&sll=42.374136,-71.12183&sspn=0.009384,0.022724&ie=UTF8&hq=&hnear=33+Oxford+St,+Cambridge,+Middlesex,+Massachusetts+02138&ll=42.378773,-71.116819&spn=0.009384,0.022724&z=16) 
 
-## Lecture Resources
+### Lecture Resources
 
 [Adobe Connect Live Classroom](http://continuinged.adobeconnect.com/cs171/)
 Live Video (alternate) 
@@ -30,10 +30,10 @@ Live Video (alternate)
 2014 Lecture Slides 
 [2013 Lecture Slides](https://drive.google.com/folderview?id=0BxYkKyLxfsNVVkFKdnlSRHhRWU0)
 
-## Preview
+### Preview
 [](http://www.youtube.com/watch?v=CEJ20OPdCFg)
 
-## Staff
+### Staff
 [Alexander Lex](http://alexander-lex.com) (Head TF) - Postdoctoral Fellow, Visual Computing Group
 [Romain Vuillemot](http://romain.vuillemot.net/) - Data Visualization Fellow, Center for International Development
 [Hendrik Strobelt](http://hendrik.strobelt.com/) - Postdoctoral Fellow, Visual Computing Group
