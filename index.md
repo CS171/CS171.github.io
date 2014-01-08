@@ -1,9 +1,10 @@
-# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       <u class="cs">CS</u> <u class="rest">1</u><u class="number">7</u><u class="rest">1 - *Visualization*</u> 
-
+# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - *Visualization*
 
 [gimmick:theme](readable)
 
 ![](i/teaser.png)
+
+<div class="credits">*[Hierarchical edge bundling](http://mbostock.github.io/d3/talk/20111116/bundle.html)* | *[Wind map](http://hint.fm/wind/)* | *[How states have shifted](http://www.nytimes.com/interactive/2012/10/15/us/politics/swing-history.html?_r=0)*</div>
 
 **Instructor: Hanspeter Pfister **
 
@@ -22,7 +23,7 @@ Maxwell Dworkin G115
 Maxwell Dworkin G115 
 
 
-### Lecture Reseources
+## Lecture Resources
 [Adobe Connect Live Classroom](http://continuinged.adobeconnect.com/cs171/)
 Live Video (alternate) [link will follow]
 2014 Video Archive [link will follow]
@@ -32,8 +33,19 @@ Live Video (alternate) [link will follow]
 2014 Lecture Slides [link will follow]
 [2013 Lecture Slides](https://drive.google.com/folderview?id=0BxYkKyLxfsNVVkFKdnlSRHhRWU0)
 
-### Preview
+## Preview
 
 [](http://www.youtube.com/watch?v=CEJ20OPdCFg)
+
+## Team
+
+### Instructor
+[Hanspeter Pfister](http://vcg.seas.harvard.edu)
+
+### Teaching Fellows
+[Alexander Lex](http://alexander-lex.com) (Head TF) - Postdoctoral Fellow, Visual Computing Group
+[Romain Vuillemot](http://romain.vuillemot.net/) - Data Visualization Fellow, Center for International Development
+[Hendrik Strobelt](http://hendrik.strobelt.com/) - Postdoctoral Fellow, Visual Computing Group
+
 
 

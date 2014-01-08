@@ -6,7 +6,6 @@
 [Readings](readings.md)
 [Projects](project.md)
 [Resources](resources.md)
-[Team](team.md)
 [Hall of Fame](fame.md)
 <a href="https://piazza.com/harvard/cs171" target="_blank">Piazza</a>
 

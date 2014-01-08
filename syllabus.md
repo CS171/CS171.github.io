@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; <u class="cs">CS</u> <u class="rest">1</u><u class="number">7</u><u class="rest">1 - Syllabus</u> <br />
+# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - Syllabus
 
 Welcome to CS171 Visualization! This course is an introduction to key design principles and techniques for visualizing data. The major goals of this course are to understand how visual representations can help in the analysis and understanding of complex data, how to use existing tools to make visualizations, and how to create your own interactive visualizations using modern web-based frameworks. 
 
@@ -31,7 +31,8 @@ We will be using two textbooks for this class, one to cover the theoretic aspect
 ![](i/design_for_information.jpg)
 *“The visualization process doesn’t happen in a vacuum; it is grounded in principles and methodologies of design, cognition, perception, and human-computer-interaction that are combined to one’s personal knowledge and creative experiences. Design for Information critically examines other design solutions —current and historic— helping you gain a larger understanding of how to solve specific problems. This book is designed to help you foster the development of a repertoire of existing methods and concepts to help you overcome design problems.”*
 
-[Interactive Data Visualization for the Web](http://www.amazon.com/Interactive-Data-Visualization-Scott-Murray-ebook/dp/B00BSG68UQ), Scott Murray, O'Reilly (2013)
+[Interactive Data Visualization for the Web](http://www.amazon.com/Interactive-Data-Visualization-Scott-Murray-ebook/dp/B00BSG68UQ), Scott Murray, O'Reilly (2013)  
+*[Free online version](http://chimera.labs.oreilly.com/books/1230000000345), [Free Safari book version for Harvard Students](http://my.safaribooksonline.com/book/web-design-and-development/9781449340223)*
 
 ![](i/interactive_data_visualization.jpg)
 *An introduction to D3 for people new to programming and web development, published by O’Reilly. “Explaining tricky technical topics with aplomb (and a little cheeky humor) is Scott Murray’s forte. If you want to dive into the world of dynamic visualization using web standards, even if you are new to programming, this book is the place to start.” - Mike Bostock, creator of D3*

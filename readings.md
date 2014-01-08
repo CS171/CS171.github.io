@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       <u class=cs>CS</u> <u class=rest>1</u><u class=number>7</u><u class=rest>1 - Readings</u>
+# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - Readings
 
 Readings are given out of these two text-books, in addition to other readings that are provided:
 
@@ -7,6 +7,7 @@ Readings are given out of these two text-books, in addition to other readings th
 ![](i/design_for_information.jpg)
 
 [Interactive Data Visualization for the Web (D3)](http://www.amazon.com/Interactive-Data-Visualization-Scott-Murray-ebook/dp/B00BSG68UQ), Scott Murray, O'Reilly (2013)
+*[Free online version](http://chimera.labs.oreilly.com/books/1230000000345), [Free Safari book version for Harvard Students](http://my.safaribooksonline.com/book/web-design-and-development/9781449340223)*
 
 ![](i/interactive_data_visualization.jpg)
 

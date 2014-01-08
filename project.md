@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; &nbsp;       <u class="cs">CS</u> <u class="rest">1</u><u class="number">7</u><u class="rest">1 - Project</u> <br />
+# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - Projects
 
 Attention: The content on this page is subject to change.
 

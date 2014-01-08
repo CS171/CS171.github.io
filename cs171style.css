@@ -20,10 +20,10 @@ a:link
 }
 
 a:focus a:focus {
-  color: #7C2C25;
+  color: #d36a61;
 }
-a:active {color:#7C2C25;}
-a:visited {color:#7C2C25;}
+a:active {color:#d36a61;}
+a:visited {color:#d36a61;}
 
 .number
 {
@@ -32,8 +32,10 @@ text-decoration: none;
 vertical-align:text-bottom;
 }
 
-.rest
+.credits
 {
 text-decoration: none;
 vertical-align:text-top;
+font-size:0.7em;
+text-align:right;
 }
