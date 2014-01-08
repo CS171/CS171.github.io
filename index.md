@@ -1,7 +1,5 @@
 # ![](i/seas.gif) &nbsp; &nbsp; CS 171 - *Visualization*
 
-[gimmick:theme](readable)
-
 ![](i/teaser.png)
 
 <div class="credits">*[Hierarchical edge bundling](http://mbostock.github.io/d3/talk/20111116/bundle.html)* | *[Wind map](http://hint.fm/wind/)* | *[How states have shifted](http://www.nytimes.com/interactive/2012/10/15/us/politics/swing-history.html?_r=0)*</div>
@@ -14,7 +12,7 @@ This course is also listed as [CSCI E-171](http://www.extension.harvard.edu/cour
 
 ### Instructor
 
-[Hanspeter Pfister](http://vcg.seas.harvard.edu) *
+[Hanspeter Pfister](http://vcg.seas.harvard.edu)
 
 ### Logistics
 
