@@ -2,10 +2,10 @@
 
 For your final assignment in this course you will work on a project. The goal of the project is to design and implement a web-based interactive visualization that allows you to answer questions you have about some topic of your own choosing. You will acquire the data, design your visualization, implement it using modern web frameworks, and evaluat the results. 
 
-### Project Team
+## Project Team
 You will work closely with other classmates in a **2-3 person project team**. You can come up with your own teams and use Piazza to find prospective team members. If you can’t find a partner we will team you up randomly. We recognize that individual schedules, different time zones, preferences, and other constraints might limit your ability to work in a team. If this the case, ask us for permission to work alone. In general, we do not anticipate that the grades for each group member will be different. However, we reserve the right to assign different grades to each group member based on peer assessments (see below).
 
-### Project Milestones
+## Project Milestones
 There are a few milestones for your final project. It is critical to note that **no extensions will be given** for any of the project due dates for any reason. Late days may not be used. Projects submitted after the final due date will not be graded. If you anticipate any issues (e.g., due to business travel) you need to send an email to the staff mailing list at least one week in advance.
 
 * Thursday, March 6: Project proposal due
@@ -68,10 +68,10 @@ Submission will be handled trough github. All teams must use a single shared git
 * README - The README file must give an overview of what you are handing in: which parts are your code, which parts are libraries, and so on. The README must contain URLs to your project websites and screencast videos.
 
 ### Grading Criteria
-* 20% Process Book - Are you following a design process that is well documented in your process book? 
-* 40% Solution - Is your visualization effective in answering your intended questions? 
-* 25% Implementation - What is the quality of your implementation? Is it appropriately polished, robust, and reliable?
-* 15% Presentation - Are your web site and screencast clear, engaging, and effective?
+* Process Book - Are you following a design process that is well documented in your process book? 
+* Solution - Is your visualization effective in answering your intended questions? 
+* Implementation - What is the quality of your implementation? Is it appropriately polished, robust, and reliable?
+* Presentation - Are your web site and screencast clear, engaging, and effective?
  
 Your individual project score will also be influenced by your peer evaluations.
 

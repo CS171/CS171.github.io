@@ -60,6 +60,8 @@ Python is great for data analysis and for data scraping.
 [NumPy](http://numpy.scipy.org/)
 [Matplotlib](http://matplotlib.sourceforge.net/)
 
+[Pattern](http://www.clips.ua.ac.be/pattern) - a data scraping library
+[Beautiful Soup](http://www.crummy.com/software/BeautifulSoup/) - the "mother" scraping library
 
 
 
