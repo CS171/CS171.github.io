@@ -31,7 +31,23 @@
 [Dive Into HTML5 - Homepage](http://diveintohtml5.info/index.html)
 [Dive Into HTML5 - Canvas](http://diveintohtml5.info/canvas.html)
 
+## Exploratory Data Analysis
+
+These tools help you to get an idea about the shape and properties of datasets and let you produce good (standard) plots.
+
+[Online Help](http://onlinehelp.tableausoftware.com/current/pro/online/en-us/help.htm)
+[Quick Start Guides](http://www.tableausoftware.com/support/manuals/quickstart)
+[Knowledge Base](http://kb.tableausoftware.com/)
+[Training and Tutorials](http://www.tableausoftware.com/learn/training)
+[Tableau Public Gallery](http://www.tableausoftware.com/public/gallery/all)
+
+[Plot.ly](https://plot.ly)
+[Wolfram Mathematica](http://www.wolfram.com/mathematica/)
+[Many Eyes](http://manyeyes.alphaworks.ibm.com/manyeyes/)
+
 ## Python
+
+Python is great for data analysis and for data scraping.
 
 [Python](http://python.org/)
 [Enthought Python Distribution](http://www.enthought.com/products/epd.php)
@@ -45,18 +61,12 @@
 [Matplotlib](http://matplotlib.sourceforge.net/)
 
 
-## Tableau
 
-[Online Help](http://onlinehelp.tableausoftware.com/current/pro/online/en-us/help.htm)
-[Quick Start Guides](http://www.tableausoftware.com/support/manuals/quickstart)
-[Knowledge Base](http://kb.tableausoftware.com/)
-[Training and Tutorials](http://www.tableausoftware.com/learn/training)
-[Tableau Public Gallery](http://www.tableausoftware.com/public/gallery/all)
 
 ## Other Software Toolkits
 
-
-[Wolfram Mathematica](http://www.wolfram.com/mathematica/),
+[Plot.ly](https://plot.ly)
+[Wolfram Mathematica](http://www.wolfram.com/mathematica/)
 [Harvard-specific Installation Guidelines](https://docs.google.com/file/d/0B2Pu4bcI9HyORndZekF0YXl5VWc/edit)
 [Protovis](http://vis.stanford.edu/protovis/) (JavaScript)
 [Prefuse](http://prefuse.org/) (Java)
@@ -102,6 +112,5 @@
 [Flowing Data](http://flowingdata.com/)
 [Perceptual Edge](http://www.perceptualedge.com/blog/)
 [Information Aesthetics](http://infosthetics.com/)
-[Many Eyes](http://manyeyes.alphaworks.ibm.com/manyeyes/)
 [Visual Complexity](http://www.visualcomplexity.com/vc/)
 
