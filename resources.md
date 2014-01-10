@@ -37,7 +37,6 @@
 [Enthought Python Distribution](http://www.enthought.com/products/epd.php)
 [The Python Tutorial](http://docs.python.org/tutorial/)
 [Learn Python the Hard Way](http://learnpythonthehardway.org/)
-[Learn Python](http://www.learnpython.org/) (interactive)
 [Google's Python Class](http://code.google.com/edu/languages/google-python-class/)
 [IPython](http://ipython.org/)
 [The Python Package Index](http://pypi.python.org/pypi)
