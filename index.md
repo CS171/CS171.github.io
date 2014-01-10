@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - *Visualization*
+# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - Visualization
 
 ![](i/teaser.png)
 
@@ -21,6 +21,8 @@ This course is also listed as [CSCI E-171](http://www.extension.harvard.edu/cour
 **Labs:** F 10-11:30 am, [Maxwell Dworkin G115](http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=33+Oxford+St,+Cambridge,+MA+02138,+USA&sll=42.374136,-71.12183&sspn=0.009384,0.022724&ie=UTF8&hq=&hnear=33+Oxford+St,+Cambridge,+Middlesex,+Massachusetts+02138&ll=42.378773,-71.116819&spn=0.009384,0.022724&z=16) 
 
 ### Staff
+
+Please address all questions regarding the class to [staff@cs171.org](mailto:staff@cs171.org)
 
 [Alexander Lex](http://alexander-lex.com) (Head TF) - Postdoctoral Fellow, Visual Computing Group
 [Romain Vuillemot](http://romain.vuillemot.net/) - Data Visualization Fellow, Center for International Development
