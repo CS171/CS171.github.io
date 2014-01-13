@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - Readings
+# ![](i/seas.png) &nbsp; &nbsp; CS 171 - Readings
 
 Readings are from the two required books and additional papers that will be provided. 
 

@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - How To Make A Screencast
+# ![](i/seas.png) &nbsp; &nbsp; CS 171 - How To Make A Screencast
 
 
 For your Projects you will create a two-minute screencast video of your project demo and/or some slides. We will show some of these videos in class and you will put them online. The video must also include narration. Below, you will find information on downloading and installing free screencast software. Note that we will stop showing the video after two minutes, so please make sure you are not running longer than that. 

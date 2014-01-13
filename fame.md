@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - Hall of Fame
+# ![](i/seas.png) &nbsp; &nbsp; CS 171 - Hall of Fame
 
 ## Best Projects 2013
 

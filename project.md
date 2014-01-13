@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - Projects
+# ![](i/seas.png) &nbsp; &nbsp; CS 171 - Projects
 
 For your final assignment in this course you will work on a project. The goal of the project is to design and implement a web-based interactive visualization that allows you to answer questions you have about some topic of your own choosing. You will acquire the data, design your visualization, implement it using modern web frameworks, and evaluat the results. 
 

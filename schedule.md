@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - Schedule
+# ![](i/seas.png) &nbsp; &nbsp; CS 171 - Schedule
 
 
 

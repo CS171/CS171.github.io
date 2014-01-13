@@ -1,4 +1,4 @@
-# ![](i/seas.gif) &nbsp; &nbsp; CS 171 - Resources
+# ![](i/seas.png) &nbsp; &nbsp; CS 171 - Resources
 
 ## D3
 
