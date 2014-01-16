@@ -37,6 +37,8 @@ Live Video (alternate)
 [2013 Video Archive](http://cm.dce.harvard.edu/2013/02/22872/publicationListing.shtml)
 [2012 Video Archive](http://cm.dce.harvard.edu/2012/02/22872/publicationListing.shtml)
 
+[2013 Lecture Slides](https://drive.google.com/#folders/0BxYkKyLxfsNVVkFKdnlSRHhRWU0)
+
 ### Preview
 
 [](http://www.youtube.com/watch?v=CEJ20OPdCFg)
