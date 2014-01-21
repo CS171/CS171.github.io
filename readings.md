@@ -2,6 +2,8 @@
 
 Readings are from the two required books and additional papers that will be provided. 
 
+**This information is still subject to (slight) changes**
+
 [DFI - Design for Information](http://www.amazon.com/Design-Information-Isabel-Meirelles/dp/1592538061), Isabel Meirelles, Rockport (2013)
 ![](i/design_for_information.jpg)
 
@@ -10,22 +12,22 @@ Readings are from the two required books and additional papers that will be prov
 ![](i/interactive_data_visualization.jpg)
 
 ### Week 1
-D3: Chapters 1-3
+D3: Chapters 1-4
+Git Tutorial - [Understanding Git Conceptually](http://www.sbf5.com/~cduan/technical/git/)
 
 ### Week 2
-D3: Chapters 4-6
+D3: Chapters 5-8
 DFI: Chapter 1
 
 ### Week 3
-D3: Chapters 7-8
+D3: Chapters 9-11
 DFI: Chapter 2
 
 ### Week 4
-D3: Chapters 9-11
+D3: Chapters 12
 DFI: Chapter 3
 
 ### Week 5
-D3: Chapters 12
 DFI: Chapter 4
 
 ### Week 6

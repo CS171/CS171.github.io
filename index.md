@@ -25,8 +25,15 @@ This course is also listed as [CSCI E-171](http://www.extension.harvard.edu/cour
 Please address all questions regarding the class to [staff@cs171.org](mailto:staff@cs171.org)
 
 [Alexander Lex](http://alexander-lex.com) (Head TF) - Postdoctoral Fellow, Visual Computing Group
+[Ibrahim Alain](http://alainibrahim.com)
+[Johanna Beyer](http://people.seas.harvard.edu/~jbeyer/) - Postdoctoral Fellow, Visual Computing Group
+[Gaurav Bharaj](http://people.seas.harvard.edu/~gaurav/) - PhD Student, Visual Computing Group
+[David Chouinard](http://davidchouinard.com/)
+Keving Ge Sun 
 [Romain Vuillemot](http://romain.vuillemot.net/) - Data Visualization Fellow, Center for International Development
+Megan Quintero
 [Hendrik Strobelt](http://hendrik.strobelt.com/) - Postdoctoral Fellow, Visual Computing Group
+
 
 ### Lecture Resources
 

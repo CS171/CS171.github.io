@@ -31,6 +31,15 @@
 [Dive Into HTML5 - Homepage](http://diveintohtml5.info/index.html)
 [Dive Into HTML5 - Canvas](http://diveintohtml5.info/canvas.html)
 
+## Git Clients
+
+[Official git command line and GUI clients](http://git-scm.com/download)
+[GitHub Client for Mac](http://mac.github.com/)
+[GitHub Client for Windows](http://windows.github.com/)
+[SourceTree for Mac and Windows](http://www.sourcetreeapp.com)
+[TortoiseGit for Windows](https://code.google.com/p/tortoisegit/)
+
+
 ## Exploratory Data Analysis
 
 These tools help you to get an idea about the shape and properties of datasets and let you produce good (standard) plots.
