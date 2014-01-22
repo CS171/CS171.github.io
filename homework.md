@@ -25,8 +25,8 @@ A couple of **important rules** to make our lives easier:
  * You can use branches to explore various options, but we will **always grade your master branch**. Make sure that your master branch is up to date at submission time.
  * We will be using state-of-the-art web technology. To avoid slowing us down with browser compatibility, we define a target platform, that we test against. Your code must be compatible with the latest version of [Google Chrome](https://www.google.com/chrome) - currently Version 32.0.1700.**.
  
- # Homeworks
+# Homeworks
  
- HW 0 will be published shortly. 
+HW 0 will be published shortly. 
 
 
