@@ -23,6 +23,7 @@ A couple of **important rules** to make our lives easier:
  * Don't make your repositories public, unless we explicitly tell you to. We will consider a public repository containing a homework solution as **[academic dishonesty](http://isites.harvard.edu/icb/icb.do?keyword=k88702&pageid=icb.page516359)**.
  * Do use the features of version control while you are working on your homework. Every time you are done with a chunk of work, or when you are done for the day, push your changes to github. This will avoid data loss, even if your house burns down, and you always will have at least something submitted.
  * You can use branches to explore various options, but we will **always grade your master branch**. Make sure that your master branch is up to date at submission time.
+ * We will be using state-of-the-art web technology. To avoid slowing us down with browser compatibility, we define a target platform, that we test against. Your code must be compatible with the latest version of [Google Chrome](https://www.google.com/chrome) - currently Version 32.0.1700.**.
  
  # Homeworks
  
