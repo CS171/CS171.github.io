@@ -14,9 +14,9 @@
 |Week 8 (3/17-3/23) | No Class - Spring Recess | No Class - Spring Recess | No Class - Spring Recess |  |
 |Week 9 (3/24-3/30) | Color. Color Processing. Color Spaces. Color Aesthetics. Colors for Visualization. | Design Studio |  | HW4
 |Week 10 (3/31-4/6) | Cognition. Looking vs. Seeing. Image Gist. Gestalt Principles. Visual Attention. Visual Working & Long-Term Memory. | Visual Story Telling. Messaging. Effective Presentations. |  |  |
-|Week 11 (4/7-4/13) | Storytelling Guest Lecture - Alberto Cairo | Design Studio |  | FP-1
+|Week 11 (4/7-4/13) | Storytelling Guest Lecture - TBD | Design Studio |  | FP-1
 |Week 12 (4/14-4/20) | Project Reviews | Project Reviews |  |  |
-|Week 13 (4/21-4/27) | Visualization and Arts - Ben Fry | Social Visualization - Martin & Fernanda |  |  |
+|Week 13 (4/21-4/27) | Visualization and Arts - Ben Fry | Social Visualization - Martin Wattenberg & Fernanda Viegas |  |  |
 |Week 14 (4/28-5/4) | No Class - Reading Period | No Class - Reading Period |  | FP
 |Week 15 (5/5-5/11) | No Class - Reading Period | Final Project Presentations.  |  |  |
 |Week 16 (5/12-5/18) | No class Exam Period | No class Exam Period |  |  |  |
