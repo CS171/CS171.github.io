@@ -4,7 +4,7 @@
 
 Homework assignments are due on Thursdays, 11:59 pm ET. No homeworks will be accepted after Saturday, 11:59 pm ET. See the schedule for an overview of all due dates. Homework solutions will be posted on Piazza. For more details see the syllabus. 
 
-# Submission Instructions
+## Submission Instructions
 
 Homework submissions will be handled trough [github](http://github.com). You will set up your github account as part of Homework 0. The gist of it:
 
@@ -14,7 +14,7 @@ Homework submissions will be handled trough [github](http://github.com). You wil
  * You share your repository with our github user [cs171tf](http://github.com/cs171tf) and your grading TF (starting with HW1). You will get an e-mail in time telling you your grading TF's github username.
  * Once the deadline approaches, you simply **stop changing your repository**. We will count the precise time of your last push as your submission time. For example, if you push on the day of the deadline, a Thursday, at 11:59pm, your submission is on time. If you push 20 minutes later, on Friday, at 00:19, we will count one late day. If you push any time after Friday at 11:59pm we will count two late days. On Saturday night, precisely at midnight, we will download your repository automatically. No changes after that will be graded. 
 
-# Homework Rules
+## Homework Rules
  
 A couple of **important rules** to make our lives easier:
  
@@ -25,7 +25,7 @@ A couple of **important rules** to make our lives easier:
  * You can use branches to explore various options, but we will **always grade your master branch**. Make sure that your master branch is up to date at submission time.
  * We will be using state-of-the-art web technology. To avoid slowing us down with browser compatibility, we define a target platform, that we test against. Your code must be compatible with the latest version of [Google Chrome](https://www.google.com/chrome) - currently Version 32.0.1700.**.
  
-# Homeworks
+## Homeworks
  
 HW 0 will be published shortly. 
 
