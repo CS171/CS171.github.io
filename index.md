@@ -37,10 +37,10 @@ Megan Quintero
 
 ### Lecture Resources
 
-[Adobe Connect Live Classroom](http://continuinged.adobeconnect.com/cs171/)
+[Adobe Connect Live Classroom](http://continuinged.adobeconnect.com/cs_171)
 Live Video (alternate) 
 2014 Lecture Slides 
-2014 Video Archive 
+[2014 Video Archive](http://cm.dce.harvard.edu/2014/02/24028/publicationListing.shtml)
 [2013 Video Archive](http://cm.dce.harvard.edu/2013/02/22872/publicationListing.shtml)
 [2012 Video Archive](http://cm.dce.harvard.edu/2012/02/22872/publicationListing.shtml)
 
