@@ -15,7 +15,7 @@ This course, when taken for a letter grade, meets the Harvard General Education 
  * Create web-based interactive visualizations using JavaScript and D3
  * Use storytelling principles to design coherent and clear visualizations
  
-Students without the technical background recommended for CS171 might want to consider [EMR19](http://artofnumbers.org/), a course focusing more on the applications and history of visualization and requiring less source code based programming.
+Students without the technical background recommended for CS171 might want to consider [EMR19](http://artofnumbers.org/), a course focusing more on the applications and history of visualization and requiring little or no programming.
 
 ## Course Logistics
 
