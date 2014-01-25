@@ -14,6 +14,8 @@ This course, when taken for a letter grade, meets the Harvard General Education 
  * Use principles of human perception and cognition in visualization design
  * Create web-based interactive visualizations using JavaScript and D3
  * Use storytelling principles to design coherent and clear visualizations
+ 
+Students without the technical background recommended for CS171 might want to consider [EMR19](http://artofnumbers.org/), a course focusing more on the applications and history of visualization and requiring less source code based programming.
 
 ## Course Logistics
 
