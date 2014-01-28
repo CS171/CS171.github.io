@@ -39,7 +39,7 @@ Megan Quintero
 
 [Adobe Connect Live Classroom](http://continuinged.adobeconnect.com/cs171/)
 Live Video (alternate) 
-2014 Lecture Slides 
+[2014 Lecture Slides](https://drive.google.com/folderview?id=0BxYkKyLxfsNVN2l0Y1lFbUdIOGc)
 2014 Video Archive 
 [2013 Video Archive](http://cm.dce.harvard.edu/2013/02/22872/publicationListing.shtml)
 [2012 Video Archive](http://cm.dce.harvard.edu/2012/02/22872/publicationListing.shtml)
