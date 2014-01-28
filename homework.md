@@ -27,6 +27,6 @@ A couple of **important rules** to make our lives easier:
  
 ## Homeworks
  
-**[Homework 0](https://github.com/CS171/HW0)** - due: Thursday January 30st 2013 11:59 pm.
+**[Homework 0](https://github.com/CS171/HW0)** - due: Thursday January 30th 2014 11:59 pm.
 
 
