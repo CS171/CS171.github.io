@@ -11,7 +11,7 @@ Homework assignments are due on Thursdays, 11:59 pm ET. No homeworks will be acc
 
 Homework submissions will be handled trough [github](http://github.com). You will set up your github account as part of Homework 0. The gist of it:
 
- * You create a **private repository** for every homework, following a naming schema (cs171-hwX-LASTNAME-FIRSTNAME). Github will provide you with free private repositories if you ask them using your **.edu** e-mail address.
+ * You create a **private repository** for every homework, following a naming schema (cs171-hwX-lastname-firstname - **all lower case**). Github will provide you with free private repositories if you ask them using your **.edu** e-mail address.
  * You put all your materials, including your sketches, source code, written answers into this repository, into the master branch.
  * You make use of the awesome features of version control: you can trace back every step, your code is stored in a secure location. For your project you will be able to collaborate, create issues, etc.
  * You share your repository with our github user [cs171tf](http://github.com/cs171tf) and your grading TF (starting with HW1). You will get an e-mail in time telling you your grading TF's github username.
