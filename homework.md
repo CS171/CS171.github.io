@@ -1,8 +1,7 @@
 # ![](i/seas.png) &nbsp; &nbsp; CS 171 - Homework
 
-**This information is still subject to change**
-
 Homework assignments are due on Thursdays, 11:59 pm ET. No homeworks will be accepted after Saturday, 11:59 pm ET. See the schedule for an overview of all due dates. Homework solutions will be posted on Piazza. For more details see the syllabus. 
+
 
 # Submission Instructions
 
