@@ -1,8 +1,11 @@
 # ![](i/seas.png) &nbsp; &nbsp; CS 171 - Homework
 
-**This information is still subject to change**
-
 Homework assignments are due on Thursdays, 11:59 pm ET. No homeworks will be accepted after Saturday, 11:59 pm ET. See the schedule for an overview of all due dates. Homework solutions will be posted on Piazza. For more details see the syllabus. 
+
+## Homeworks
+ 
+**[Homework 0](https://github.com/CS171/HW0)** - due: Thursday January 30th 2014 11:59 pm.
+
 
 ## Submission Instructions
 
@@ -25,8 +28,5 @@ A couple of **important rules** to make our lives easier:
  * You can use branches to explore various options, but we will **always grade your master branch**. Make sure that your master branch is up to date at submission time.
  * We will be using state-of-the-art web technology. To avoid slowing us down with browser compatibility, we define a target platform, that we test against. Your code must be compatible with the latest version of [Google Chrome](https://www.google.com/chrome) - currently Version 32.0.1700.**.
  
-## Homeworks
- 
-**[Homework 0](https://github.com/CS171/HW0)** - due: Thursday January 30th 2014 11:59 pm.
 
 
