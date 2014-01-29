@@ -27,7 +27,8 @@
 
 [Enabling Web Developer Extensions in the Browser](http://macwright.org/enable-web-developer-extensions/)
 [Eloquent Javascript Book](http://eloquentjavascript.net/)
-[Mozilla Web Dev Resources](https://developer.mozilla.org/en-US/)
+[Mozilla Developer Network](https://developer.mozilla.org/en-US/)
+— See [DevDocs](http://devdocs.io/) for unified documentation on all web technologies
 [Dive Into HTML5 - Homepage](http://diveintohtml5.info/index.html)
 [Dive Into HTML5 - Canvas](http://diveintohtml5.info/canvas.html)
 
