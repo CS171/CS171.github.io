@@ -31,7 +31,7 @@ Please address all questions regarding the class to [staff@cs171.org](mailto:sta
 Travis Downs - CS Concentrator, Harvard College
 [Alain Ibrahim](http://alainibrahim.com) - Senior Web Developer, Alhurra
 Mimi Lai -  Web Developer, Wellesley College
-Francis Kei Masuda
+Francis Kei Masuda - Neurobiology Concentrator, Harvard College
 Keving Ge Sun 
 Vincent Tsugranes
 [Romain Vuillemot](http://romain.vuillemot.net/) - Data Visualization Fellow, Center for International Development
