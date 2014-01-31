@@ -32,13 +32,23 @@
 [Dive Into HTML5 - Homepage](http://diveintohtml5.info/index.html)
 [Dive Into HTML5 - Canvas](http://diveintohtml5.info/canvas.html)
 
-## Git Clients
+## Git
 
-[Official git command line and GUI clients](http://git-scm.com/download)
+
+[Official git command line and GUI clients, official documentation](http://git-scm.com/)
+
+### Clients
+
 [GitHub Client for Mac](http://mac.github.com/)
 [GitHub Client for Windows](http://windows.github.com/)
 [SourceTree for Mac and Windows](http://www.sourcetreeapp.com)
 [TortoiseGit for Windows](https://code.google.com/p/tortoisegit/)
+
+### Tutorials etc. 
+
+
+[Setting up git](https://help.github.com/articles/set-up-git)
+[Understanding git conceptually](http://www.sbf5.com/~cduan/technical/git/)
 
 
 ## Exploratory Data Analysis
