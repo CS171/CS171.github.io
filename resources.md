@@ -22,6 +22,7 @@
 [D3 Tutorial Videos by Ian Johnson - Vol II](http://enjalot.github.com/dot-append/)
 [D3 Tips and Tricks](http://www.d3noob.org/)
 [TopoJson](https://github.com/mbostock/topojson)
+[D3 Gallery](http://christopheviau.com/d3list/gallery.html)
 
 ## Web Development
 
