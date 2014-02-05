@@ -27,12 +27,12 @@ Please address all questions regarding the class to [staff@cs171.org](mailto:sta
 [Alexander Lex](http://alexander-lex.com) (Head TF) - Postdoctoral Fellow, Visual Computing Group
 [Johanna Beyer](http://people.seas.harvard.edu/~jbeyer/) - Postdoctoral Fellow, Visual Computing Group
 [Gaurav Bharaj](http://people.seas.harvard.edu/~gaurav/) - PhD Student, Visual Computing Group
-[David Chouinard](http://davidchouinard.com/)
+[David Chouinard](http://davidchouinard.com/) – Product design & development consultant
 Travis Downs - CS Concentrator, Harvard College
 [Alain Ibrahim](http://alainibrahim.com) - Senior Web Developer, Alhurra
 Mimi Lai -  Web Developer, Wellesley College
 Francis Kei Masuda - Neurobiology Concentrator, Harvard College
-Keving Ge Sun 
+[Keving Ge Sun](http://www.thekevinsun.com/)
 Vincent Tsugranes
 [Romain Vuillemot](http://romain.vuillemot.net/) - Data Visualization Fellow, Center for International Development
 Megan Quintero - CS Concentrator, Harvard College
