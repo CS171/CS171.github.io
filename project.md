@@ -14,11 +14,22 @@ There are a few milestones for your final project. It is critical to note that *
 * **Thursday, May 1: Projects due  (including screencast)**
 * Thursday, May 8: Best project presentations and prizes
 
+## Proposal
+You start your project by forming your groups and letting us know what topic you are interested in exploring by submitting [this project data form](https://docs.google.com/forms/d/1L7bb7R9J3yA8NSnz7tpOlOX8TFNAv9AMZCQsBQqTkMk). **Each team will only need to submit one form**. In addition to the form, you will create a proposal document, addressing the following points. Use these points as headers in your document.
+
+* **Background and Motivation.** Discuss your motivations and reasons for choosing this project, especially any background or research interests that may have influenced your decision.
+* **Project Objectives.** Provide the primary questions you are trying to answer with your visualization. What would you like to learn and accomplish? List the benefits.
+* **Data.** From where and how are you collecting your data? If appropriate, provide a link to your data sources.
+* **Data Processing.** Do you expect to do substantial data cleanup? What quantities do you plan to derive from your data? How will data processing be implemented?  
+* **Visualization.** How will you display your data? Provide some general ideas that you have for the visualization design. Include sketches of your design.
+* **Must-Have Features.** These are features without which you would consider your project to be a failure.
+* **Optional Features.** Those features which you consider would be nice to have, but not critical.
+* **Project Schedule.** Make sure that you plan your work so that you can avoid a big rush right before the final project deadline, and delegate different modules and responsibilities among your team members. Write this in terms of weekly deadlines.
+
+You will submit this proposal as part of Homework 3. Based on your proposals we will assign a TF to your team who will guide you through the rest of the project. You will schedule a project review meeting with your TF during regular lecture times of the week marked in the schedule. Make sure all of your team members are present at the meeting. Online students can schedule a Skype or google hangout meeting with their TF.
+
 ## Deliverables
 There are several deliverables for your project that will be graded individually to make up your final project score.
-
-### Proposal
-You start your project by forming your groups and letting us know what topic you are interested in exploring by submitting this project proposal form. **Each team will only need to submit one form**. Based on your proposals we will assign a TF to your team who will guide you through the rest of the project. You will schedule a project review meeting with your TF during regular lecture times of the week marked in the schedule. Make sure all of your team members are present at the meeting. Online students can schedule a Skype meeting with their TF.
 
 ### Process Book
 An important part of your project is your process book. Your process book details your steps in developing your solution, including how you collected the data, alternative designs you tried, and the insights you got. **Equally important to your final results is how you got there!** Your process book is the place you describe and document the space of possibilities you explored at each step of your project. It is not, however, a journal or lab notebook that describes every detail - you should think carefully about the important decisions you made and insights you gained and present your reasoning in a concise way.
