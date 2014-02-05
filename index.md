@@ -37,7 +37,7 @@ Vincent Tsugranes
 [Romain Vuillemot](http://romain.vuillemot.net/) - Data Visualization Fellow, Center for International Development
 Megan Quintero - CS Concentrator, Harvard College
 [Hendrik Strobelt](http://hendrik.strobelt.com/) - Postdoctoral Fellow, Visual Computing Group
-Julie Zhang
+Julie Zhang - CS Concentrator, Harvard College
 
 
 ### Lecture Resources
