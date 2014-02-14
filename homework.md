@@ -6,7 +6,7 @@ Homework assignments are due on Thursdays, 11:59 pm ET. No homeworks will be acc
  
 **[Homework 0](https://github.com/CS171/HW0)** - due: Thursday, January 30th 2014 11:59 pm.
 **[Homework 1](https://github.com/CS171/HW1)** - due: Thursday, February 13th 2014 11:59 pm. 
-
+**[Homework 1](https://github.com/CS171/HW2)** - due: Thursday, February 27th 2014 11:59 pm. 
 
 ## Submission Instructions
 
