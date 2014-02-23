@@ -8,7 +8,7 @@ You will work closely with other classmates in a **2-3 person project team**. Yo
 ## Project Milestones
 There are a few milestones for your final project. It is critical to note that **no extensions will be given** for any of the project due dates for any reason. Late days may not be used. Projects submitted after the final due date will not be graded. If you anticipate any issues (e.g., due to business travel) you need to send an email to the staff mailing list at least one week in advance.
 
-* Thursday, March 6: Project proposal due
+* Thursday, March 13: Project proposal due (part of Homework 3)
 * Thursday, April 10: Functional project prototype due
 * Week of April 14: Project review with the TFs
 * **Thursday, May 1: Projects due  (including screencast)**
@@ -43,7 +43,7 @@ Your process book should include the following topics. Depending on your project
 * Questions: What questions are you trying to answer? How did these questions evolve over the course of the project? What new questions did you consider in the course of your analysis?
 * Data: Source, scraping method, cleanup, etc.
 * Exploratory Data Analysis: What visualizations did you use to initially look at your data? What insights did you gain? How did these insights inform your design?
-* Design Evolution: What are the different visualizations you considered? Justify the design decisions you made using the preceptual and design principles you learned in the course. 
+* Design Evolution: What are the different visualizations you considered? Justify the design decisions you made using the perceptual and design principles you learned in the course. 
 * Implementation: Describe the intent and functionality of the interactive visualizations you implemented. Provide clear and well-referenced images showing the key design and interaction elements.
 * Evaluation: What did you learn about the data by using your visualizations? How did you answer your questions? How well does your visualization work, and how could you further improve it? 
  
