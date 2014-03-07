@@ -10,9 +10,9 @@
  | Week 4 (2/17-2/23) | Maps. Choropleth Maps. Cartograms. Symbol Maps. Flow Maps. Real-Time Maps. | Design Studio | D3: Layouts |  |
  |Week 5 (2/24-3/2) |High-Dimensional Data. Filtering. Parallel Coordinates. Glyphs. Aggregation.| Text Visualization. Document Visualization. Images & Video.  | Web scraping and advanced JS | HW2
  |Week 6 (3/3-3/9) | Maps. Choropleth Maps. Cartograms. Symbol Maps. Flow Maps. Real-Time Maps. | Design Studio | No Lab |  |
-| Week 7 (3/10-3/16) | Perception. Visual Channels. Weber's Law. Preattentive Processing. Visual Channel Rankings. | Patterns. Contours & Textures. Grouping. Gestalt Principles. Spatial Layout. Directing the Eyes. | Tableau  | HW3
+| Week 7 (3/10-3/16) | Tableau - Robert Kosara |Perception. Visual Channels. Weber's Law. Preattentive Processing. Visual Channel Rankings. | Advanced JavaScript  | HW3
 |Week 8 (3/17-3/23) | No Class - Spring Recess | No Class - Spring Recess | No Class - Spring Recess |  |
-|Week 9 (3/24-3/30) | Color. Color Processing. Color Spaces. Color Aesthetics. Colors for Visualization. | Design Studio |  | HW4
+|Week 9 (3/24-3/30) |  Design Studio | Color. Color Processing. Color Spaces. Color Aesthetics. Colors for Visualization. | | HW4
 |Week 10 (3/31-4/6) | Cognition. Looking vs. Seeing. Image Gist. Gestalt Principles. Visual Attention. Visual Working & Long-Term Memory. | Visual Story Telling. Messaging. Effective Presentations. |  |  |
 |Week 11 (4/7-4/13) | Design Studio | Design for Information - Isabel Meirelles |  | FP-1
 |Week 12 (4/14-4/20) | Project Reviews | Project Reviews |  |  |
