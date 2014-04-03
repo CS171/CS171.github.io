@@ -9,9 +9,10 @@ You will work closely with other classmates in a **2-3 person project team**. Yo
 There are a few milestones for your final project. It is critical to note that **no extensions will be given** for any of the project due dates for any reason. Late days may not be used. Projects submitted after the final due date will not be graded. If you anticipate any issues (e.g., due to business travel) you need to send an email to the staff mailing list at least one week in advance.
 
 * Thursday, March 13: Project proposal due (part of Homework 3)
-* Thursday, April 10: Functional project prototype due
+* Tuesday, April 8th, 11:59 pm: **Announce your project repository by filling out (https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo)[this form]
+* Thursday, April 10, 11:59 pm: Functional project prototype due
 * Week of April 14: Project review with the TFs
-* **Thursday, May 1: Projects due  (including screencast)**
+* **Thursday, May 1, 11:59pm: Projects due  (including screencast)**
 * Thursday, May 8: Best project presentations and prizes
 
 ## Proposal
@@ -71,12 +72,16 @@ It is important to provide positive feedback to people who truly worked hard for
 Your teammate’s assessment of your contributions and the accuracy of your self-assessment will be considered as part of your overall project score. 
 
 ### Submission Instructions
-Submission will be handled trough github. All teams must use a single shared github repository. *If we cannot access your work because these directions are not followed correctly, we will not grade your work.* Submit the following:
+Submission will be handled trough github. All teams must use a single shared github repository. *If we cannot access your work because these directions are not followed correctly, we will not grade your work.* 
+
+To submit your work **you must fill out (https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo)[this form] by April 8th, 11:59 pm** where you specify your project URL. 
+
+Store the following in your github repository:
 
 * Code - All web site files and libraries assuming they are not too big to include
 * Data - Include all the data that you used in your project. If the data is too large for github store it on a cloud storage provider, such as Dropbox or Yousendit.
 * Process Book- Your Process Book in PDF format.
-* README - The README file must give an overview of what you are handing in: which parts are your code, which parts are libraries, and so on. The README must contain URLs to your project websites and screencast videos.
+* README - The README file must give an overview of what you are handing in: which parts are your code, which parts are libraries, and so on. The README must contain URLs to your project websites and screencast videos. The README must also explain any non-obvious features of your interface.
 
 ### Grading Criteria
 * Process Book - Are you following a design process that is well documented in your process book? 
