@@ -86,3 +86,15 @@ Submission will be handled trough github. All teams must use a single shared git
  
 Your individual project score will also be influenced by your peer evaluations.
 
+## Milestone 1 Deliverables
+
+For your Milestone 1 we expect you to hand in your **code** and your **process book** in it's current state. You don't have to hand in a screencast and you don't have to have your website ready. 
+
+For your Milestone you should have completed your data acquisition, or at least have a significant sample of your data. You must have your data structure ready. For example, if you plan to collect 1000 data records, but only have 200, that's fine. If you are missing one of two datasets you want to use you will loose points, since you have to have the whole structure. 
+
+You must have a working visualization prototype. You must not have all your views up and running, and it must not be completely interactive, but the direction and the content must be clear. 
+
+If you are uncertain about the scope, please contact your project TF.
+
+Milestone 1 counts as 30% of your project grade.
+
