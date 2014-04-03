@@ -9,10 +9,10 @@ You will work closely with other classmates in a **2-3 person project team**. Yo
 There are a few milestones for your final project. It is critical to note that **no extensions will be given** for any of the project due dates for any reason. Late days may not be used. Projects submitted after the final due date will not be graded. If you anticipate any issues (e.g., due to business travel) you need to send an email to the staff mailing list at least one week in advance.
 
 * Thursday, March 13: Project proposal due (part of Homework 3)
-* Tuesday, April 8th, 11:59 pm: **Announce your project repository by filling out [this form](https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo)
-* Thursday, April 10, 11:59 pm: Functional project prototype due
+* Tuesday, April 8th, 11:59 pm: **Announce your project repository by filling out [this form](https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo)**
+* Thursday, April 10, 11:59 pm: **Functional project prototype due**
 * Week of April 14: Project review with the TFs
-* **Thursday, May 1, 11:59pm: Projects due  (including screencast)**
+* Thursday, May 1, 11:59pm: **Projects due  (including screencast)**
 * Thursday, May 8: Best project presentations and prizes
 
 ## Proposal
