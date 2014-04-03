@@ -74,7 +74,7 @@ Your teammate’s assessment of your contributions and the accuracy of your self
 ### Submission Instructions
 Submission will be handled trough github. All teams must use a single shared github repository. *If we cannot access your work because these directions are not followed correctly, we will not grade your work.* 
 
-To submit your work **you must fill out [this form](https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo) by April 8th, 11:59 pm** where you specify your project URL. 
+To submit your work **you must fill out [this form](https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo) by April 8th, 11:59 pm** where you specify your project URL in ssh format. You can switch between http and ssh urls on your github project main page in the right menu.
 
 Store the following in your github repository:
 
