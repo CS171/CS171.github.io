@@ -9,7 +9,7 @@ You will work closely with other classmates in a **2-3 person project team**. Yo
 There are a few milestones for your final project. It is critical to note that **no extensions will be given** for any of the project due dates for any reason. Late days may not be used. Projects submitted after the final due date will not be graded. If you anticipate any issues (e.g., due to business travel) you need to send an email to the staff mailing list at least one week in advance.
 
 * Thursday, March 13: Project proposal due (part of Homework 3)
-* Tuesday, April 8th, 11:59 pm: **Announce your project repository by filling out (https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo)[this form]
+* Tuesday, April 8th, 11:59 pm: **Announce your project repository by filling out [this form](https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo)
 * Thursday, April 10, 11:59 pm: Functional project prototype due
 * Week of April 14: Project review with the TFs
 * **Thursday, May 1, 11:59pm: Projects due  (including screencast)**
@@ -74,7 +74,7 @@ Your teammate’s assessment of your contributions and the accuracy of your self
 ### Submission Instructions
 Submission will be handled trough github. All teams must use a single shared github repository. *If we cannot access your work because these directions are not followed correctly, we will not grade your work.* 
 
-To submit your work **you must fill out (https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo)[this form] by April 8th, 11:59 pm** where you specify your project URL. 
+To submit your work **you must fill out [this form](https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo) by April 8th, 11:59 pm** where you specify your project URL. 
 
 Store the following in your github repository:
 
