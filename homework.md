@@ -14,6 +14,9 @@ Homework assignments are due on Thursdays, 11:59 pm ET. No homeworks will be acc
 
 **[Design Studio 1](http://goo.gl/iG5P2d)** - due together with HW2. 
 **[Design Studio 2](http://goo.gl/gwEjjE)** - due together with HW3.
+**[Design Studio 3](http://goo.gl/gKxNqS)** - due together with Project Milestone 1.
+
+
 
 ## Submission Instructions
 
