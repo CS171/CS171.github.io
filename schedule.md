@@ -16,7 +16,7 @@
 |Week 10 (3/31-4/6) | No Class | Visual Story Telling. Messaging. Effective Presentations. |  |  |
 |Week 11 (4/7-4/13) | Design Studio | Design for Information - Isabel Meirelles |  | FP-1
 |Week 12 (4/14-4/20) | Project Reviews | Project Reviews |  |  |
-|Week 13 (4/21-4/27) | Visualization and Arts - Ben Fry | Social Visualization - Fernanda Viegas |  |  |
+|Week 13 (4/21-4/27) | Visualization and Arts - James Grady, Mark Schifferli | Social Visualization - Fernanda Viegas |  |  |
 |Week 14 (4/28-5/4) | No Class - Reading Period | No Class - Reading Period |  | FP
 |Week 15 (5/5-5/11) | No Class - Reading Period | Final Project Presentations.  |  |  |
 |Week 16 (5/12-5/18) | No class - Exam Period | No class - Exam Period |  |  |  |
