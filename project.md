@@ -12,7 +12,7 @@ There are a few milestones for your final project. It is critical to note that *
 * Tuesday, April 8th, 11:59 pm: **Announce your project repository by filling out [this form](https://docs.google.com/forms/d/1seaSw8GFe5zxN8IMB1kGUuFYQCfZ7NWxaz2NCHj-ZXo)**
 * Thursday, April 10, 11:59 pm: **Functional project prototype due**
 * Week of April 14: Project review with the TFs
-* Thursday, May 1, 11:59pm: **Projects due  (including screencast)**
+* Thursday, May 1, 11:59pm: **Projects due  (including screencast). Include [peer evaluation](https://docs.google.com/forms/d/1aUeT285fC5plcVfl525XIQae8LhRBuKaTmzSA6IY_Ys).**
 * Thursday, May 8: Best project presentations and prizes
 
 ## Proposal
