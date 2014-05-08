@@ -7,6 +7,8 @@
 [Century of Corn](http://jbencook.github.io/cs171-ag-viz/)
 Benjamin Cook, Charles Hornbaker, Conor Myhrvold, Ryan King
 
+The prize for our winners: a 3D pie chart! We took a bite though! ![](i/pie.jpg)
+
 ### Runner Ups Places 2-3
 
 [Fukushima Memoriam (Japan's Triple Disaster)](http://beta.fukushimajapan.org/website.html)
@@ -51,7 +53,7 @@ Kevin Kuate Fodouop, Alexandre Sahyoun
 Shreyas Dube, Christopher Gerber
 
 [SEAS](http://theredsetter.com/cs171)
-Rebecca Mazur			
+Rebecca Mazur
 
 
 ## Best Projects 2013
