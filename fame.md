@@ -2,6 +2,8 @@
 
 ## Best Projects 2014
 
+These are the best projects (out of 79 in total) in 2014. Within the sections the order is alphabetical. 
+
 ### Winner
 
 [Century of Corn](http://jbencook.github.io/cs171-ag-viz/) 
