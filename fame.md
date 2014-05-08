@@ -13,31 +13,44 @@ The prize for our winners: a 3D pie chart! We took a bite though!
 
 ### Runner Ups Places 2-3
 
-[Fukushima Memoriam (Japan's Triple Disaster)](http://beta.fukushimajapan.org/website.html)
-Molly Lloyd, Anthony Thul, Eric Coletti
-
 [Data Driven Dota](http://d2dota.com/)
 Robbie Gibson, Benjy Levin, Huihui Fan
 
+[Fukushima Memoriam (Japan's Triple Disaster)](http://beta.fukushimajapan.org/website.html)
+Molly Lloyd, Anthony Thul, Eric Coletti
+
+
 ### Runner Ups
 
-[Vindolanda: A Visual History](http://nmulani.github.io/cs171-finalproject-mulani-nikhil/)
-Nikhil Mulani
-
-[The Evolution of Social Networks](http://people.fas.harvard.edu/~reece/171/seenet/#)
-Andrew Reece, Brian Feeny, Jennifer Sulkow
+[Box Office Success and Social Media](http://cleuer.github.io/BoxOfficeSuccess)
+Christopher Leuer
 
 Exploring Influence and Bipartisanship through Social Networks in Congress
 Jonathan Marks
 
-[Visualizing the Great Recession Through The United States from 2001 to 2011](http://monarchjhaveri.github.io/GreatRecession/)
-Eric Slater, Luciano Arango, Monarch Wadia
-
 [Eye to the Sky. Chandra Edition.](http://chandra.phptime.biz/)
 Pat O'Brien, Katherine Wyman, Daniel Schultz
 
+[Not Safe Anymore (NSA)](http://notsafeanymo.appspot.com/) 
+Shreyas Dube, Christopher Gerber
+
 [owlhub. Insights](http://insights.owlhub.co/) 
 Arne Zeising, Hendrik Makait, Keda Che
+
+[SEAS](http://theredsetter.com/cs171)
+Rebecca Mazur
+
+[Startup Lookup](http://stup-lkup.herokuapp.com/)
+Kevin Kuate Fodouop, Alexandre Sahyoun
+
+[The Evolution of Social Networks](http://people.fas.harvard.edu/~reece/171/seenet/#)
+Andrew Reece, Brian Feeny, Jennifer Sulkow
+
+[Vindolanda: A Visual History](http://nmulani.github.io/cs171-finalproject-mulani-nikhil/)
+Nikhil Mulani
+
+[Visualizing the Great Recession Through The United States from 2001 to 2011](http://monarchjhaveri.github.io/GreatRecession/)
+Eric Slater, Luciano Arango, Monarch Wadia
 
 [U.S. College Data Comparison Tool](http://cheunjm.github.io/cs171-project-jcheun-rkim/)
 Jaemin Cheun, Ray Kim
@@ -45,21 +58,8 @@ Jaemin Cheun, Ray Kim
 [Zap! Pow! Graph! or Holy Data, Batman!](http://www.somervillain.com/heroes.html)
 Charles Bandes, Svetlana Nelson
 
-[Box Office Success and Social Media](http://cleuer.github.io/BoxOfficeSuccess)
-Christopher Leuer
-
-[Startup Lookup](http://stup-lkup.herokuapp.com/)
-Kevin Kuate Fodouop, Alexandre Sahyoun
-
-[Not Safe Anymore (NSA)](http://notsafeanymo.appspot.com/) 
-Shreyas Dube, Christopher Gerber
-
-[SEAS](http://theredsetter.com/cs171)
-Rebecca Mazur
-
 
 ## Best Projects 2013
-
 
 ### Project 3 - Interactive Data Visualization
 
