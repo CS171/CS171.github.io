@@ -4,10 +4,12 @@
 
 ### Winner
 
-[Century of Corn](http://jbencook.github.io/cs171-ag-viz/)
+[Century of Corn](http://jbencook.github.io/cs171-ag-viz/) 
 Benjamin Cook, Charles Hornbaker, Conor Myhrvold, Ryan King. 
 
-The prize for our winners: a 3D pie chart! We took a bite though! ![](i/pie.jpg)
+The prize for our winners: a 3D pie chart! We took a bite though! 
+
+![](i/pie.jpg)
 
 ### Runner Ups Places 2-3
 
