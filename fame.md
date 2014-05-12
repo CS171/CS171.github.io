@@ -42,9 +42,6 @@ Arne Zeising, Hendrik Makait, Keda Che
 [SEAS](http://theredsetter.com/cs171)
 Rebecca Mazur
 
-[Startup Lookup](http://stup-lkup.herokuapp.com/)
-Kevin Kuate Fodouop, Alexandre Sahyoun
-
 [The Evolution of Social Networks](http://people.fas.harvard.edu/~reece/171/seenet/#)
 Andrew Reece, Brian Feeny, Jennifer Sulkow
 
