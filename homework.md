@@ -4,11 +4,11 @@ Homework assignments are due on Thursdays, 11:59 pm ET. No homeworks will be acc
 
 ## Homeworks
  
-**[Homework 0](https://github.com/CS171/HW0)** - due: Thursday, January 30th 2014 11:59 pm.
-**[Homework 1](https://github.com/CS171/HW1)** - due: Thursday, February 13th 2014 11:59 pm. 
-**[Homework 2](https://github.com/CS171/HW2)** - due: Thursday, February 27th 2014 11:59 pm. 
-**[Homework 3](https://github.com/CS171/HW3)** - due: Thursday, March 13th 2014 11:59 pm. 
-**[Homework 4](https://github.com/CS171/HW4)** - due: Thursday, March 27th 2014 11:59 pm. 
+**Homework 0** - due: Thursday, January 30th 2014 11:59 pm.
+**Homework 1** - due: Thursday, February 13th 2014 11:59 pm. 
+**Homework 2** - due: Thursday, February 27th 2014 11:59 pm. 
+**Homework 3** - due: Thursday, March 13th 2014 11:59 pm. 
+**Homework 4** - due: Thursday, March 27th 2014 11:59 pm. 
 
 ## Design Studios
 
