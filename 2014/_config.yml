@@ -1,0 +1,22 @@
+# Site settings
+title: CS 171 - Visualization
+email: staff@cs171.org
+description: "Visualization Class at Harvard University"
+baseurl: ""
+url: "http://cs171.org"
+twitter_username: VCGHarvard
+github_username:  cs171
+
+analytics :
+  provider : google
+  google :
+      tracking_id : 'UA-123-12'
+
+plugins: ./_plugins
+
+# Build settings
+markdown: kramdown
+kramdown:
+   input: GFM
+
+permalink: pretty
