@@ -1,23 +1,25 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="1;url=2015/index.html">
-        <script type="text/javascript">
-         var parameters = window.location.hash;
-if(parameters.length > 0)
-{
-  window.location.href = "2014/index.html" + parameters;
-}
-         else {
-  window.location.href = "2015/index.html" + parameters;
-}
-        </script>
-        <title>CS 171 </title>
-    </head>
-    <body>
-    <h1>CS 171</h1>
-    <p>
-        If you are not redirected automatically, follow the <a href='2015/index.html'>link to the latest version of the class</a></p>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="1;url=2015/index.html">
+  <script type="text/javascript">
+    // making sure 2014 urls where no year was part of it still work, i.e., we redirect to the right 2014 url
+    var parameters = window.location.hash;
+    if (parameters.length > 0) {
+      window.location.href = "2014/index.html" + parameters;
+    }
+    else {
+      window.location.href = "2015/index.html";
+    }
+  </script>
+  <title>CS 171 </title>
+</head>
+<body>
+<h1>CS 171</h1>
+
+<p>
+  If you are not redirected automatically, follow the <a href='2015/index.html'>link to the latest version of the
+  class</a></p>
+</body>
 </html>
