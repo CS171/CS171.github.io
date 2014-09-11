@@ -48,6 +48,12 @@ a:visited {
   margin: 0 auto;
   zoom: 1; }
 
+@media screen and (min-width: 850px) {
+  #seasLogo {
+    content: url(/2015/assets/i/seas.png);
+    float: right;
+    padding: 10px 10px 10px 10px; } }
+
 /* Layout Styles */
 /* ----------------------------------------------------------*/
 /* Site header */
