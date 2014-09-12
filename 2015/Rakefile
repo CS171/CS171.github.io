@@ -6,6 +6,7 @@ require "stringex"
 
 public_dir      = "_site"    # compiled site directory
 deploy_dir      = "_deploy"
+deploy_subdirectory = "/2015/"
 server_port     = "4000"      # port for preview server eg. localhost:4000
 target_repo     = "git@github.com:CS171/CS171.github.io.git"
 target_dev_repo = ""
@@ -128,14 +129,15 @@ task :deployImpl do
   puts "## Pulling any updates from Github Pages "
   
   puts "delete existing deployment dir"
-  FileUtils.remove_dir("#{deploy_dir}",true)
+  FileUtils.remove_dir("#{deploy_dir}#{deploy_subdirectory}",true)
 
+  puts "URL: #{repo_url}"
   system "git clone #{repo_url} #{deploy_dir}"
-  (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
+  (Dir["#{deploy_dir}#{deploy_subdirectory}/*"]).each { |f| rm_rf(f) }
   
-  puts "\n## Copying #{public_dir} to #{deploy_dir}"
-  Rake::Task[:copydot].invoke(public_dir, deploy_dir)
-  cp_r "#{public_dir}/.", deploy_dir
+  puts "\n## Copying #{public_dir} to #{deploy_dir}#{deploy_subdirectory}"
+  Rake::Task[:copydot].invoke(public_dir, deploy_dir+deploy_subdirectory)
+  cp_r "#{public_dir}/.", deploy_dir+deploy_subdirectory
   
   #remove CNAME entry for project specific repos
   if branch == 'gh-pages' and File.exist?("#{deploy_dir}/CNAME")
