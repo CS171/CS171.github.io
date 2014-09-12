@@ -167,7 +167,8 @@ end
 # Publish Chain #
 ##############
 desc "Generate website and deploy"
-task :publish => [:patch_config, :generate, :unpatch_config, :deploy] do #, :check_links
+#task :publish => [:patch_config, :generate, :unpatch_config, :deploy] do #, :check_links
+task :publish => [:generate, :deploy] do #, :check_links
 end
 
 ########################################################
