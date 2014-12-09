@@ -1,5 +1,6 @@
 $crimson: #AD3D34;
 $crimson_light: #d36a61;
+$crimson_super_light: #e6b4b0;
 
 /* Base */
 /* ----------------------------------------------------------*/
@@ -65,11 +66,36 @@ a:visited {
 }
 
 #seasLogo {
-  @media screen and (min-width: 850px){
-  content: url(/2015/assets/i/seas.png);
-  float: right;
-  padding: 10px 10px 10px 10px;
+  @media screen and (min-width: 850px) {
+    content: url(/2015/assets/i/seas.png);
+    float: right;
+    padding: 10px 10px 10px 10px;
   }
+}
+
+.date {
+  float: right;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+}
+
+.week {
+  border-bottom: 1px solid;
+}
+
+.day {
+  font-family: 'Baumans', cursive;
+  font-size: 1.3em;
+}
+
+.deadline {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: $crimson-super-light;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
 //<img style=" max-width: 40%" src="{{ site.baseurl }}/assets/i/seas.png" alt="Harvard SEAS">
