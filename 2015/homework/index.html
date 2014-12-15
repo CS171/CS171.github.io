@@ -110,7 +110,7 @@
   </header>
 
   <article class="post-content">
-  <p>Homework assignments are due on Fridays, 11:59 pm ET (except homework 0, which is due on Monday). No homeworks will be accepted that are more than 48 hours late (Sunday, 11:59 pm ET). See the schedule for an overview of all due dates. Homework solutions will be posted on Piazza. For more details see the syllabus. </p>
+  <p>Homework assignments are due on Fridays, 11:59 pm ET. No homeworks will be accepted that are more than 48 hours late (Sunday, 11:59 pm ET). See the schedule for an overview of all due dates. Homework solutions will be posted on Piazza. For more details see the syllabus. </p>
 
 <h2 id="homeworks">Homeworks</h2>
 
@@ -126,14 +126,23 @@
 
 <ul>
   <li>You create a <strong>private repository</strong> for all of your homework, following a naming schema (cs171-hw-lastname-firstname - <strong>all lower case</strong>). Github will provide you with free private repositories if you ask them using your <strong>.edu</strong> e-mail address.</li>
-  <li>You put the stuff of the homework in a directory named hwX - where X corresponds to the number of the homework you are submitting.</li>
-  <li>You put all your materials, including your sketches, source code, written answers into this directory, into the master branch of your repository.</li>
-  <li>You make use of the awesome features of version control: you can trace back every step, your code is stored in a secure location. For your project you will be able to collaborate, create issues, etc.</li>
   <li>You share your repository with our GitHub user <a href="http://github.com/cs171tf">cs171tf</a>.</li>
-  <li>Once the deadline approaches, you simply <strong>stop changing the content in the folder</strong>. We will count the precise time of your last push to that folder as your submission time. Be aware of the <a href="http://stackoverflow.com/questions/2745076/what-is-the-difference-between-git-commit-and-git-push">difference between commit and push</a> in git. Essentially, a commit is a local operation, only a push copies your changes to the server. For example, if you push on the day of the deadline, a Thursday, at 11:59pm, your submission is on time. If you push 20 minutes later, on Friday, at 00:19, we will count one late day. If you push any time after Friday at 11:59pm we will count two late days. On Saturday night, precisely at midnight, we will download your repository automatically. No changes after that will be graded. </li>
+  <li>You create a directory named hwX - where X corresponds to the number of the homework you are submitting.</li>
+  <li>You put all your materials, including your sketches, source code, written answers, etc. into this directory.</li>
+  <li>You commit your changes and push them to github.</li>
+  <li>You make use of the awesome features of version control: you can trace back every step, your code is stored in a secure location. For your project you will be able to collaborate, create issues, etc.</li>
+  <li>Once the deadline approaches, you simply <strong>commit and push your final changes, after which you stop changing the content in the folder</strong>. We will count the precise time of your last push to that folder as your submission time.</li>
 </ul>
 
-<h2 id="homework-rules">Homework Rules</h2>
+<div class="deadline">
+ Be aware of the <a href="http://stackoverflow.com/questions/2745076/what-is-the-difference-between-git-commit-and-git-push">difference between commit and push</a> in git. Essentially, a commit is a local operation, only a push copies your changes to the server where we can access it.
+ </div>
+
+<h2 id="how-late-days-are-counted">How late days are counted</h2>
+
+<p>If you push to your repository by the day of the deadline, a Friday, at 11:59pm, your submission is on time. If you push 20 minutes later, on Saturday, at 00:19am, we will count one late day. If you push any time after Saturday 11:59pm we will count two late days. On Sunday night, precisely at midnight, we will download your repository automatically. No changes after that will be graded.</p>
+
+<h2 id="homework-rules--hints">Homework Rules &amp; Hints</h2>
 
 <p>A couple of <strong>important rules</strong> to make our lives easier:</p>
 
@@ -143,7 +152,7 @@
   <li><strong>Don’t make your repository public</strong>, unless we explicitly tell you to. GitHub will give you private repositories under their educational micro-plans. You will set this up during Homework 0. We will consider a public repository containing a homework solution as <strong><a href="http://isites.harvard.edu/icb/icb.do?keyword=k88702&amp;pageid=icb.page516359">academic dishonesty</a></strong>.</li>
   <li>Do use the features of version control while you are working on your homework. Every time you are done with a chunk of work, or when you are done for the day, push your changes to GitHub. This will avoid data loss, even if your house burns down, and you always will have at least something submitted.</li>
   <li>You can use branches to explore various options, but we will <strong>always grade your master branch</strong>. Make sure that your master branch is up to date at submission time.</li>
-  <li>We will be using state-of-the-art web technology. To avoid slowing us down with browser compatibility, we define a target platform, that we test against. Your code must be compatible with the latest version of <a href="https://www.google.com/chrome">Google Chrome</a> - currently Version 37.0.2062.94.**.</li>
+  <li>We will be using state-of-the-art web technology. To avoid slowing us down with browser compatibility, we define a target platform, that we test against. Your code must be compatible with the latest version of <a href="https://www.google.com/chrome">Google Chrome</a> - currently &gt; Version 39**.</li>
 </ul>
 
 
