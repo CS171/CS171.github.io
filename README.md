@@ -1,7 +1,41 @@
-CS 171 website
-=============
+### CS 171
 
-This repository hosts the CS 171 websites - [http://www.cs171.org](http://www.cs171.org) - for 2014 and 2015. The 2014 version is completely contained in the 2014 subfolder, while the 2015 code is dynamically generated using the jekyll code hosted at the [2015-cs171-website repository](https://github.com/CS171/2015-cs171-website). See the respective folders/repository for deployment information.
+The 2015 CS 171 website is built with [Jekyll](http://jekyllrb.com).
 
-The root directory contains an index.html file that automatically redirects to the latest instance (currently 2015).
+#### Ubuntu Prerequisites
 
+```ShellSession
+$ sudo apt-get install ruby-dev
+```
+
+#### Setup
+
+Requires Jekyll 2.1.0 or later.
+
+```ShellSession
+$ gem install jekyll
+```
+
+#### Generate and/or Serve Site
+
+```ShellSession
+$ jekyll serve --watch
+```
+
+#### View Site
+
+```ShellSession
+$ open http://0.0.0.0:4000/
+```
+
+### Liquid Syntax
+
+https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+
+### Windows Installation Instructions
+
+http://jekyll-windows.juthilo.com/1-ruby-and-devkit/
+
+### Deployment
+
+The resulting _site content must be copied into the 2015 folder in the cs171.github.io repository. An automatic build will be integrated soon.
