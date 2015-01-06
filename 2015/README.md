@@ -10,7 +10,7 @@ $ sudo apt-get install ruby-dev
 
 #### Setup
 
-Requires Jekyll 2.1.0 or later.
+Requires Jekyll 2.4.0 or later.
 
 ```ShellSession
 $ gem install jekyll
@@ -38,4 +38,4 @@ http://jekyll-windows.juthilo.com/1-ruby-and-devkit/
 
 ### Deployment
 
-The resulting _site content must be copied into the 2015 folder in the cs171.github.io repository. An automatic build will be integrated soon.
+just push your changes. An automatic build will compile it using jekyll 2.4.0 and push it to the public repository  
