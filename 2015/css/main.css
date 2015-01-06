@@ -15,8 +15,7 @@ body {
   background-color: #fdfdfd; }
 
 img {
-  float: right;
-  padding-left: 20px; }
+  float: right; }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
@@ -24,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Baumans', cursive; }
 
 a {
-  color: #AD3D34;
+  color: #ad3d34;
   text-decoration: none; }
 
 a:hover {
@@ -32,7 +31,7 @@ a:hover {
   text-decoration: underline; }
 
 a:visited {
-  color: #AD3D34; }
+  color: #ad3d34; }
 
 /* Utility */
 .wrap:before,
@@ -419,15 +418,15 @@ a:visited {
 
 /* Literal.Number */
 .highlight .s {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String */
 .highlight .na {
-  color: #008080; }
+  color: teal; }
 
 /* Name.Attribute */
 .highlight .nb {
-  color: #0086B3; }
+  color: #0086b3; }
 
 /* Name.Builtin */
 .highlight .nc {
@@ -436,11 +435,11 @@ a:visited {
 
 /* Name.Class */
 .highlight .no {
-  color: #008080; }
+  color: teal; }
 
 /* Name.Constant */
 .highlight .ni {
-  color: #800080; }
+  color: purple; }
 
 /* Name.Entity */
 .highlight .ne {
@@ -458,11 +457,11 @@ a:visited {
 
 /* Name.Namespace */
 .highlight .nt {
-  color: #000080; }
+  color: navy; }
 
 /* Name.Tag */
 .highlight .nv {
-  color: #008080; }
+  color: teal; }
 
 /* Name.Variable */
 .highlight .ow {
@@ -490,35 +489,35 @@ a:visited {
 
 /* Literal.Number.Oct */
 .highlight .sb {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String.Backtick */
 .highlight .sc {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String.Char */
 .highlight .sd {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String.Doc */
 .highlight .s2 {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String.Double */
 .highlight .se {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String.Escape */
 .highlight .sh {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String.Heredoc */
 .highlight .si {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String.Interpol */
 .highlight .sx {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String.Other */
 .highlight .sr {
@@ -526,7 +525,7 @@ a:visited {
 
 /* Literal.String.Regex */
 .highlight .s1 {
-  color: #d14; }
+  color: #dd1144; }
 
 /* Literal.String.Single */
 .highlight .ss {
@@ -538,15 +537,15 @@ a:visited {
 
 /* Name.Builtin.Pseudo */
 .highlight .vc {
-  color: #008080; }
+  color: teal; }
 
 /* Name.Variable.Class */
 .highlight .vg {
-  color: #008080; }
+  color: teal; }
 
 /* Name.Variable.Global */
 .highlight .vi {
-  color: #008080; }
+  color: teal; }
 
 /* Name.Variable.Instance */
 .highlight .il {
@@ -639,5 +638,3 @@ a:visited {
     clear: both;
     width: auto;
     margin: 0 0 15px; } }
-
-/*# sourceMappingURL=main.css.map */

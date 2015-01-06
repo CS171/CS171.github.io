@@ -129,15 +129,18 @@ task :deployImpl do
   puts "## Pulling any updates from Github Pages "
   
   puts "delete existing deployment dir"
-  FileUtils.remove_dir("#{deploy_dir}#{deploy_subdirectory}",true)
+  FileUtils.remove_dir("#{deploy_dir}",true)
 
   puts "URL: #{repo_url}"
   system "git clone #{repo_url} #{deploy_dir}"
+  #remove existing entries for having old entries removed
   (Dir["#{deploy_dir}#{deploy_subdirectory}/*"]).each { |f| rm_rf(f) }
   
   puts "\n## Copying #{public_dir} to #{deploy_dir}#{deploy_subdirectory}"
   Rake::Task[:copydot].invoke(public_dir, deploy_dir+deploy_subdirectory)
   cp_r "#{public_dir}/.", deploy_dir+deploy_subdirectory
+  puts "\n## Copying #{public_dir}/index.html to #{deploy_dir}/index.html"
+  cp_r "#{public_dir}/index.html", "#{deploy_dir}/index.html", :remove_destination => true
   
   #remove CNAME entry for project specific repos
   if branch == 'gh-pages' and File.exist?("#{deploy_dir}/CNAME")
