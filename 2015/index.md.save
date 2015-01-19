@@ -4,10 +4,10 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>CS 171 - Visualization - Readings</title>
+  <title>CS 171 - Visualization - </title>
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Visualization Class at Harvard University">
-  <link rel="canonical" href="http://cs171.org//2015/reading/">
+  <link rel="canonical" href="http://cs171.org//2015/index.md.save">
   <link href='http://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/2015/css/main.css">
@@ -110,36 +110,75 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>Readings</h1>
+    <h1></h1>
   </header>
 
   <article class="post-content">
-  <p>Readings are from the two required books (see <a href="/2015/syllabus/">Syllabus</a>) and additional papers that will be provided here. </p>
+  <img src="/2015/assets/i/teaser.png" width="100%;" />
 
-<h3 id="week-1">Week 1</h3>
-<p>D3: Chapters 1-4<br />
-Git Tutorial - <a href="http://www.sbf5.com/~cduan/technical/git/">Understanding Git Conceptually</a></p>
+<div class="credits"><a href="http://mbostock.github.io/d3/talk/20111116/bundle.html">Hierarchical edge bundling]</a> | <a href="http://hint.fm/wind/">Wind map</a> | <a href="http://www.nytimes.com/interactive/2012/10/15/us/politics/swing-history.html?_r=0">How states have shifted</a></div>
 
-<h3 id="week-2">Week 2</h3>
-<p>D3: Chapters 5-8<br />
-VAD: Chapter 1</p>
+The amount and complexity of information produced in science, engineering, business, and everyday human activity is increasing at staggering rates. The goal of this course is to expose you to visual representation methods and techniques that increase the understanding of complex data. Good visualizations not only present a visual interpretation of data, but do so by improving comprehension, communication, and decision making.
 
-<h3 id="week-3">Week 3</h3>
-<p>D3: Chapters 9-11<br />
-VAD: Chapter 2</p>
+In this course you will learn how the human visual system processes and perceives images, good design practices for visualization, tools for visualization of data from a variety of fields, and programming of interactive web-based visualizations using [D3](http://d3js.org/).
 
-<h3 id="week-4">Week 4</h3>
-<p>D3: Chapters 12<br />
-VAD: Chapter 3</p>
+The course is offered in the spring term 2015. Classes start on Tuesday, Jan 27. All classes are streamed live and archived online. The course is open to all Harvard undergraduate and graduate students and can be taken through cross-registration from the GSD and MIT.
 
-<h3 id="week-5">Week 5</h3>
-<p>VAD: Chapter 4</p>
+This course is also offered through the Harvard Extension school (online only) where it is listed as [CSCI E-171](http://www.extension.harvard.edu/courses/24028).
 
-<h3 id="week-6">Week 6</h3>
-<p>VAD: Chapter 5</p>
+The information on this page is subject to change without notice until classes begin.
 
-<h3 id="week-7">Week 7</h3>
-<p>VAD: Chapter 6</p>
+### Instructor
+
+[Alexander Lex](http://alexander-lex.com)
+
+### Logistics
+
+**Lectures & Design Studios:** Tuesday and Thursday 2:30-4 pm, [Maxwell Dworkin G115](http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=33+Oxford+St,+Cambridge,+MA+02138,+USA&sll=42.374136,-71.12183&sspn=0.009384,0.022724&ie=UTF8&hq=&hnear=33+Oxford+St,+Cambridge,+Middlesex,+Massachusetts+02138&ll=42.378773,-71.116819&spn=0.009384,0.022724&z=16)
+
+**Sections:** Monday-Thursday in small groups
+
+### Staff
+
+
+
+Please address all questions regarding the class to [staff@cs171.org](mailto:staff@cs171.org)
+
+**Teaching Fellows**
+
+
+[Johanna Beyer](http://people.seas.harvard.edu/~jbeyer/) (Head TF) - Postdoctoral Fellow, Visual Computing Group <br />
+[David Chouinard](http://davidchouinard.com/) - Research Associate, Disney Research <br />
+[Hendrik Strobelt](http://hendrik.strobelt.com/) - Postdoctoral Fellow, Visual Computing Group <br />
+[Romain Vuillemot](http://romain.vuillemot.net/) - Data Visualization Fellow, Center for International Development <br />
+[Luciano Arango](http://imluciano.com) - A.B. candidate in Computer Science <br />
+[Samuel Gratzl](https://sgratzl.github.io/) - PhD Student, Johannes Kepler University <br />
+[Mohammad K. Hadhrawi](http://moixd.com/) - Graduate Student Research Assistant, MIT Media Lab <br />
+[Daniel Haehn](http://danielhaehn.com/) - PhD Student, Visual Computing Group <br />
+[Alain Ibrahim](http://alainibrahim.com) - Senior Web Developer
+Benjy Levin - Computer Science Concentrator
+Andrew Mauboussin - Computer Science Concentrator
+Kevin Sun - A.B. candidate in Applied Math  <br />
+[James Tompkin](http://www.jamestompkin.com/) - Postdoctoral Fellow, Visual Computing Group
+
+**Graders:**
+Mimi Lai
+
+
+### Lecture Resources
+
+We use [Piazza](https://piazza.com/harvard/cs171) for discussions and questions.
+
+[Adobe Connect Live Classroom](http://continuinged.adobeconnect.com/cs_171)
+[Live Video (alternate)](http://cm.dce.harvard.edu/2014/02/24028/liveClassroom.shtml)
+
+[2014 Website](http://www.cs171.org/2014/) <br />
+[2014 Video Archive](http://cm.dce.harvard.edu/2014/02/24028/publicationListing.shtml)
+[2014 Lecture Slides](https://drive.google.com/folderview?id=0BxYkKyLxfsNVN2l0Y1lFbUdIOGc)
+
+[2013 Video Archive](http://cm.dce.harvard.edu/2013/02/22872/publicationListing.shtml)
+
+[2012 Video Archive](http://cm.dce.harvard.edu/2012/02/22872/publicationListing.shtml)
 
   </article>
 
