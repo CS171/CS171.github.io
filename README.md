@@ -40,4 +40,4 @@ http://jekyll-windows.juthilo.com/1-ruby-and-devkit/
 
 ### Deployment
 
-The resulting _site content must be copied into the 2015 folder in the cs171.github.io repository. An automatic build will be integrated soon.
+The resulting _site content is automatically copied into the 2015 folder in the cs171.github.io repository using Jenkins.
