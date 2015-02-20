@@ -1,43 +1,8 @@
-**The 2015 subfolder of this repository is automatically created based on the [2015-cs171-homework](https://github.com/CS171/2015-cs171-homework) repository containing jekyll code. Do not edit this page directly!**
+**The 2015 subfolder of this repository is automatically created based on the [2015-cs171-website](https://github.com/CS171/2015-cs171-website) repository containing jekyll code. Do not edit this page directly!**
 
 ### CS 171
 
-The 2015 CS 171 website is built with [Jekyll](http://jekyllrb.com).
-
-#### Ubuntu Prerequisites
-
-```ShellSession
-$ sudo apt-get install ruby-dev
-```
-
-#### Setup
-
-Requires Jekyll 2.1.0 or later.
-
-```ShellSession
-$ gem install jekyll
-```
-
-#### Generate and/or Serve Site
-
-```ShellSession
-$ jekyll serve --watch
-```
-
-#### View Site
-
-```ShellSession
-$ open http://0.0.0.0:4000/
-```
-
-### Liquid Syntax
-
-https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
-
-### Windows Installation Instructions
-
-http://jekyll-windows.juthilo.com/1-ruby-and-devkit/
-
-### Deployment
-
-The resulting _site content is automatically copied into the 2015 folder in the cs171.github.io repository using Jenkins.
+This repository holds the CS 171 website for 2014 and 2015. 
+* The 2014 website is created using [MDWiki](http://www.mdwiki.info/) and can be edited directly in this repository
+* The 2015 CS 171 website is built with [Jekyll](http://jekyllrb.com), the  jekyll source code is hosted in the [2015-cs171-website](https://github.com/CS171/2015-cs171-website) repository, only the generated html code is hosted in this repository 
+* The index.html file automatically redirects to the latest year.
