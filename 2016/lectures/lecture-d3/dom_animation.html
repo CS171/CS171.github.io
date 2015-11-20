@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+    <script src="manipulation.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div id="mainDiv"></div>
+<script>
+    mainDiv = document.getElementById("mainDiv");
+
+    function numberText(v) {
+        var node = divWithText(String(Math.floor(v)));
+        // here we add a new update function to the node.
+        // It takes the previous v and adds amount to it.
+        node.update = function (amount) {
+            v += amount;
+            node.textContent = String(Math.floor(v));
+            var x = 130 + 100 * Math.cos(radians(v));
+            var y = 130 + 100 * Math.sin(radians(v));
+            node.setAttribute("style", "position:absolute; left: " + x + "px; top: " + y + "px; color: rgb(" + v % 255 + ", " + 0 + ", 0)");
+        };
+        node.update(0);
+        return node;
+    }
+
+    // initializing the nodes
+    var nodes = [];
+    for (i = 0; i < 360; i += 30) {
+        var node = numberText(i);
+        mainDiv.appendChild(node);
+        nodes.push(node);
+    }
+
+    // updating the nodes
+    function tick() {
+        var i;
+        for (i = 0; i < nodes.length; ++i) {
+            nodes[i].update(1);
+        }
+    }
+
+    // if we did this in a while(true) loop it would run forever and eventually
+    // crash your browser, never showing you a result
+    //    while (true) {
+    //        tick();
+    //    }
+
+    // running the animation
+    function tickForever() {
+        tick();
+        // a recursive call to this function executed by the browser on repaing
+        window.requestAnimationFrame(tickForever);
+    }
+    tickForever();
+</script>
+
+</body>
+</html>

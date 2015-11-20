@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Pie</title>
+    <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+    <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+    <style>
+        body {
+            font: 10px sans-serif;
+        }
+    </style>
+</head>
+<body>
+<svg>
+</svg>
+</body>
+<script>
+
+    // data from http://www.idc.com/prodserv/smartphone-os-market-share.jsp
+    var data = [
+        {
+            os: "Android",
+            share: 82.8
+        },
+        {
+            os: "iOS",
+            share: 13.9
+        },
+        {
+            os: "Win",
+            share: 2.6
+        },
+        {
+            os: "BB",
+            share: 2.6
+        },
+        {
+            os: "",
+            share: 0.3
+        }];
+
+    // example based on http://bl.ocks.org/mbostock/3887235
+    var height = 400;
+    var width = 800;
+    var radius = Math.min(width, height) / 2;
+
+    var svg = d3.select("svg")
+            .attr({
+                width: width,
+                height: height
+            })
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+
+    var color = d3.scale.ordinal()
+            .range(colorbrewer.Accent[4]);
+
+    // function for drawing arcs with an inner and outer radius
+    var arc = d3.svg.arc()
+            .outerRadius(radius - 10)
+        // pie chart
+            .innerRadius(0)
+    // donut chart
+    //.innerRadius(100);
+
+
+    // create the layout function
+    var pie = d3.layout.pie().value(function (d) {
+        // here we tell the pie layout which attribute
+        // of the object to use for the layout
+        return d.share;
+    })
+            // set start and end angle
+            //.startAngle(-Math.PI/2)
+            //.endAngle(Math.PI/2);
+
+    var execute = function () {
+
+        // apply the layout function to the data
+        var pieData = pie(data);
+        // let's see what pieData contains
+        console.log(pieData);
+
+        // let's see the path that arc produces based on this information.
+        console.log(arc(pieData[0]));
+
+
+        var g = svg.selectAll(".arc").data(pieData)
+                .enter()
+                .append("g")
+                .attr("class", "arc");
+
+        g.append("path")
+            // the d attribute defines the path,
+            // the arc function passed along uses the data
+            // associated with each element in the selection
+            // to produce the values for d
+                .attr("d", arc)
+                .style("fill", function (d) {
+                    return color(d.data.os);
+                });
+
+        g.append("text")
+                .attr("transform", function (d) {
+                    // centroid returns the center of the arc
+                    return "translate(" + arc.centroid(d) + ")";
+                })
+                .attr("dy", ".35em")
+                .style("text-anchor", "middle")
+                .text(function (d) {
+                    return d.data.os;
+                });
+    }
+    execute();
+</script>

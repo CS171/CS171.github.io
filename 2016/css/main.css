@@ -9,7 +9,7 @@ html, body {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   font-weight: 300;
   background-color: #fdfdfd; }
@@ -21,18 +21,18 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: 400;
-  font-family: 'Baumans', cursive; }
+  font-family: "Baumans", cursive; }
 
 a {
-  color: #ad3d34;
+  color: #c10000;
   text-decoration: none; }
 
 a:hover {
-  color: #d36a61;
+  color: #e47b7b;
   text-decoration: underline; }
 
 a:visited {
-  color: #ad3d34; }
+  color: #c10000; }
 
 /* Utility */
 .wrap:before,
@@ -43,46 +43,67 @@ a:visited {
 .wrap:after {
   clear: both; }
 
+table {
+  border-collapse: collapse;
+  border-style: hidden; }
+
+table th, table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0px 5px 0px 5px; }
+
 .wrap {
   max-width: 800px;
   padding: 0 30px;
   margin: 0 auto;
   zoom: 1; }
 
-@media screen and (min-width: 850px) {
-  #seasLogo {
-    content: url(/2016/assets/i/seas.png);
-    float: right;
-    padding: 10px 10px 10px 10px; } }
+#utahLogo {
+  float: right;
+  padding: 10px 10px 10px 10px; }
+
+#utahLogoImg {
+  height: 65px; }
 
 .date {
   float: right;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.8em; }
+  font-size: 1em; }
 
 .week {
   border-bottom: 1px solid; }
 
 .day {
-  font-family: 'Baumans', cursive;
+  font-family: "Baumans", cursive;
   font-size: 1.3em; }
 
-.lecture {
+.note-box, .lecture, .deadline {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #eeeeee;
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin: 10px 0px 10px 0px; }
+
+.lecture {
+  background-color: #eeeeee; }
 
 .deadline {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  background-color: #e6b4b0;
-  font-weight: bold;
-  border-radius: 5px; }
+  background-color: #f09c9c;
+  font-weight: bold; }
+
+#schedule h3 {
+  font-size: 19px;
+  width: 70%;
+  float: left;
+  margin-top: 1px;
+  margin-bottom: 4px; }
+
+#schedule h4 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 2px;
+  margin-bottom: 2px; }
 
 /* Layout Styles */
 /* ----------------------------------------------------------*/
@@ -93,20 +114,30 @@ a:visited {
   min-height: 56px;
   background-color: white; }
 
+.site-title-all {
+  width: 50%;
+  float: left; }
+
 .site-title,
 .site-title:hover,
 .site-title:visited {
-  font-family: 'Baumans', cursive;
-  font-weight: 550;
-  display: block;
+  font-family: "Baumans", cursive;
+  font-weight: 500;
   color: #333;
   font-size: 50px;
   letter-spacing: -1px;
-  float: left;
-  line-height: 56px;
-  position: relative;
+  line-height: 50px;
+  text-decoration: none; }
+
+.site-subtitle {
+  font-family: "Baumans", cursive;
+  font-weight: 400;
+  display: block;
+  color: #333;
+  font-size: 22px;
+  letter-spacing: 5.5px;
   z-index: 1;
-  padding-top: 20px;
+  padding-top: -10px;
   text-decoration: none; }
 
 .site-nav {
@@ -427,15 +458,15 @@ a:visited {
 
 /* Literal.Number */
 .highlight .s {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String */
 .highlight .na {
-  color: teal; }
+  color: #008080; }
 
 /* Name.Attribute */
 .highlight .nb {
-  color: #0086b3; }
+  color: #0086B3; }
 
 /* Name.Builtin */
 .highlight .nc {
@@ -444,11 +475,11 @@ a:visited {
 
 /* Name.Class */
 .highlight .no {
-  color: teal; }
+  color: #008080; }
 
 /* Name.Constant */
 .highlight .ni {
-  color: purple; }
+  color: #800080; }
 
 /* Name.Entity */
 .highlight .ne {
@@ -466,11 +497,11 @@ a:visited {
 
 /* Name.Namespace */
 .highlight .nt {
-  color: navy; }
+  color: #000080; }
 
 /* Name.Tag */
 .highlight .nv {
-  color: teal; }
+  color: #008080; }
 
 /* Name.Variable */
 .highlight .ow {
@@ -498,35 +529,35 @@ a:visited {
 
 /* Literal.Number.Oct */
 .highlight .sb {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String.Backtick */
 .highlight .sc {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String.Char */
 .highlight .sd {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String.Doc */
 .highlight .s2 {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String.Double */
 .highlight .se {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String.Escape */
 .highlight .sh {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String.Heredoc */
 .highlight .si {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String.Interpol */
 .highlight .sx {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String.Other */
 .highlight .sr {
@@ -534,7 +565,7 @@ a:visited {
 
 /* Literal.String.Regex */
 .highlight .s1 {
-  color: #dd1144; }
+  color: #d14; }
 
 /* Literal.String.Single */
 .highlight .ss {
@@ -546,15 +577,15 @@ a:visited {
 
 /* Name.Builtin.Pseudo */
 .highlight .vc {
-  color: teal; }
+  color: #008080; }
 
 /* Name.Variable.Class */
 .highlight .vg {
-  color: teal; }
+  color: #008080; }
 
 /* Name.Variable.Global */
 .highlight .vi {
-  color: teal; }
+  color: #008080; }
 
 /* Name.Variable.Instance */
 .highlight .il {
@@ -647,3 +678,5 @@ a:visited {
     clear: both;
     width: auto;
     margin: 0 0 15px; } }
+
+/*# sourceMappingURL=main.css.map */

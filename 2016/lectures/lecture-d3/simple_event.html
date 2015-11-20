@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SimpleEvent</title>
+</head>
+<body>
+<button onclick="messageMe()">Click Me!</button>
+<button id="myButton">No, click Me!</button>
+<script>
+    // the function is referenced in the button
+    var messageMe = function()
+    {
+        alert("Yes, it's me, button 1!");
+    }
+
+    // we identify the button and add the function to be connected dynamically
+    document.getElementById("myButton").onclick = function(event){
+        alert("Aaah, you chose me, button 2!");
+    }
+</script>
+</body>
+</html>

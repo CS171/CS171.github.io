@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3: Updating with Groups</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <style>
+        rect {
+            fill: lightgray;
+            stroke: darkgray;
+            stroke-width: 2px
+        }
+    </style>
+</head>
+<body>
+<svg height="300" width="800">
+</svg>
+<button id="next">Next Dataset!</button>
+</body>
+<script>
+    execute = function (myData) {
+        if (!myData) {
+            myData = [127, 61, 256, 71, 15, 23]
+        }
+
+        var barHeight = 30;
+
+        var svg = d3.select("svg");
+
+        var barGroups = svg.selectAll(".barGroup")
+                .data(myData);
+
+        // ------ taking care of entering elements ----
+        var barGroupsEnter = barGroups.enter()
+                .append("g")
+                .classed("barGroup", true); // assigning the class
+
+        barGroupsEnter.append("rect")
+                .attr("width", "0")
+                .attr("height", 20)
+                .style("fill", "steelblue")
+                .attr("opacity", 0);
+
+        barGroupsEnter.append("text");
+
+        // ------ taking care of removing elements ----
+        barGroups.exit()
+                .attr("opacity", 1)
+                .transition()
+                .duration(3000)
+                .attr("opacity", 0)
+                .remove();
+
+        // ------ taking care of updates ----
+        // update groups
+        barGroups.attr("transform", function (d, i) {
+                    return "translate(0," + i * barHeight + ")";
+                });
+
+        // the selection propagates update data from the group to the rectangle
+        barGroups.select("rect")
+                .transition().duration(3000)
+                .attr("width", function (d, i) {
+                    return d;
+                })
+                .attr("opacity", 1);
+
+        // the selection propagates update data from the group to the text
+        barGroups.select("text")
+                .attr("transform", function (d, i) {
+                    return "translate(" + (parseFloat(d) + 5) + ", 0)";
+                })
+                .text(function (d) {
+                    return d;
+                })
+                .attr("dy", barHeight / 2)
+                .attr("opacity", 0)
+                .transition()
+                .delay(2000)
+                .duration(1000)
+                .attr("opacity", 1);
+    }
+
+    // a button setting another dataset
+    d3.select("#next").on("click", function () {
+        execute([500, 100, 120]);
+    });
+</script>
+<script src="run.js" charset="utf-8"></script>
+
+</html>

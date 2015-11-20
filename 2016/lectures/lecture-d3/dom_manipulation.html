@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+<div id="mainDiv">Text in HTML.</div>
+<script>
+    // Selecting an existing element from the document
+    mainDiv = document.getElementById("mainDiv");
+    // we can log any elements
+    // console.log(mainDiv);
+    // Creating a new paragraph element
+    var newParagraph = document.createElement("p");
+    // creating a new text node and appending it to the paragraph we just created
+    newParagraph.appendChild(document.createTextNode("Here is some text in a new paragraph that was created dynamically by JavaScript!"))
+    // appending the whole paragraph to the div
+    mainDiv.appendChild(newParagraph);
+</script>
+</body>
+</html>

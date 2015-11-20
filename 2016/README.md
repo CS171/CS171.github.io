@@ -1,6 +1,6 @@
-### CS 171
+### CS 5630 / CS 6630
 
-The 2015 CS 171 website is built with [Jekyll](http://jekyllrb.com).
+The 2015 Visualization website is built with [Jekyll](http://jekyllrb.com).
 
 #### Ubuntu Prerequisites
 

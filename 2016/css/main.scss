@@ -1,6 +1,12 @@
-$crimson: #AD3D34;
-$crimson_light: #d36a61;
-$crimson_super_light: #e6b4b0;
+
+
+
+$crimson: #c10000;
+$crimson_light: #e47b7b;
+$crimson_super_light: #f09c9c;
+
+$body-font: Helvetica, Arial, sans-serif;
+$heading-font: 'Baumans', cursive;
 
 /* Base */
 /* ----------------------------------------------------------*/
@@ -15,8 +21,8 @@ html, body {
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: $body-font;
+  font-size: 14px;
   line-height: 1.5;
   font-weight: 300;
   background-color: #fdfdfd;
@@ -30,7 +36,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: 400;
-  font-family: 'Baumans', cursive;
+  font-family: $heading-font;
 }
 
 a {
@@ -59,6 +65,17 @@ a:visited {
   clear: both;
 }
 
+table {
+  border-collapse: collapse;
+  border-style: hidden;
+}
+
+table th, table td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0px 5px 0px 5px;
+}
+
 .wrap {
   max-width: 800px;
   padding: 0 30px;
@@ -66,18 +83,18 @@ a:visited {
   zoom: 1;
 }
 
-#seasLogo {
-  @media screen and (min-width: 850px) {
-    content: url(/2016/assets/i/seas.png);
-    float: right;
-    padding: 10px 10px 10px 10px;
-  }
+#utahLogo {
+  float: right;
+  padding: 10px 10px 10px 10px;
+}
+
+#utahLogoImg {
+  height: 65px;
 }
 
 .date {
   float: right;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .week {
@@ -85,30 +102,50 @@ a:visited {
 }
 
 .day {
-  font-family: 'Baumans', cursive;
+  font-family: $heading-font;
   font-size: 1.3em;
 }
 
-.lecture{
+.note-box {
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: #eeeeee;
+
   border-radius: 5px;
+  margin: 10px 0px 10px 0px;
+}
+
+.lecture {
+  @extend .note-box;
+  background-color: #eeeeee;
 }
 
 .deadline {
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  @extend .note-box;
   background-color: $crimson-super-light;
   font-weight: bold;
-  border-radius: 5px;
 }
 
+#schedule h3 {
+  font-size: 19px;
+  width: 70%;
+  float: left;
+  margin-top: 1px;
+  margin-bottom: 4px;
+}
+
+#schedule h4 {
+  font-family: $body-font;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+
 //<img style=" max-width: 40%" src="{{ site.baseurl }}/assets/i/seas.png" alt="Harvard SEAS">
+
 
 /* Layout Styles */
 /* ----------------------------------------------------------*/
@@ -122,20 +159,41 @@ a:visited {
   background-color: white;
 }
 
+.site-title-all {
+  width: 50%;
+  float: left;
+}
+
 .site-title,
 .site-title:hover,
 .site-title:visited {
-  font-family: 'Baumans', cursive;
-  font-weight: 550;
-  display: block;
+  font-family: $heading-font;
+  font-weight: 500;
+  //display: block;
   color: #333;
   font-size: 50px;
   letter-spacing: -1px;
-  float: left;
-  line-height: 56px;
-  position: relative;
+  // float: left;
+  line-height: 50px;
+  // position: relative;
+  //z-index: 1;
+  // padding-bottom: -40px;
+  text-decoration: none;
+  //border: dashed;
+}
+
+.site-subtitle, {
+  font-family: $heading-font;
+  font-weight: 400;
+  display: block;
+  color: #333;
+  font-size: 22px;
+  letter-spacing: 5.5px;
+  //float: left;
+  //line-height: 56px;
+  //position: relative;
   z-index: 1;
-  padding-top: 20px;
+  padding-top: -10px;
   text-decoration: none;
 }
 
@@ -793,5 +851,4 @@ a:visited {
     width: auto;
     margin: 0 0 15px;
   }
-
 }
