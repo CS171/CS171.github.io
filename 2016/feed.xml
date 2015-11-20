@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS 171 - Visualization</title>
+    <description>Visualization Class at Harvard University</description>
+    <link>http://cs171.org//2016/</link>
+    <atom:link href="http://cs171.org//2016/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 13 Aug 2015 10:53:05 +0200</pubDate>
+    <lastBuildDate>Thu, 13 Aug 2015 10:53:05 +0200</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+  </channel>
+</rss>
