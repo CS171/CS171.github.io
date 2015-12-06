@@ -21,7 +21,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: 400;
-  font-family: "Baumans", cursive; }
+  font-family: "Capriola", cursive; }
 
 a {
   color: #c10000;
@@ -58,11 +58,11 @@ table th, table td {
   margin: 0 auto;
   zoom: 1; }
 
-#utahLogo {
+#harvardLogo {
   float: right;
   padding: 10px 10px 10px 10px; }
 
-#utahLogoImg {
+#harvardLogoImg {
   height: 65px; }
 
 .date {
