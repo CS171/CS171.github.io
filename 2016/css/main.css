@@ -21,7 +21,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: 400;
-  font-family: "Righteous"; }
+  font-family: "Baumans", cursive; }
 
 a {
   color: #c10000;
@@ -73,7 +73,7 @@ table th, table td {
   border-bottom: 1px solid; }
 
 .day {
-  font-family: "Righteous";
+  font-family: "Baumans", cursive";
   font-size: 1.3em; }
 
 .note-box, .lecture, .deadline {
@@ -121,7 +121,7 @@ table th, table td {
 .site-title,
 .site-title:hover,
 .site-title:visited {
-  font-family: "Righteous";
+  font-family: "Baumans", cursive;
   font-weight: 500;
   color: #333;
   font-size: 50px;
@@ -130,7 +130,7 @@ table th, table td {
   text-decoration: none; }
 
 .site-subtitle {
-  font-family: "Righteous";
+  font-family: "Baumans", cursive;
   font-weight: 400;
   display: block;
   color: #333;
