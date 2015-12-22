@@ -4,10 +4,10 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Visualization - Schedule</title>
+  <title> Visualization - Canvas</title>
   <meta name="viewport" content="width=device-width">
   <meta name="description" content="Visualization Class at Harvard University">
-  <link rel="canonical" href="http://www.cs171.org//2016/schedule/">
+  <link rel="canonical" href="http://www.cs171.org//2016/https:/canvas.harvard.edu/courses/9586">
   <link href='http://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/2016/css/main.css">
@@ -122,23 +122,12 @@
 
   
   <header class="post-header">
-    <h1>Schedule</h1>
+    <h1>Canvas</h1>
   </header>
   
 
   <article class="post-content">
-  <div id="schedule">
-
-<h2 id="class_schedule">Semester Schedule</h2>
-
-<iframe src="https://docs.google.com/spreadsheets/d/1MtctPE6_WRwl2_LSZHnnh_6G2rp-SzUIM4f6W9RT72E/pubhtml?gid=65899131&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="800"></iframe>
-
-<h2 id="lab_oh_schedule">Labs and Office Hours</h2>
-
-<iframe src="https://docs.google.com/spreadsheets/d/10zEJOAcc_HqmPu2vW_xX54oC3hOI7UL6s9FkWIFzOG4/pubhtml?gid=65899131&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="800"></iframe>
-
-
-</div>
+  <p><a href="https://canvas.harvard.edu/courses/9586">CS 171 Canvas Site</a></p>
 
   </article>
 
