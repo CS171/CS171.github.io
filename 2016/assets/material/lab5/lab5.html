@@ -1,0 +1,913 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>README</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<p><img src="cs171-logo.png" width="200"></p>
+
+<p>&nbsp;</p>
+
+<p><img src="cs171-lab5-banner.png?raw=true" alt="Lab 5" title="Lab 5"></p>
+
+<h1 id="toc_0">Lab 5</h1>
+
+<h3 id="toc_1">Learning Objectives</h3>
+
+<ul>
+<li>Learn the D3 update pattern (enter, update, exit)</li>
+<li>Load dynamic datasets and implement flexible scales and axes</li>
+<li>Handle mouse click events and changes of UI components</li>
+<li>Add D3 transitions</li>
+</ul>
+
+<h3 id="toc_2">Prerequisites</h3>
+
+<ul>
+<li>You have read the article &ldquo;Enter, Update, Exit&rdquo; by Christian Behrens:
+<a href="https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36#.3mzg93bya">https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36#.3mzg93bya</a></li>
+<li>Optional reading: <a href="http://bost.ocks.org/mike/join/">Mike Bostock&rsquo;s &lsquo;Thinking with Joins&rsquo;</a>. Chapter 9-10 in <em>D3 - Interactive Data Visualization for the Web</em>.</li>
+<li>You have successfully filled in the pre-quiz for the fifth lab.</li>
+</ul>
+
+<h2 id="toc_3">Dynamic updates with D3</h2>
+
+<p>By now you have learned how to load external data and how to map it to visual elements like e.g., a bar chart. But very often you have to deal with a continuous data stream rather than a static CSV file. Dynamic data often requires more sophisticated user interfaces that allow users to interact with the data (e.g. filter, sort).</p>
+
+<p>→ <strong><em>Instead of removing and redrawing visualizations each time new data arrives, update only affected components and focus on loading times and smooth transitions.</em></strong></p>
+
+<p>→ <strong><em>We will accomplish this by using the D3 update pattern (enter → update → exit).</em></strong></p>
+
+<h3 id="toc_4"><em>&ldquo;Updating data&rdquo;</em> means <em>&ldquo;joining data&rdquo;</em></h3>
+
+<p>A data-join is followed by operations on the three virtual selections: <strong>enter</strong>, <strong>update</strong> and <strong>exit</strong>.</p>
+
+<p>This means that we are merging new data with existing elements. In the merging process we have to consider:</p>
+
+<ul>
+<li>What happens to new data values without existing, associated DOM elements (enter)</li>
+<li>What happens to existing elements which have changed (update)</li>
+<li>What happens to existing DOM elements which are not associated with data anymore (exit)</li>
+</ul>
+
+<p><img src="cs171-data-join.png?raw=true" alt="Data Join" title="Data Join"></p>
+
+<p><em>To take care of the update pattern you have to change the sequence of your D3 code a little bit. Instead of chaining everything together, some code snippets must be separated.</em></p>
+
+<p>&nbsp;</p>
+
+<p>We create an SVG drawing space as usual:</p>
+
+<pre><code class="language-javascript">var svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;)
+    .attr(&quot;width&quot;, 600)
+    .attr(&quot;height&quot;, 200);</code></pre>
+
+<p>And bind the data to SVG circles:</p>
+
+<pre><code class="language-javascript">var circle = svg.selectAll(&quot;circle&quot;)
+    .data([5, 10, 15]);</code></pre>
+
+<p>The length of the dataset is 3 and we select all SVG circles in the document. That means, if there are 3 or more existing circles, the <strong>enter selection</strong> is empty, otherwise it contains placeholders for the missing elements.</p>
+
+<p>The page is empty because we have not appended any circles yet. We can access the <em>enter selection</em> and append a new circle for each placeholder with the following statement:</p>
+
+<pre><code class="language-javascript">circle.enter().append(&quot;circle&quot;)
+    .attr(&quot;r&quot;, function(d) { return d; })
+    .attr(&quot;cx&quot;, function(d, index) { return (index * 80) + 50 })
+    .attr(&quot;cy&quot;, 80);</code></pre>
+
+<p>(You might have noticed that we&rsquo;ve actually already used this pattern multiple times in previous labs.)</p>
+
+<p>But often you want to do the exact opposite operation. If someone filters the dataset you may want to remove existing elements. In this case, you have to use the <code>exit</code> selection. <code>exit</code> contains the leftover elements for which there is no corresponding data anymore.</p>
+
+<p>We call the drawing function again with new data:</p>
+
+<pre><code class="language-javascript">var circle = svg.selectAll(&quot;circle&quot;)
+    .data([20, 30]);  </code></pre>
+
+<p>The new dataset contains 2 elements but on the website there are currently 3 circles. We can access the <em>exit selection</em> and remove the element that has no data-binding anymore:</p>
+
+<pre><code class="language-javascript">circle.exit().remove();</code></pre>
+
+<p>There is still one problem left: <em>dynamic properties</em>. We are using a data-dependent radius and the values in the new dataset have been changed. For this reason, we have to update the dynamic properties (that we previously set in the <em>enter selection</em>) every time we update the data. To do this we use the *update selection:</p>
+
+<pre><code class="language-javascript">var circle = svg.selectAll(&quot;circle&quot;)
+    .data(data);</code></pre>
+
+<p>The result of the  <code>data()</code> method returns the updated selection.</p>
+
+<p>Putting everything together:</p>
+
+<pre><code class="language-javascript">var svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;)
+    .attr(&quot;width&quot;, 600)
+    .attr(&quot;height&quot;, 200);
+
+// Call visualization with 2 datasets consecutively
+updateChart([5, 10, 15]);
+updateChart([20, 30]);
+
+function updateChart(data) {
+    // Data-join (circle now contains the update selection)
+    var circle = svg.selectAll(&quot;circle&quot;)
+        .data(data);
+    
+    // Enter (initialize the newly added elements)
+    circle.enter().append(&quot;circle&quot;)
+        .attr(&quot;class&quot;, &quot;dot&quot;)
+        .attr(&quot;fill&quot;, &quot;#707086&quot;);
+    
+    // Update (set the dynamic properties of the elements)
+    circle
+        .attr(&quot;r&quot;, function(d) { return d; })
+        .attr(&quot;cx&quot;, function(d, index) { return (index * 80) + 50 })
+        .attr(&quot;cy&quot;, 80);
+    
+    // Exit
+    circle.exit().remove();
+}</code></pre>
+
+<p><em>Result:</em></p>
+
+<p><img src="cs171-enter-update-exit.png?raw=true" alt="Update Pattern Example" title="Update Pattern Example"></p>
+
+<h3 id="toc_5">Key function</h3>
+
+<p>Before continuing with Activity 1 we will go one step back and look again at the data join. For the sake of clarity and simplicity, we have not mentioned an important detail - the <em>key function</em> - in the last example.</p>
+
+<p><strong>The key function defines which datum should be assigned to which element.</strong></p>
+
+<pre><code class="language-javascript">var circle = svg.selectAll(&quot;circle&quot;)
+    .data([5, 10, 15]);</code></pre>
+
+<p>The code <code>.selectAll(&quot;circle&quot;)</code> selects all circle-elements and if we chain it with <code>.data([5, 10, 15])</code> we are joining the given data with the selected circles. The default key function applies and the keys are assigned by index. In our example it will use the first three circles that it finds. The first datum (first item in our array) and the first circle have the key &ldquo;0&rdquo;, the second datum and circle have the key &ldquo;1&rdquo;, and so on.</p>
+
+<p>Assume, that we have implemeted the &ldquo;enter, update, exit&rdquo;-pattern and appended the three circles to the webpage.</p>
+
+<p>We can now start the pipeline again, with a slightly different array:</p>
+
+<pre><code class="language-javascript">var circle = svg.selectAll(&quot;circle&quot;)
+    .data([10, 15]);</code></pre>
+
+<p><img src="cs171-key-function-1.png?raw=true" alt="Key Function (1)" title="Key Function (1)"></p>
+
+<p>The index will be used again as the default key to match the new data to the actual circles. There are three circles on the webpage and two items in the new dataset. Therefore, the last circle will be removed and the other two circles will be bound to the new data.</p>
+
+<p>This is the simplest method of joining data and often sufficient. However, when the data and the elements are not in the same order, joining by index is insufficient. In this case, you can specify a key function as the second argument (callback function). The key function returns the key for a given datum or element:</p>
+
+<pre><code class="language-javascript">// use the actual data value as key function
+var circle = svg.selectAll(&quot;circle&quot;)
+    .data([5, 10, 15], function(d) { return d; })
+    
+// enter, update, exit
+
+circle = svg.selectAll(&quot;circle&quot;)
+    .data([10, 15], function(d) { return d; })
+
+// enter, update, exit</code></pre>
+
+<p>In the above example, the key function allows us to map the data value directly instead of the default by-index behavior:</p>
+
+<p><img src="cs171-key-function-2.png?raw=true" alt="Key Function (2)" title="Key Function (2)"></p>
+
+<p>This means, we can update the appropriate elements without having to delete and re-add elements. We can update them in place!</p>
+
+<blockquote>
+<p>Additionally, a comment from Mike Bostock regarding <em>key functions</em>:</p>
+
+<p><em>&ldquo;The key function also determines the enter and exit selections: the new data for which there is no corresponding key in the old data become the enter selection, and the old data for which there is no corresponding key in the new data become the exit selection. The remaining data become the default update selection.&rdquo;</em></p>
+</blockquote>
+
+<p>If you are still unclear about the concept of key functions, we encourage you to look at <a href="http://cscheid.net/courses/spr15/cs444/lectures/week5.html">Carlos Scheidegger&rsquo;s expanation</a> at home.</p>
+
+<hr>
+
+<h4 id="toc_6">Activity I</h4>
+
+<p>In this activity you will visualize how customer orders are processed at a coffee shop.</p>
+
+<ol>
+<li><p><strong>Download the framework</strong></p>
+
+<p><a href="http://cs171.org/2016/assets/scripts/lab5/template1.zip">http://cs171.org/2016/assets/scripts/lab5/template1.zip</a></p>
+
+<p>The framework includes:</p>
+
+<ul>
+<li>A basic D3 project with a script that simulates the order queue</li>
+<li>an index.html file with a headline and an empty container for the visualization</li>
+</ul>
+
+<p><em>You should implement the following steps in the file: <code>main.js</code></em></p></li>
+<li><p><strong>Analyze the data stream</strong></p>
+
+<p>The function <code>updateVisualization()</code> is called every time an order comes in or an order was processed.</p>
+
+<p>The script includes a debugging message function - open the webpage in a browser and check the web console to see information on unprocessed orders.</p></li>
+<li><p><strong>Append an SVG drawing area for the visualization</strong> (with at least 600 x 200px)</p>
+
+<p>Keep in mind that <code>updateVisualization()</code> is called every couple of seconds, so be careful that you create the SVG area only once (otherwise this becomes a very expensive process).</p></li>
+<li><p><strong>Create the dynamic visualization</strong></p>
+
+<p>The visualization should consist of a label that indicates the current number of orders and <em>x</em> SVG circles that show the order queue.</p>
+
+<p><em>You can use the following animation as a guide:</em><br>
+<img src="cs171-basic-queue.gif?raw=true" alt="Basic Queue Example" title="Basic Queue Example"></p>
+
+<ul>
+<li>The current order queue is stored in the variable <code>orders</code>. You can access the data in the function <code>updateVisualization()</code>. The function is called automatically by our script every few seconds.</li>
+<li>Implement the D3 update pattern and make sure to append new elements for new orders and delete elements after orders are processed (default key function; map by index).</li>
+<li>The design decisions are up to you but please choose appropriate circle radii and spacings.</li>
+<li>The SVG text label should be updated too. Don&rsquo;t append a new label every time the queue changes, just update the text. (Hint: Create the label once, but update it every time <code>updateVisualization</code> is called.)</li>
+</ul></li>
+<li><p><strong>Change the circle color</strong></p>
+
+<p>You should use two different fill colors depending on the drink ordered: <strong><em>coffee</em></strong> or <strong><em>tea</em></strong>. Then, if the queue is long enough, you can see that it follows the priority principle: first-come, first-serve (i.e., first in, first out or FIFO).</p></li>
+</ol>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p>Now you should be more comfortable with the D3 update pattern. You can easily adapt the enter, update, exit sequence for any other visualizations. Using the D3 enter-update-exit pattern, code is more flexible and can accomodate changing data as well as different sized datasets.</p>
+
+<h2 id="toc_7">JS Array method: <em>map()</em></h2>
+
+<p>Up to this point, we have seen a few different <em>array functions</em>. In this lab you will get more practice with the popular <strong><em>map()</em></strong> method.</p>
+
+<p>→ <em>The map() method creates a new array by calling a function on every element in an existing array.</em></p>
+
+<p><em>Example 1:</em></p>
+
+<pre><code class="language-javascript">// Multiply each element by 10
+var numericData = [1, 2, 3];
+var numericDataMultiplied = numericData.map( function(d) { return d * 10; } );
+numericDataMultiplied    // Returns: [10, 20, 30]</code></pre>
+
+<p><em>Example 2:</em></p>
+
+<pre><code class="language-javascript">// Define the callback function.
+function areaOfCircle(radius) {
+    var area = Math.PI * (radius * radius);
+    return area.toFixed(0);
+}
+
+// Create an array
+var radii = [10, 20, 30];
+
+// Get the areas from the radii
+var areas = radii.map(areaOfCircle);
+
+areas    // Returns: [314, 1257, 2827]</code></pre>
+
+<p><em>Example 3:</em></p>
+
+<pre><code class="language-javascript">// Caffeine (mg) per 100g
+var data = [
+    { &quot;item&quot;: &quot;Brewed Coffee&quot;, &quot;caffeine&quot;: 72 },
+    { &quot;item&quot;: &quot;Brewed Tea&quot;, &quot;caffeine&quot;: 36 },
+    { &quot;item&quot;: &quot;Coke&quot;, &quot;caffeine&quot;: 30 },
+    { &quot;item&quot;: &quot;Red Bull&quot;, &quot;caffeine&quot;: 77 }
+];
+
+// Create ordinal scale
+var x = d3.scale.ordinal();
+
+// Use map() to compute the data for an ordinal scale automatically
+x.domain(data.map(function(d) { return d.item; }));
+
+x.domain()   // Returns: [&quot;Brewed Coffee&quot;, &quot;Brewed Tea&quot;, &quot;Coke&quot;, &quot;Red Bull&quot;]</code></pre>
+
+<p>&nbsp;</p>
+
+<p><em>Before you start with the next activity, here are a few pointers for updating scales and axes.</em></p>
+
+<h2 id="toc_8">Updating scales and axes</h2>
+
+<p>Whenever you get new data or your existing data change, you need to recalibrate your scales, otherwise elements will get clipped, or the visualization will show the wrong information.</p>
+
+<p>Last week you learned to create a basic linear scale like this:</p>
+
+<pre><code class="language-javascript">var y = d3.scale.linear()
+    .domain([0, d3.max(data, function(d) { return d.price })])
+    .range([0, height]);</code></pre>
+
+<p>When the data change, the <strong>range</strong> does not have to be updated, because the visual size of your chart usually does not change. You do need to update the <strong>domain</strong>, though, because the minimum and maximum of the data might change.</p>
+
+<pre><code class="language-javascript">// Initialize the axis once
+var y = d3.scale.linear()
+    .range([0, height]);
+
+function update(data) {
+    // Update the scale&#39;s input domain to match the new data
+    y.domain([0, d3.max(data, function(d) { return d.price })]);
+    
+    // Update visualization
+    ...
+}</code></pre>
+
+<p><strong><em>We can use a similar principle for updating axes.</em></strong></p>
+
+<p>First we have to initialize the axis function and pass in the scale function:</p>
+
+<pre><code class="language-javascript">var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient(&quot;left&quot;);</code></pre>
+
+<p>And then we append a <em>group element</em> to the SVG drawing area:</p>
+
+<pre><code class="language-javascript">var yAxisGroup = svg.append(&quot;g&quot;)
+    .attr(&quot;class&quot;, &quot;y-axis axis&quot;);</code></pre>
+
+<p>In comparison to last week (without using the <em>update pattern</em>) we don&rsquo;t call the y-axis function immediately. We select the <em>group</em> and call the axis function afterwards, every time the data change.</p>
+
+<pre><code class="language-javascript">function update(data) {
+    // Update scales and visual elements
+    ...
+
+    // Update axis by calling the axis function
+    svg.select(&quot;.y-axis&quot;)
+        .call(yAxis);
+}</code></pre>
+
+<p>This guarantees that the axis component uses the correct scale (adjusted to match the new input domain).</p>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<h4 id="toc_9">Activity II</h4>
+
+<p>In this activity you will create an interactive bar chart showing a ranking of leading coffee house chains. </p>
+
+<ol>
+<li><p><strong>Download the framework</strong></p>
+
+<p><a href="http://cs171.org/2016/assets/scripts/lab5/template2.zip">http://cs171.org/2016/assets/scripts/lab5/template2.zip</a></p>
+
+<p>The framework is based on Bootstrap and D3. You should use it for the remainder of this lab. The template includes:</p>
+
+<ul>
+<li><code>index.html</code> - HTML structure with a headline, a select box and an empty container for your visualization</li>
+<li><code>style.css</code> - CSS file with a few rules for the webpage and the bar chart</li>
+<li><code>main.js</code> - JS file that should contain your visualization code. We have already started to implement the bar chart (e.g. load the CSV data) but you should integrate the enter, update, exit sequence and the interactive components.</li>
+<li><code>coffee-house-chains.csv</code> - The table consists of three columns: <em>company name</em>, <em>revenue in billion U.S. dollars</em>, <em>number of stores worldwide</em></li>
+</ul></li>
+<li><p><strong>Analyze the provided framework and the CSV data</strong></p>
+
+<p><em>main.js</em></p>
+
+<ul>
+<li>We have created a new SVG drawing area (using the D3 margin convention)</li>
+<li><p>We have used an ordinal scale function for the x-axis (listing all coffee shops) and a linear scale function for the y-axis (number of stores). You don&rsquo;t necessarily need an ordinal scale for a bar chart but it makes your code much cleaner. You can use the JS array method <strong><em>map()</em></strong> to set <em>domains</em> for ordinal scales:</p>
+
+<pre><code class="language-javascript">x.domain(data.map(function(d) { return d.company; }));</code></pre></li>
+<li><p>We have separated the loading of the CSV file and the actual drawing of the bar chart. The function <code>loadData()</code> reads the data and saves it in the variable <code>data</code>. The function <code>updateVisualization()</code> should include all the dynamic chart elements and should be called every time something changes.</p></li>
+</ul></li>
+<li><p><strong>Implement the bar/column chart</strong></p>
+
+<p><em>Show the coffee house chains and their number of stores worldwide. Your result should look similar to the screenshot below.</em></p>
+
+<p><img src="cs171-barchart-example.png?raw=true" alt="Barchart example" title="Barchart"></p>
+
+<ul>
+<li>Specify the <strong><em>domains</em></strong> for the two scales</li>
+<li>Consider that the data or at least the sorting of the data will change. You have to implement the <strong><em>enter</em></strong>-<strong><em>update</em></strong>-<strong><em>exit</em></strong> sequence</li>
+<li><p>These properties will help you to position the elements:</p>
+
+<pre><code class="language-javascript">.attr(&quot;x&quot;, function(d) { return x(d.company); })
+.attr(&quot;y&quot;, function(d) { return y(d.stores); })
+.attr(&quot;width&quot;, x.rangeBand())
+.attr(&quot;height&quot;, function(d) { return height - y(d.stores); })</code></pre>
+
+<p><code>rangeBand()</code> is a particular function of <em>d3.scale.ordinal</em> that helps us to divide the space evenly and automatic into bands across a specific range.</p></li>
+</ul>
+
+<ul>
+<li>Use the HTML class attribute <code>bar</code> for the columns/bars of the chart so it matches the stylesheet.</li>
+<li>We will draw axes for the bar chart later (see Activity II, point 6).</li>
+</ul></li>
+<li><p><strong>Create a ranking</strong></p>
+
+<p><em>Sort the coffee house chains by number of stores, and display the sorted data in the bar chart.</em></p>
+
+<p>We provide you with the code below, but you need to decide where to best integrate it in your code:</p>
+
+<pre><code class="language-javascript">data.sort(function(a, b) { return b.stores - a.stores; });</code></pre></li>
+<li><p><strong>React to the user&rsquo;s selection</strong></p>
+
+<p>There is a select box in the HTML document that should enable the user to switch the ranking from <em>&ldquo;number of stores&rdquo;</em> to <em>&ldquo;revenue&rdquo;</em>.</p>
+
+<ul>
+<li><p>Listen to an event (select-box option change) with D3 or HTML/JS:</p>
+
+<pre><code class="language-javascript">// option 1: D3
+d3.select(&quot;#select-box&quot;).on(&quot;change&quot;, doSomething);
+
+// option 2: HTML
+&lt;select id=&quot;select-box&quot; onchange=&quot;doSomething()&quot;&gt;
+    ...
+&lt;/select&gt;</code></pre></li>
+<li><p>Get the currently selected option in D3:</p>
+
+<pre><code class="language-javascript">d3.select(&quot;#select-box&quot;).property(&quot;value&quot;);</code></pre></li>
+<li><p>Change the scales, the sorting and the dynamic properties in a way that they correspond to the selected option (<em>stores</em> or <em>revenue</em>).</p>
+
+<p><em>Hint: You can access JS object properties either with the familiar dot notation (<code>product.price</code>) or with the bracket notation (<code>product[&quot;price&quot;]</code>).</em> </p></li>
+</ul></li>
+<li><p><strong>Append dynamic axes</strong></p>
+
+<p>Similar to scales, you should first initialize axis components (only once) and then update them every time the data changes.</p>
+
+<p>Integrate these HTML class attributes to make use of the pre-configured CSS rules:</p>
+
+<ul>
+<li><strong>x-axis</strong> and <strong>axis</strong> for the x-axis</li>
+<li><strong>y-axis</strong> and <strong>axis</strong> for the y-axis</li>
+</ul>
+
+<p><em>You can optionally append a title for the y-axis.</em></p></li>
+</ol>
+
+<p><em>Result:</em>
+<img src="cs171-activity2.gif?raw=true" alt="Activity 2 - Result" title="Activity 2 - Result"></p>
+
+<hr>
+
+<h2 id="toc_10">Transitions</h2>
+
+<p>To change the color of all circles to blue, use the following D3 statement:</p>
+
+<pre><code class="language-javascript">d3.selectAll(&quot;circle&quot;).attr(&quot;fill&quot;, &quot;blue&quot;);</code></pre>
+
+<p>We selected all <em>circles</em> and changed the <em>fill color</em>.</p>
+
+<p>D3 evaluates every <em>attr()</em> statement immediately, so the changes happen right away. But sometimes it is important to show the user what&rsquo;s happening between the states and not just the final result. D3 provides the <strong><em>transition()</em></strong> method that makes it easy to create these smooth, animated transitions between states:</p>
+
+<pre><code class="language-javascript">d3.selectAll(&quot;circle&quot;).transition().attr(&quot;fill&quot;, &quot;blue&quot;);</code></pre>
+
+<p>When you add transition(), <strong><em>D3 interpolates between the old values and the new values</em></strong>, meaning it normalizes the beginning and ending values, and calculates all their in-between states.</p>
+
+<p>In our second example, the circle color changes from red to blue over time. The default time span is 250 milliseconds but you can specify a custom value by simply using the <strong><em>duration()</em></strong> method directly after <em>transition()</em>.</p>
+
+<p>The result shows the animation from red to blue (3 seconds):</p>
+
+<pre><code class="language-javascript">d3.selectAll(&quot;circle&quot;)
+    .transition()
+    .duration(3000)
+    .attr(&quot;fill&quot;, &quot;blue&quot;);</code></pre>
+
+<p><img src="cs171-transition-duration.gif?raw=true" alt="Transition with duration" title="Transition with duration"></p>
+
+<h4 id="toc_11">Transitions Are Per-Element and Exclusive</h4>
+
+<blockquote>
+<p><em>&ldquo;Each element transitions independently. When you create a transition from a selection, think of it as a set of transitions, one per element, rather than a single mega-transition running on multiple elements. Different elements can have different delays and duration, and even different easing and tweens. Additionally, transition events are dispatched separately for each element. When you receive an end event for a given element, its transition has ended, but other transitions may still be running on other elements.&rdquo;</em> - (Mike Bostock, <a href="http://bost.ocks.org/mike/transition/">http://bost.ocks.org/mike/transition/</a>)</p>
+</blockquote>
+
+<p>If you need to delay an animation, you can add the <strong><em>delay()</em></strong> method right after <em>transition()</em>.</p>
+
+<h4 id="toc_12">Some things cannot be interpolated with D3</h4>
+
+<p>It is impossible to interpolate the creation of an element. The element must exist in order to use D3 transitions.</p>
+
+<p>Transitions in conjunction with the D3 update pattern:</p>
+
+<pre><code class="language-javascript">// Data join
+var circle = svg.selectAll(&quot;circle&quot;)
+    .data(data);
+
+// Enter
+circle.enter().append(&quot;circle&quot;)
+    .attr(&quot;class&quot;, &quot;dot&quot;)
+
+// Update
+circle
+    .transition() // transition entering + updating circles
+    ...
+
+// Exit
+circle.exit()
+    .transition() // transition exiting circles
+    ...
+    .remove();</code></pre>
+
+<p>&nbsp;</p>
+
+<blockquote>
+<h3 id="toc_13">Animation for Visualization</h3>
+
+<p>If done right, animations make a visualization better and help engage the user. If done wrong (i.e., you don&rsquo;t follow key principles), you will achieve exactly the opposite results.</p>
+
+<h4 id="toc_14">Pros</h4>
+
+<ul>
+<li>Transitions show what is happening between states, adding a sense of continuity and finer resolution to your visualization</li>
+<li>Animations can draw the user&rsquo;s attention to specific elements or aspects</li>
+<li>Animations can provide the user with interactive feedback</li>
+</ul>
+
+<h4 id="toc_15">Cons</h4>
+
+<ul>
+<li>Too many transitions will confuse the user (e.g., overused PowerPoint effects) </li>
+<li>If the transition is not continuous, animations look funny and can even be deceiving based on the interpolation used.</li>
+<li>Animation across many states is the least effective use case for
+data analysis. In this case, use a static comparison of several charts/images (e.g., small multiples) instead of creating video-like animations.</li>
+</ul>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<h4 id="toc_16">Activity III</h4>
+
+<ol>
+<li><p><strong>Add transitions to the bars/rectangles of your chart</strong></p>
+
+<p><em>Try also different time spans and examine it in the web browser.</em></p></li>
+<li><p><strong>Add transitions to the x- and y-axis</strong></p></li>
+<li><p><strong>Think about the different animations. Which transitions are useful? Would it be better to omit some of them?</strong>
+We want you to think about the pros and cons of transitions, but you don&rsquo;t have to hand anything in for this question.</p></li>
+</ol>
+
+<hr>
+
+<h4 id="toc_17">Bonus Activity (optional)</h4>
+
+<p><em>In this activity you will implement a button that reverses the sort order of your bar chart.</em></p>
+
+<ol>
+<li><p><strong>HTML button to enable user interactions</strong></p>
+
+<p>The HTML snippet is already prepared. Uncomment the button in <code>index.html</code> (line 31).</p></li>
+<li><p><strong>Use D3 to listen to click events</strong></p>
+
+<pre><code class="language-javascript">d3.select(&quot;#change-sorting&quot;).on(&quot;click&quot;, function() {
+    // do something
+});</code></pre></li>
+<li><p><strong>Change the sorting</strong></p>
+
+<p><em>Create a boolean variable that represents the sorting state. Every time the user clicks on the button, change the state and reverse the sort order.</em></p>
+
+<p>Generally, there are two different ways to process the new sorting:</p>
+
+<ul>
+<li>Call <em>updateVisualization()</em> every time the user clicks on the button. It will process the data-join and run through the enter-update-exit sequence</li>
+<li>Don&rsquo;t call <em>updateVisualization()</em> and select the SVG rectangles directly without running through the <em>update pattern</em>.</li>
+</ul>
+
+<p><strong><em>In both cases you have to update the input domain of your ordinal scale and you have to call the x-axis function to redraw the axis.</em></strong></p></li>
+<li><p><strong>Use a key function for the data-join and opacity during the transition</strong></p>
+
+<pre><code class="language-javascript">svg.selectAll(&quot;circle&quot;)
+    .style(&quot;opacity&quot;, 0.5)
+    .transition()
+    .duration(1000)
+    ...</code></pre>
+
+<p>Make sure to not only lower the opacity during a transition, but to also re-set it after the transition (in another transition). Don&rsquo;t forget: You can chain transitions together!</p>
+
+<p>During the last activities you have probably used the default key function to bind data to the rectangles. This leads to a distorted and difficult to follow transition. As you have learned at the beginning of this lab you can add a key function (callback-function) to the <code>.data()</code> property to specify a custom key, instead of an index.</p></li>
+</ol>
+
+<p><em>Result (basic: assign keys by index):</em></p>
+
+<p><img src="cs171-activity4-basic.gif?raw=true" alt="Activity 4 - Basic" title="Activity 4 - Basic"></p>
+
+<p><em>Result (advanced: custom key function):</em></p>
+
+<p><img src="cs171-activity4-advanced.gif?raw=true" alt="Activity 4 - Advanced" title="Activity 4 - Advanced"></p>
+
+<hr>
+
+<h4 id="toc_18">Submission of 1-minute paper</h4>
+
+<p>Congratulations, you have now completed the activities of Lab 5. Please submit your 1-minute paper now.</p>
+
+<p><em>See you next week!</em></p>
+
+<hr>
+
+<h4 id="toc_19">Submission of lab (activity II, and III) as part of homework 5</h4>
+
+<p>Please upload the code of your completed lab (the final interactive bar chart of activities II and III) with your homework 5 submission! Make sure to upload all files of this lab in a subfolder called &ldquo;lab&rdquo;.</p>
+
+<hr>
+
+<p>&nbsp;</p>
+
+<p><strong>Resources</strong></p>
+
+<ul>
+<li>Chapter 9 (p. 137-180) in <em>D3 - Interactive Data Visualization for the Web</em> by Scott Murray</li>
+<li><a href="https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36">https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36</a></li>
+<li><a href="http://blog.visual.ly/creating-animations-and-transitions-with-d3-js/">http://blog.visual.ly/creating-animations-and-transitions-with-d3-js/</a></li>
+<li><a href="http://bost.ocks.org/mike/circles/">http://bost.ocks.org/mike/circles/</a></li>
+<li><a href="http://bost.ocks.org/mike/transition/">http://bost.ocks.org/mike/transition/</a></li>
+</ul>
+
+
+</body>
+
+</html>
