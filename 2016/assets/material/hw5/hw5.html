@@ -1,0 +1,502 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>README</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<p><img src="cs171-logo.png" width="200"></p>
+
+<p>&nbsp;</p>
+
+<h1 id="toc_0">Homework 5</h1>
+
+<p><strong>This homework is due on <em>Monday, February 29th 2016 at 11:59 pm EST</em>.</strong></p>
+
+<p>This homework requires that you have read the article &ldquo;Enter, Update, Exit&rdquo; by Christian Behrens:
+<a href="https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36#.3mzg93bya">https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36#.3mzg93bya</a></p>
+
+<p>Optional reading: <a href="http://bost.ocks.org/mike/join/">Mike Bostock&rsquo;s &lsquo;Thinking with Joins&rsquo;</a>, and chapters 9-10 in <em>D3 - Interactive Data Visualization for the Web</em>.</p>
+
+<h2 id="toc_1">1) FIFA World Cup™ - All Time Statistics</h2>
+
+<blockquote>
+<p>The FIFA World Cup™ is the biggest single-event sporting competition in the world and is played by the senior men&rsquo;s national teams from the 209 Member Associations of FIFA. The competition has been played every four years since the inaugural tournament in 1930, except in 1942 and 1946 when it was not held because of the Second World War.</p>
+
+<p>The 20 FIFA World Cup tournaments have been won by eight different national teams.</p>
+
+<p><em>FIFA (<a href="http://www.fifa.com/fifa-tournaments/statistics-and-records/worldcup">http://www.fifa.com/fifa-tournaments/statistics-and-records/worldcup</a>)</em></p>
+</blockquote>
+
+<h3 id="toc_2">Template</h3>
+
+<p>To help you get started with this homework assignment we have prepared a template that you can use. It is based on the front-end framework <em>Bootstrap</em> and it includes the JS libraries: <em>D3</em>, <em>D3-tip</em> (tooltips) and <em>jQuery</em>. Furthermore, a CSV file (<code>fifa-world-cup.csv</code>) is stored in the folder <em>&ldquo;data&rdquo;</em>. Of course, you can also start with an empty project and just copy the dataset.</p>
+
+<p><a href="http://www.cs171.org/2016/assets/scripts/hw5/template_data.zip">http://www.cs171.org/2016/assets/scripts/hw5/template_data.zip</a></p>
+
+<h3 id="toc_3">Overview</h3>
+
+<p>A D3 line chart will be the core component of your visualization. The x-axis represents the time period and the y-axis will show the attribute of the current user selection: <strong>goals</strong>, <strong>average goals</strong>, <strong>matches</strong>, <strong>teams</strong> or <strong>average attendance.</strong> Additional input fields allow the user to limit the time frame that is shown. If you hover over an event in the line chart, the most important attributes are displayed in a tooltip. If you click on an event, detailed information is visible in a separate container to the right of the chart.</p>
+
+<p><em>You can use the following mockup as a guide:</em></p>
+
+<p><img src="cs171-hw5-mockup.png?raw=true" alt="Homework 5 Mockup" title="Homework 5 Mockup"></p>
+
+<h3 id="toc_4">Implementation</h3>
+
+<ol>
+<li><p><strong>Download the resources</strong></p>
+
+<p>Please download the template and the CSV file as a ZIP file: <a href="http://www.cs171.org/2016/assets/scripts/hw5/template_data.zip">http://www.cs171.org/2016/assets/scripts/hw5/template_data.zip</a></p></li>
+<li><p><strong>Familiarize yourself with the provided framework and the FIFA World Cup data</strong></p>
+
+<p><em>main.js</em></p>
+
+<ul>
+<li>The script creates a new SVG drawing area inside the container <code>#chart-area</code></li>
+<li>We have separated the loading of the CSV file and the update sequence. The function <code>loadData()</code> reads the data and saves it in the variable <code>data</code>. The function <code>updateVisualization()</code> should include all the dynamic chart elements and should be called every time something changes. Beyond that, feel free to customize the structure according to your preferences.</li>
+<li><p>We have used the D3 time formatting function to parse string values (year the world cup was held) to <em>date objects</em>. You can read more about D3 time formatting here: <a href="https://github.com/mbostock/d3/wiki/Time-Formatting">https://github.com/mbostock/d3/wiki/Time-Formatting</a>.</p>
+
+<p>If you want to convert it back - to a year value with four digits - you can use: <em>formatDate(d.YEAR)</em></p>
+
+<pre><code class="language-javascript">var formatDate = d3.time.format(&quot;%Y&quot;);
+
+var newDate = formatDate.parse(&quot;2020&quot;);
+newDate  // Returns: Wed Jan 01 2020 00:00:00 GMT-0500 (EST)
+var year = formatDate(newDate);
+year     // Returns: &quot;2020&quot;</code></pre></li>
+</ul></li>
+<li><p><strong>Create scales and axis functions</strong></p>
+
+<ul>
+<li>Create the inital scales and axes. Make sure to pick appropriate scales, especially for the x axis!</li>
+<li>Keep in mind that you should update the input domains each time the data changes.</li>
+<li>We recommend that you first implement the y-axis for showing the data attribute <em>&ldquo;goals&rdquo;</em>. After you have implemented the initial line chart, you will then connect your visualization with a select box to create a dynamic y-axis (in Activity II, part 6). This will allow the user to interactively change the attribute that is being visualized on the y axis.</li>
+</ul></li>
+<li><p><strong>Use the <code>d3.svg.line</code> function to map the data to an SVG path and draw the line chart</strong></p>
+
+<ul>
+<li>Read more about D3&rsquo;s path generator: <a href="https://github.com/mbostock/d3/wiki/SVG-Shapes#path-data-generators">https://github.com/mbostock/d3/wiki/SVG-Shapes#path-data-generators</a></li>
+<li>Create a path by using the d3.svg.line function. </li>
+<li>Try different values for the <strong><em>interpolate</em></strong> property (<em>linear</em>, <em>monotone</em>, &hellip;) and choose a setting that fits best.</li>
+<li>Make sure that you can update the path with new data afterwards</li>
+<li>Debugging hint: Make sure you only draw a single path!</li>
+</ul>
+
+<p><em>Important: Usually, in D3 you map your data elements to the same number of visual elements (e.g., circles). Here, you will map all your data elements to a single path. This is reflected in a different way to create and update your path, different to the standard enter/update/exit methods. Also, you might want to look at the difference between data and datum in D3.</em></p></li>
+<li><p><strong>Draw the axes</strong></p>
+
+<ul>
+<li>Append the axis components to the drawing area only once</li>
+<li>The axis functions must be called every time the data changes</li>
+</ul></li>
+<li><p><strong>Emphasize the data points on the D3 line graph</strong></p>
+
+<ul>
+<li>Append an SVG circle on each x/y intersection <em>(20 tournaments = 20 circles)</em></li>
+<li>The points are meant to highlight the individual events and will be used as an anchor point for the tooltips later</li>
+<li>Use the D3 update pattern: enter, update, exit</li>
+</ul></li>
+<li><p><strong>Implement a dynamic y-axis</strong></p>
+
+<p>The user should be able to switch between different data attributes for the y-axis:</p>
+
+<ul>
+<li>Goals</li>
+<li>Average Goals</li>
+<li>Matches</li>
+<li>Teams</li>
+<li>Average Attendance</li>
+</ul>
+
+<p>Create an HTML select box and react to changes in your JS code (update scale → redraw visual elements). The default value should be the <em>number of goals</em>. The x-axis shows the time frame and always stays the same.</p>
+
+<p><em>Make sure that your code stays well-structured and understandable, especially after these types of modifications.</em></p></li>
+<li><p><strong>Include smooth, animated transitions whenever something in the visualization changes</strong></p>
+
+<p>Instead of jumping from one state to another, perform a smooth transition when the user selects a different mode (y-axis value). The duration of the transition should be <em>800ms</em>.</p>
+
+<ul>
+<li>Add transitions to the path, the overlayed circles, and the axes</li>
+</ul></li>
+<li><p><strong>Implement tooltips</strong></p>
+
+<ul>
+<li>The provided template contains the D3 tooltip library <strong><em>d3-tip</em></strong> (CSS and JS): <a href="https://github.com/Caged/d3-tip">https://github.com/Caged/d3-tip</a></li>
+<li>You can use the libray or create your own tooltips</li>
+<li>Display the tooltip whenever the user hovers over a circle in the line chart (circle = specific world cup instance)</li>
+<li>The tooltip should include the <strong><em>edition</em></strong> (year, country) and the respective <strong><em>y-axis value</em></strong>, which depends on the users selection</li>
+</ul></li>
+<li><p><strong>Implement a time period filter</strong></p>
+
+<p><em>Enable the user to limit the visible FIFA World Cups to a specific time frame.</em></p>
+
+<ul>
+<li>Create two HTML input fields (lower and upper bound) and a button to update the visualization. Optionally, if you feel confident in JavaScript and were able to finish the last steps quickly, you can also implement a range slider.</li>
+<li>The default values should cover the whole time period of the data (20 FIFA World Cups).</li>
+<li>After the user modifies the time frame you have to filter the dataset, update the scales/axes and redraw the SVG elements (<code>updateVisualization()</code>).</li>
+<li>You don&rsquo;t need to worry about error handling here. We expect that the user enters a valid time frame.</li>
+<li>Adjust the transition of the circles and the path in the line chart: Think about how you can best visually represent the filtering action in the transition. The transition should be intuitive and not break the mental model the user has of the data. Use the animation below as guidance.</li>
+</ul>
+
+<p><img src="time_filtering.gif?raw=true" alt="Time Filtering" title="Time Filtering"></p></li>
+<li><p><strong>Show the details for a single FIFA World Cup edition</strong></p>
+
+<p><em>If the user clicks on an SVG circle on the line graph, the invidual statistics for this specific event should be displayed in a separate container beside the chart.</em></p>
+
+<ul>
+<li>Extend your HTML structure to display the additional information</li>
+<li>Create a <strong><em>click listener</em></strong> for the SVG circles. For this you have to make sure that the tooltip you previously created does not overlap with the circle. You might have to add an offset to the tooltip to accomplish that.</li>
+<li>We have prepared an empty function <code>showEdition(d)</code>. You can call it with the data of the selected event and implement the logic there. Re-factoring code into separate functions is a crucial factor for maintaining the readability and extensibility of your programs. Your D3 update sequence remains compact and you can reuse the functions.</li>
+<li>Use <em>JS functions</em>, <em>D3</em> or <em>jQuery</em> to update the HTML content with all the available information for a FIFA World Cup edition: <em>title, winner, goals, average goals, matches, teams, average attendance</em>.</li>
+</ul></li>
+<li><p><strong>Create a proper style for your webpage</strong></p>
+
+<p>Maintain good spacing between UI components, overall layout, font size, color scheme, etc. Also, make sure that transitions are intuitive and clear.</p></li>
+</ol>
+
+<h2 id="toc_5">2) Interaction Design</h2>
+
+<ol>
+<li><p><strong>Chose a visualization</strong></p>
+
+<p>Chose one of your designs from last week. If you don’t think they are sufficient for this task, please provide a new one. You can also use a different dataset, but only if you can provide a link to the data source (no artificial data).</p></li>
+<li><p><strong>Create an interaction storyboard</strong></p>
+
+<p>Design an interaction storyboard (branching storyboard) that uses at least three interaction strategies for data and view specification or/and view manipulation. Imagine yourself in a situation where you have to present your interaction concepts to a client. Please use pen and paper.</p></li>
+<li><p><strong>Answer the following questions/tasks for EACH interaction:</strong></p>
+
+<ul>
+<li>Which questions can you answer by using your interactions?</li>
+<li>Use the <em>Heer &amp; Shneiderman</em> taxonomy to classify every interaction.</li>
+</ul></li>
+<li><p><strong>Create a PDF with ALL your results</strong></p>
+
+<ul>
+<li>Scan your branching interaction storyboards.</li>
+</ul></li>
+</ol>
+
+<h2 id="toc_6">3) Submit Homework on Vocareum</h2>
+
+<p>Submission instructions:</p>
+
+<ol>
+<li><p><strong>Upload your D3 homework under &lsquo;work/hw/implementation&rsquo;.</strong> 
+(Depending on your project structure you might have to create new directories in Vocareum. You can upload multiple files at once into the same directory or directly upload your zipped directory tree.)</p></li>
+<li><p><strong>Upload your design part as a PDF file under &lsquo;work/hw/design&rsquo;.</strong> (Make sure to keep the overall size of your submission under 5MB! Sketches don&rsquo;t have to be in the highest resolution, but should still be readable.)</p></li>
+<li><p><strong>Upload the completed lab (activity I, II, and III) under &lsquo;work/lab&rsquo;</strong></p></li>
+<li><p><strong>For DCE students, upload your lecture activities under &lsquo;work/lecture&rsquo;</strong></p></li>
+</ol>
+
+<p>For your final submission you will have to:</p>
+
+<ul>
+<li>Click the &lsquo;submit&rsquo; button</li>
+<li>Double-check your &lsquo;latest submission&rsquo;, check that all the visualizations are working as expected. You can run them directly in Vocareum and look at them in a new window</li>
+<li>Upload a teaser image of your homework (under &lsquo;Action&rsquo;/&lsquo;upload gallery thumbnail&rsquo;. This teaser will show up in the classes gallery and should motivate other students to look at your solution in more detail.</li>
+</ul>
+
+
+</body>
+
+</html>
