@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Malaria Free Africa</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<!-- Following script scroll the page to begining everytime user refreshes it -->
+	<script>
+		window.onbeforeunload = function(){
+			window.scrollTo(0,0);
+		}
+	</script>
+
+	<!-- This HTML page is inspired by https://www.malarianomore.org/ -->
+	<!-- Most pics and color scheme are copied from there -->
+
+	<div class="container">
+
+		<!-- Create menu bar at the top and locl html links to various sections -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<span id="home"></span>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+					</button>
+					<a class="navbar-brand" href="#"><span>Gotham Times</span></a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#t3"><span>T</span>3</a></li>
+						<li><a href="#challenge"><span>C</span>hallenge</a></li>
+						<li><a href="#explore"><span>E</span>xplore</a></li>
+						<li><a href="#solution"><span>S</span>olution</a></li>
+						<li><a href="#funds"><span>F</span>unds</a></li>
+						<li><a href="#parasites"><span>P</span>arasites</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>R</span>esources <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li class="disabled"><a href="#">Malaria Facts</a></li>
+								<li class="disabled"><a href="#">Data & Statistics</a></li>
+								<li class="disabled"><a href="#">About WHO</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#resources">Media Gallery</a></li>
+								<li class="disabled"><a href="#">Forum</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span>D</span>onate</a></li>
+						<li><a href="#"><span>A</span>bout Us</a></li>
+						<li><a href="#"><span>C</span>ontact Us</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</nav>
+
+	</div>
+
+	<!-- Main header section with primary message about the web page -->
+	<div class="jumbotron hdrimg">
+		<div class="container">
+			<h1>The journey to a  <span> Malaria </span> free africa</h1>
+			<p>Malaria is both <span>preventable</span> and <span>curable</span>, and increased efforts are dramatically reducing the malaria burden in many places.
+				Malaria is caused by the Plasmodium parasite and is transmitted by female Anopheles mosquitoes which bite
+				between dusk and dawn. People infected with malaria often experience fever, chills and flu-like illness at first.
+				Left untreated, the disease can lead to severe complications and, in some cases, death. But the world is better prepared to defeat malaria now than ever before.
+				We can end deaths from this disease if we follow <span>T</span>3.
+			</p>
+		</div>
+	</div>
+
+	<div class="container">
+		</br>
+		</br>
+
+		<!--  T3 - Test, Treat and Track primary strategy to eliminate malaria completely -->
+		<span id="t3"></span>
+		<div class="row">
+			<div class="col-lg-4" align="center">
+				<img class="img-circle" src="img/Test.png" alt="Generic placeholder image" width="140" height="140">
+				<h2><span>T</span>est.</h2>
+				<p>Test the Malaria symptoms timely. Test the Malaria symptoms timely. Test the Malaria symptoms timely. Test the Malaria symptoms timely.</p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4" align="center">
+				<img class="img-circle" src="img/Treat.png" alt="Generic placeholder image" width="140" height="140">
+				<h2><span>T</span>reat.</h2>
+				<p>Treat it timely with proper vaccines and treaments. Treat it timely with proper vaccines and treaments. Treat it timely with proper vaccines and treaments</p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4" align="center">
+				<img class="img-circle" src="img/Track.png" alt="Generic placeholder image" width="140" height="140">
+				<h2><span>T</span>rack.</h2>
+				<p>Report and track each Malaria case. Report and track each Malaria case. Report and track each Malaria case. Report and track each Malaria case.</p>
+			</div><!-- /.col-lg-4 -->
+		</div>
+
+		</br>
+		</br>
+
+		<!-- Current malaria challenges Africa faces today -->
+		<span id="challenge"></span>
+		<h1 class="page-header">The <span>Challenge</span></h1>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/mortality.png">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/Risk.png">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/Kids.png">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/FundingGap.png">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/AfricaEconomy.png">
+			</div>
+		</div>
+
+		</br>
+		</br>
+
+		<!--  Explore the malaria situation in africa in detail using interactive choropleth map -->
+		<span id="explore"></span>
+		<h1 class="page-header">Explore <span>Africa</span></h1>
+
+		<div class="row">
+			<form class="form-inline">
+				<div class="form-group">
+					<label class="label" for="map-data">Map Data</label>
+					<select class="form-control" id="map-data">
+						<option value="UN_population" selected>UN Population</option>
+						<option value="At_risk">At Risk</option>
+						<option value="At_high_risk">At High Risk</option>
+						<option value="Suspected_malaria_cases">Suspected Malaria Cases</option>
+						<option value="Malaria_cases">Malaria Cases</option>
+						<option value="Sus_malaria_cases_by_pop_den">Suspected Malaria Cases (By Population)</option>
+						<option value="Malaria_cases_by_pop_den">Malaria Cases (By Population)</option>
+					</select>
+				</div>
+			</form>
+		</div>
+
+		<!-- container to add the choropleth map vis -->
+		<div id="map-area"  align="center"></div>
+
+		<!-- Possible solutions to eliminate the malaria -->
+		<span id="solution"></span>
+		<h1 class="page-header">The <span>Solution</span></h1>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/TimelyDiag.png">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/Treatment.png">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/Nets.png">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/Insecticide.png">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<img alt="map" src="img/GovtFunding.png">
+			</div>
+		</div>
+
+		</br>
+		</br>
+
+		<!-- Second vis showing funding sources from 2005 - 2013 with smooth transition from stacked vs grouped bar graph -->
+		<span id="funds"></span>
+		<h1 class="page-header">Gov. <span>Funding</span> Trend</h1>
+
+		<form class="form-inline">
+			<div class="radio">
+				<label>
+					<input type="radio" name="mode" id="stacked" value="stacked" checked> Stacked </label>
+				<label>
+					<input type="radio" name="mode" id="grouped" value="grouped"> Grouped</label>
+			</div>
+		</form>
+
+		<!-- container to add bar vis -->
+		<div id="chart-area" align="center"> </div>
+
+		</br>
+		</br>
+
+		<!-- Top down tree structure to explain malaria parasites -->
+		<span id="parasites"></span>
+		<h1 class="page-header">Malaria <span>Parasites</span></h1>
+
+		<div id="tree-area" align="center"></div>
+
+		</br>
+		</br>
+
+		<!-- Promotional Video about Test, Treat and Track -->
+		<span id="resources"></span>
+		<h1 class="page-header">Additional <span>Resources</span></h1>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<div align="center">
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/vnsoTPE_PUc" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+
+		</br>
+		</br>
+
+		<hr>
+
+		<!-- Footer copyright message -->
+		<footer>
+			<p>© 2016 Gotham Times, Inc.</p>
+		</footer>
+
+	</div> <!-- /container -->
+
+	<!-- Load JS libraries -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/queue.min.js"></script>
+	<script src="js/topojson.js"></script>
+	<script src="js/d3.min.js"></script>
+	<script src="js/d3.tip.js"></script>
+
+	<!-- Color Brewer -->
+	<script src="js/colorbrewer.js"></script>
+
+	<!-- Africa Choropleth visualization -->
+	<script src="js/vis-choropleth.js"></script>
+
+	<!-- Global Funding Bar visualization -->
+	<script src="js/vis-bar.js"></script>
+
+	<!-- Malaria Parasites Tree visualization -->
+	<script src="js/vis-tree.js"></script>
+	
+</body>
+</html>
