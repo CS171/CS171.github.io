@@ -1,0 +1,101 @@
+WHO_region,Country,Code,UN_population,At_risk,At_high_risk,Suspected_malaria_cases,Malaria_cases
+African,Angola,AGO,24227524,100,100,6134471,3180021
+African,Burundi,BDI,10816860,100,100,7622162,4831758
+African,Benin,BEN,10598482,100,100,1955773,1509221
+African,Burkina Faso,BFA,17589198,100,100,9274530,8280183
+African,Botswana,BWA,2219937,66.30,4.21,1485,1485
+African,Central African Republic,CAF,4804316,100,100,625301,495238
+African,Côte d'Ivoire,CIV,22157107,100,100,6418571,4658774
+African,Cameroon,CMR,22773014,100,71,3709906,1369518
+African,Democratic Republic of the Congo,COD,74877030,100,97,14647380,9968983
+African,Congo,COG,4504962,100,100,290346,248159
+African,Comoros,COM,769991,100,47.58,103545,2465
+African,Cabo Verde,CPV,513906,N/A,N/A,6894,46
+African,Algeria,DZA,38934334,N/A,N/A,8690,266
+African,Eritrea,ERI,5110444,100,71,121755,35725
+African,Ethiopia,ETH,96958732,68,27.20,7457765,2513863
+African,Gabon,GAB,1687673,100,100,256183,185996
+African,Ghana,GHA,26786598,100,100,10636057,8453557
+African,Guinea,GIN,12275527,100,100,1595828,1595828
+African,Gambia,GMB,1928201,100,100,603424,166229
+African,Guinea-Bissau,GNB,1800513,100,100,309939,98952
+African,Equatorial Guinea,GNQ,820885,100,100,57129,20417
+African,Kenya,KEN,44863583,100,70.19,15142723,9655905
+African,Liberia,LBR,4396554,100,100,2433086,1066107
+African,Madagascar,MDG,23571713,100,87.77,977228,433101
+African,Mali,MLI,17086022,100,90,2590643,2590643
+African,Mozambique,MOZ,27216276,100,100,60607724,55485327
+African,Mauritania,MRT,3969625,100,70,188194,156529
+African,Malawi,MWI,16695253,100,100,7703651,5065703
+African,Mayotte (France),MYT,228070,N/A,N/A,15,15
+African,Namibia,NAM,2402858,79.37,46.16,186972,15914
+African,Niger,NER,19113728,94,53,7014724,3222613
+African,Nigeria,NGA,177475986,100,76.38,19555575,16512127
+African,Rwanda,RWA,11341544,100,100,4178206,1610812
+African,South Sudan,SSD,11911184,100,100,N/A,N/A
+African,Senegal,SEN,14672557,100,96,1079536,628642
+African,Sierra Leone,SLE,6315627,100,100,2647375,1898852
+African,Sao Tome and Principe,STP,186342,100,100,91445,1754
+African,Swaziland,SWZ,1269112,28,0,711,711
+African,Chad,TCD,13587053,98.91,67.35,1737195,1513772
+African,Togo,TGO,7115163,100,100,1756700,1130251
+African,United Republic of Tanzania,TZA,51822621,100,98.90,25190092,7403562
+African,Uganda,UGA,37782971,100,100,19201136,13724345
+African,South Africa,ZAF,53969054,10,4,543196,13988
+African,Zambia,ZMB,15721343,100,100,7859740,5972933
+African,Zimbabwe,ZWE,15245855,78.74,28.62,1420946,535983
+Eastern Mediterranean,Afghanistan,AFG,31627506,75.58,26.91,743183,290079
+Eastern Mediterranean,Djibouti,DJI,876174,50,0,39276,9439
+Eastern Mediterranean,Iran,IRN,78143644,N/A,N/A,N/A,1243
+Eastern Mediterranean,Pakistan,PAK,185044286,98.31,28.92,8514341,3666257
+Eastern Mediterranean,Saudi Arabia,SAU,30886545,N/A,N/A,N/A,2305
+Eastern Mediterranean,Sudan,SDN,39350274,100,86.90,1207771,1207771
+Eastern Mediterranean,Somalia,SOM,10517569,100,50.90,79653,26174
+Eastern Mediterranean,Yemen,YEM,26183676,77.89,25.06,725169,97089
+European,Azerbaijan,AZE,9629779,N/A,N/A,399925,2
+European,Georgia,GEO,4034774,N/A,N/A,440,6
+European,Kyrgyzstan,KGZ,5843617,N/A,N/A,35600,0
+European,Tajikistan,TJK,8295840,N/A,N/A,200241,7
+European,Turkey,TUR,77523788,N/A,N/A,189854,249
+European,Uzbekistan,UZB,29469913,N/A,N/A,812347,1
+Region of the Americas,Argentina,ARG,42980026,N/A,N/A,5691,4
+Region of the Americas,Belize,BLZ,351706,N/A,N/A,24122,19
+Region of the Americas,Bolivia,BOL,10561887,45.37,2.50,124900,7401
+Region of the Americas,Brazil,BRA,206077898,20.30,2.30,1670019,143415
+Region of the Americas,Colombia,COL,47791393,22.23,4.51,403532,40768
+Region of the Americas,Costa Rica,CRI,4757606,N/A,N/A,4420,6
+Region of the Americas,Dominican Republic,DMA,10405943,48.18,0.92,416729,496
+Region of the Americas,Ecuador,ECU,15902916,N/A,N/A,370825,241
+Region of the Americas,Guatemala,GTM,16015494,76.73,24.90,314294,4931
+Region of the Americas,French Guiana,GUF,261466,100,85.50,14651,448
+Region of the Americas,Guyana,GUY,763893,93,35,142843,12354
+Region of the Americas,Honduras,HND,7961680,63.37,4.66,151420,3380
+Region of the Americas,Haiti,HTI,10572029,100,53,258817,17696
+Region of the Americas,Mexico,MEX,125385833,N/A,N/A,900578,664
+Region of the Americas,Nicaragua,NIC,6013913,50.20,1.30,620977,1163
+Region of the Americas,Panama,PAN,3867535,4.69,4.40,80701,874
+Region of the Americas,Peru,PER,30973148,39.28,5.01,866047,64676
+Region of the Americas,Paraguay,PRY,6552518,N/A,N/A,24832,8
+Region of the Americas,El Salvador,SLV,6107706,N/A,N/A,106915,8
+Region of the Americas,Suriname,SUR,538248,15.70,15.70,26964,400
+Region of the Americas,Venezuela,VEN,30693827,18.80,2.60,522617,90708
+South-East Asia,Bangladesh,BGD,159077513,10.36,2.66,125201,10216
+South-East Asia,Bhutan,BTN,765008,N/A,N/A,28716,48
+South-East Asia,Indonesia,IDN,254454778,26.13,11.77,1575907,252027
+South-East Asia,India,IND,1295291543,91,14,138628331,1102205
+South-East Asia,Sri Lanka,LKA,20618991,N/A,N/A,1069817,49
+South-East Asia,Myanmar,MMR,53437159,59.52,15.81,890913,152195
+South-East Asia,Nepal,NPL,28174724,47.95,3.63,296979,122874
+South-East Asia,Democratic People's Republic of Korea,PRK,25026772,N/A,N/A,38878,11212
+South-East Asia,Thailand,THA,67725979,50,8,1756528,37921
+South-East Asia,Timor-Leste,TLS,1157360,89.71,33.67,117107,342
+Western Pacific,China,CHN,1377240453,N/A,N/A,4403633,2921
+Western Pacific,Cambodia,KHM,15328136,70.72,48.13,142242,26278
+Western Pacific,Republic of Korea,KOR,50074401,N/A,N/A,638,638
+Western Pacific,Lao,LAO,6689300,92.61,31.24,294542,48071
+Western Pacific,Malaysia,MYS,29901997,N/A,N/A,1443958,3923
+Western Pacific,Philippines,PHL,99138690,60.98,6.59,314820,4903
+Western Pacific,Papua New Guinea,PNG,7463577,100,94,922417,644688
+Western Pacific,Solomon Islands,SLB,572171,99,99,233803,51649
+Western Pacific,Viet Nam,VNM,92423338,73.70,6.80,2786135,27868
+Western Pacific,Vanuatu,VUT,258883,100,86.92,35570,982

@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CS171 - HW 6</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="big-mosquito"></div>
+
+        <div class="jumbotron top">
+        <header>
+            <h1>Winning The War On Malaria</h1>
+            <h2>Another Year of Progress for the WHO Global Malaria Programme</h2>
+        </header>
+
+        </div>
+        <div class="main container">
+            <section class="intro">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <h2>What is Malaria?</h2>
+                        <p>Malaria is a life-threatening disease caused by parasites transmitted to people through the bites of infected female mosquitoes.</p>
+                        <p>People infected with malaria often experience fever, chills and flu-like illness at first.</p>
+                        <p>Young children, pregnant women and non-immune travellers from malaria-free areas are particularly vulnerable to the disease when they become infected.</p>
+                        <p class="lead">Left untreated, the disease can lead to severe complications and, in some cases, death.</p>
+                    </div>
+                    <div class="col-xs-5 col-xs-offset-1">
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="mosquitoes">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <h2>Transmission</h2>
+                        <p>The disease is caused by five species of parasites belonging to the genus Plasmodium, transmitted via the bite of female mosquitoes of the genus Anopheles.</p>
+                        <p>There are two modalities by which they are spread:</p>
+                    </div>
+                    <div class="col-xs-5  col-xs-offset-1">
+                    </div>
+                </div>
+                <div id="mosquito-chart"></div>
+                <div class="row">
+                    <div class="col-xs-5">
+                        <h3>Human-Human Transmission</h3>
+                        <p>
+                        P. falciparum, P. vivax, P. malariae and P. ovale – are human malaria species that are spread from one person to another via the bite of female mosquitoes of the genus Anopheles. There are about 400 different species of Anopheles mosquitoes, but only 30 of these are vectors of major importance.
+                        </p>
+                        <p>
+                        P. falciparum and P. vivax are the most prevalent, and P. falciparum is the most dangerous, with the highest rates of complications and mortality. This deadly form of malaria is a serious public health concern in most countries in sub-Saharan Africa.
+                        </p>
+                    </div>
+                    <div class="col-xs-5 col-xs-offset-1">
+                        <h3>Zoonetic Transmission</h3>
+                        <p>In recent years, human cases of malaria due to P. knowlesi have been recorded – this species causes malaria among monkeys in certain forested areas of South-East Asia.</p><p>Current information suggests that P. knowlesi malaria is not spread from person to person, but rather occurs in people when an Anopheles mosquito infected by a monkey then bites and infects humans (zoonotic transmission).</p>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            </div>
+        <div class="jumbotron middle">
+            <h1>Progress</h1><br>
+            <h2>Fighting A Deadly Disease</h2>
+        </div>
+            <div class="container">
+            <section class="key-facts">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2>Key Facts</h2>
+                        <ul class="list-facts list-unstyled row">
+                            <li class="col-xs-3">
+                                <h4>Risk</h4>
+                                <h5 class="fig">3.2B</h5>
+                                <p>About 3.2 billion people – almost <em>half</em> of the world’s population – are at risk of malaria.</p>
+                            </li>
+                            <li class="col-xs-3">
+                                <h4>Cases</h4>
+                                <h5 class="fig">214M</h5>
+                                <p>214 million malaria cases reported worldwide in 2015.</p>
+                            </li>
+                            <li class="col-xs-3">
+                                <h4>Incidence</h4>
+                                <h5 class="fig good">37%<span class="glyphicon glyphicon-arrow-down"></span></h5>
+                                <p>37% global decrease in malaria incidence between 2000 and 2015</p>
+                            </li>
+                            <li class="col-xs-3">
+                                <h4>Mortality</h4>
+                                <h5 class="fig good">60%<span class="glyphicon glyphicon-arrow-down"></span></h5>
+                                <p>60% decrease in global malaria mortality rates between 2000 and 2015.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="row">
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <p class="lead">An increasing number of countries are moving towards elimination of malaria.</p>
+                    <p>Whereas only 13 countries were estimated to have fewer than 1000 malaria cases in 2000, <em>33 countries are estimated to have achieved this milestone in 2015.</em></p>
+                    </div>
+                </div>
+            </section>
+            <section class="africa">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div id="choropleth-chart"></div>
+                    </div>
+                    <div class="col-xs-3 col-xs-offset-1">
+                        <h2>Africa</h2>
+                        <p>Africa remains our biggest challenge when it comes to eradicating Malaria. More than 88% of all cases reported in 2015 occured in Africa.</p><p>But enormous progress has been made.</p>
+                        <strong>Since 2000, malaria mortality rates have fallen by 66% among all age groups, and by 71% among children under five.</strong>
+                        <hr>
+                        <form class="form-line">
+                            <div class="form-group">
+                            <label for="attribute-selector">Show&nbsp;&nbsp;</label><select class="combo form-control input-lg" id="attribute-selector"></select>
+                            <p class="help-block">Use the dropdown selector to explore different metrics across the countries of this continent.</p>
+                            <p class="help-block">Mouse-over the countries to see the details.</p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <hr>
+        <div class="container">
+            <section class="outro">
+            <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+            <h2>Moving forward</h2>
+            <p>To address remaining challenges in global malaria control and elimination, WHO has developed the Global Technical Strategy for Malaria 2016-2030: it was adopted in May 2015. It sets ambitious goals for 2030:</p>
+
+            <ul class="list-unstyled big-list">
+                <li>Reducing case incidence by at least 90%</li>
+                <li>Reducing mortality rates by at least 90%</li>
+                <li>Eliminating malaria in at least 35 countries</li>
+                <li>Preventing a resurgence of malaria in all countries that are malaria-free</li>
+            </ul>
+            <p>To achieve these targets, annual funding for malaria will need to triple over the next 15-year period, from US$ 2.7 billion (current level of spending) to US$ 8.7 billion by 2030.</p>
+            </div>
+            </div>
+            </section>
+
+            <footer>
+                <strong>CS171</strong><br><small> Midterm Project by <a href="mailto:bruno.carriere@gmail.com">Bruno Carriere</a></small>
+            </footer>
+        </div>
+
+        <!-- Load JS libraries -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/queue.min.js"></script>
+        <script src="js/topojson.js"></script>
+        <script src="js/d3.min.js"></script>
+        <script src="js/d3.tip.js"></script>
+        <script src="js/lodash.min.js"></script>
+
+        <!-- Choropleth and second visualization -->
+        <script src="js/cs171.js"></script>
+        <script src="js/vis-choropleth.js"></script>
+        <script src="js/vis-second.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>

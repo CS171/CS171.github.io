@@ -1,0 +1,207 @@
+body, html, svg {
+    font: 300 16px / 25px Georgia, "Times New Roman", serif;
+    margin-bottom: 17px;
+    color: #2A2A2A;
+}
+
+p.lead {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 1em 0 1em 0;
+  margin-top: 1em;
+}
+
+h1, h2, h3, h1, h2, h3 {
+  margin: 25px 0px 25px 0px;
+}
+
+.big-mosquito {
+  position: absolute;
+  width: 700px;
+  height: 600px;
+  top: 730px;
+  right: 122px;
+  z-index: 0;
+  background-image: url(../img/big-mosquito.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+section {
+  margin-bottom: 3em;
+  margin-top: 3em;
+}
+
+header {
+  margin-bottom: 4em;
+  padding-bottom: 2em;
+  border-bottom: 1px dotted transparent;
+  text-align: left;
+}
+
+header h1 {
+  text-align: left;
+}
+
+mark {
+  background-color: lightBlue;
+  padding: 1px;
+}
+
+.factoid blockquote {
+  font-size: 70%;
+}
+
+.main {
+
+}
+
+.container {
+  position: relative;
+}
+
+.jumbotron.top {
+    background-image: url(../img/jumbo3.jpg);
+    background-position: 50% 54%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #333;
+    height: 600px;
+}
+
+.jumbotron h1, .jumbotron h2 {
+  color: #333;
+  display: inline-block;
+  padding: 10px;
+  margin-left: 48px;
+  opacity: 0.8;
+}
+
+.jumbotron h1 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  background-color: #333;
+  color: white;
+}
+
+.jumbotron h2 {
+  background-color: #fff;
+  margin-top: 0
+}
+
+.jumbotron.middle {
+    background-image: url(../img/jumbo2.jpg);
+    background-position: 50% 54%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+
+h1, h2 {
+    font-weight: lighter;
+    text-align: left;
+}
+
+section > h1 {
+  margin-bottom: 0.5em;
+}
+
+h1 small {
+  font-weight: lighter;
+}
+
+.africa {
+  margin-top: 5em;
+}
+
+footer {
+    margin-top: 10em;
+    text-align: center;
+}
+
+.list-facts {
+  height: 200px;
+}
+
+.list-facts li {
+  border-left: 1px dotted #333;
+  height: 100%;
+}
+
+.list-facts li:first-child {
+  border: none;
+}
+
+.list-facts h4 {
+  font-weight: bold;
+}
+
+.list-facts .fig {
+  font-size: 64px;
+  color: #333;
+  font-family: Helvetica;
+  vertical-align: top;
+}
+
+.list-facts .glyphicon {
+  vertical-align: top;
+}
+
+.fig.good {
+  color: green;
+}
+
+.outro, .outro h2 {
+  text-align: center;
+}
+
+.big-list {
+  font-weight: bold;
+}
+
+// Tree graph
+.node circle {
+  fill: red;
+  stroke: blue;
+  stroke-width: 3px;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+
+/* LEGEND */
+
+.legend-label {
+  font-family: Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+
+/* TOOLTIP */
+
+.tooltip-title {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.d3-tip {
+  line-height: 1.6;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 1px;
+  pointer-events: none !important;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+

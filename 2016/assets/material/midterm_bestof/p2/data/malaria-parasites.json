@@ -1,0 +1,43 @@
+[{
+  "name": "Plasmodium (Malaria Parasites)",
+  "parent": "null",
+  "children": [
+    {
+      "name": "Human-Human Transmission",
+      "parent": "Plasmodium (Malaria Parasite)",
+      "children": [
+        {
+          "name": "P. falciparum",
+          "img": "img/p-falciparum.png",
+          "parent": "Human-Human Transmission"
+        },
+        {
+          "name": "P. vivax",
+          "img": "img/p-vivax.png",
+          "parent": "Human-Human Transmission"
+        },
+        {
+          "name": "P. malariae",
+          "img": "img/p-malariae.jpg",
+          "parent": "Human-Human Transmission"
+        },
+        {
+          "name": "P. ovale",
+          "img": "img/p-ovale.png",
+          "parent": "Human-Human Transmission"
+        }
+      ]
+    },
+    {
+      "name": "Zoonotic Transmission",
+      "parent": "Plasmodium (Malaria Parasite)",
+      "children": [
+        {
+          "name": "P. knowlesi",
+          "img": "img/p-knowlesi.jpg",
+          "parent": "Zoonotic Transmission"
+        }
+       ]
+    }
+  ]
+}]
