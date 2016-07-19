@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Complex Data</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+    <style>
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: black;
+            stroke-width: 1px;
+            shape-rendering: crispEdges
+        }
+
+        .axis text {
+            font-family: sans-serif;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+<svg id="chart">
+</svg>
+<select id="dropDown">
+    <option selected value="type">Type</option>
+    <option value="product">Product</option>
+    <option value="tonnage">Tonnage</option>
+
+</select>
+</body>
+<script>
+    // the height and width of the actual drawing area
+    var margin = {top: 20, right: 30, bottom: 30, left: 40};
+    var width = 800 - margin.left - margin.right;
+    var height = 500 - margin.top - margin.bottom;
+
+    var svg = d3.select("#chart")
+            .attr({
+                width: width + margin.left + margin.right,
+                height: height + margin.top + margin.bottom
+            }).append("g")
+        // here we move everything by the margins
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var data = [
+        {
+            product: "Apples",
+            tons: 10123,
+            type: "fruit"
+        },
+        {
+            product: "Bananas",
+            tons: 11204,
+            type: "fruit"
+        },
+        {
+            product: "Plums",
+            tons: 8441,
+            type: "fruit"
+        },
+        {
+            product: "Bread",
+            tons: 1911,
+            type: "grocery"
+        },
+        {
+            product: "Cereals",
+            tons: 1011,
+            type: "grocery"
+
+        },
+        {
+            product: "Beer",
+            tons: 9011,
+            type: "alcohol"
+        },
+        {
+            product: "Wine",
+            tons: 8041,
+            type: "alcohol"
+        }];
+
+    var types = ["grocery", "fruit", "alcohol"];
+    var max = 13000;
+
+    document.getElementById("dropDown").onchange = function (event) {
+        var active = event.srcElement.value;
+        // sorting the array based on product, type, or tonnage
+        data = data.sort(function compare(a, b) {
+            switch (active) {
+                case "product":
+                case "type":
+                    if (a[active] < b[active])
+                        return -1;
+                    else if (a[active] > b[active])
+                        return 1;
+                    else
+                        return 0;
+                    break;
+                case "tonnage":
+                    return a.tons - b.tons;
+                    break;
+            }
+        })
+        // this execute serves as the update
+        execute();
+    }
+
+    var textWidth = 80;
+
+    var xScale = d3.scale.linear()
+            .domain([0, max])
+            .range([textWidth, width])
+            .nice();
+
+    var colorScale = d3.scale.ordinal()
+            .domain(types)
+            .range(colorbrewer.Accent[4]);
+
+    // here we use an ordinal scale with rangeBoundBands
+    // to position and size the bars in y direction
+    var yScale = d3.scale.ordinal()
+            .rangeRoundBands([0, height], .1);
+
+    var xAxis = d3.svg.axis();
+    xAxis.scale(xScale);
+    xAxis.orient("bottom");
+
+    svg.append("g")
+            .classed("axis", true)
+            .attr("transform", "translate(" + 0 + "," + height + ")")
+            .call(xAxis);
+
+    var execute = function () {
+        // Note that execute here is also called as the update function,
+        // so everything that can be is already initialized outside of this function
+
+        // here we update the yscale
+        yScale.domain(data.map(function (d) {
+            return d.product
+        }))
+
+        var barGroups = svg.selectAll(".barGroup")
+            // here we tell D3 how to know which objects are the
+            // same thing between updates (object consistency)
+                .data(data, function (d) {
+                    return d.product;
+                });
+
+        //---------------- Enter and Enter Animations ------------------------
+
+        var barGroupsEnter = barGroups.enter()
+                .append("g")
+                .classed("barGroup", true).attr("transform", function (d, i) {
+                    return "translate(" + 0 + "," + yScale(d.product) + ")";
+                });
+
+        barGroupsEnter.append("text").text(function (d) {
+            return d.product;
+        })
+                .attr("x", textWidth - 10)
+            // dy is a shift along the y axis
+                .attr("dy", yScale.rangeBand() / 2)
+            // align it to the right
+                .attr("text-anchor", "end")
+            // center it
+                .attr("alignment-baseline", "middle")
+                .attr("opacity", 0)
+                .transition().duration(3000)
+                .attr("opacity", 1);
+
+        barGroupsEnter.append("rect")
+                .attr("width", "0")
+                .attr("x", textWidth)
+                // rangeBand accesses the automatically computed width of the bar
+                .attr("height", yScale.rangeBand())
+                .style("fill", function (d) {
+                    // here we apply the color scale
+                    return colorScale(d.type);
+                })
+                .attr("width", 0)
+                .transition().duration(5000)
+                .attr("width", function (d, i) {
+                    // here we call the scale function.
+                    return Math.abs(xScale(d.tons) - xScale(0));
+                });
+
+        //---------------- Exit and Exit Animations ------------------------
+
+        barGroups.exit()
+                .attr("opacity", 1)
+                .transition()
+                .duration(3000)
+                .attr("opacity", 0)
+                .remove();
+
+        //---------------- Update Animations after sort --------------------
+
+        barGroups.transition().duration(3000).attr("transform", function (d, i) {
+            return "translate(" + 0 + "," + yScale(d.product) + ")";
+        });
+    }
+</script>
+<script src="run.js" charset="utf-8"></script>
+</html>

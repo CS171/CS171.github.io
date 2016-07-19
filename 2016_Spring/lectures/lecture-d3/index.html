@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Visualization - DOM Manipulation & D3 Fundamentals</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Visualization Class at Harvard University">
+  <link rel="canonical" href="http://www.cs171.org//2016/lectures/lecture-d3/">
+  <link href='http://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/2016/css/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/2016/favicon.png">
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+<div class="site-title-all">
+    <div><a class="site-title" href="/2016/">Visualization</a></div>
+    <div class="site-subtitle">CS-171 / CSCI E-171</div>
+</div>
+
+    <div id="harvardLogo"><img id="harvardLogoImg" src="/2016/assets/i/harvard.svg" alt="harvard-logo" onerror="this.src='/2016/assets/i/harvard.png'" /></div>
+
+
+  </div>
+
+  <div class="wrap">
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+
+
+        
+
+        
+        
+        
+        
+        
+        <a class="page-link" href="/2016/feed.xml"></a>
+        
+        
+        
+        <a class="page-link" href="/2016/"></a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="page-link" href="/2016/">Home</a>
+        
+        
+        
+        <a class="page-link" href="/2016/syllabus/">Syllabus</a>
+        
+        
+        
+        <a class="page-link" href="/2016/schedule/">Schedule</a>
+        
+        
+        
+        <a class="page-link" href="/2016/project/">Project</a>
+        
+        
+        
+        <a class="page-link" href="/2016/resources/">Resources</a>
+        
+        
+        
+        
+        
+        
+        <a class="page-link" href="/2016/fame/">Fame</a>
+        
+        
+        <a class="page-link" href="https://canvas.harvard.edu/courses/9586">Canvas</a>
+        <a class="page-link" href="https://piazza.com/class/ihv3pvmbyc86g7">Piazza</a>
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <!-- Source: http://liveweave.com/JlSG6D -->
+<html class="post">
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src='http://codemirror.net/lib/codemirror.js'></script>
+<script src='http://codemirror.net/mode/xml/xml.js'></script>
+<script src='http://codemirror.net/mode/javascript/javascript.js'></script>
+<script src='http://codemirror.net/mode/css/css.js'></script>
+<script src='http://codemirror.net/mode/htmlmixed/htmlmixed.js'></script>
+<link rel='stylesheet' href='http://codemirror.net/lib/codemirror.css'>
+<style type='text/css'>
+    .CodeMirror {
+        float: left;
+        width: 100%;
+        border: 1px solid gray;
+        height: auto;
+    }
+
+    .CodePreview {
+        width: 100%;
+        float: left;
+        border: 1px solid gray;
+    }
+</style>
+<script>
+
+    function renderCode(id, file, code, js, renderPreview) {
+        var delay;
+
+        var boilerplateHTML = "<!DOCTYPE html><html lang='en'><head> <meta charset='UTF-8'><title><\/title><\/head><body><script src='/2016/lectures/logger.js'\/>\n";
+        var endHTML = "\n<\/script><div id='log'></div><\/body><\/html>";
+
+        var highlightLanguage = "text/html";
+        if (js == "true") {
+            highlightLanguage = "text/javascript"
+        }
+
+        // Initialize CodeMirror editor
+        var editor = CodeMirror.fromTextArea(document.getElementById(id), {
+            mode: highlightLanguage,
+            tabMode: 'indent',
+            lineNumbers: true,
+            lineWrapping: true,
+            autoCloseTags: true
+        });
+
+        // Live preview
+        editor.on("change", function () {
+            clearTimeout(delay);
+            delay = setTimeout(updatePreview, 1000);
+        });
+
+        function updatePreview() {
+
+            if (renderPreview == "false" && js == "true") {
+                // if we don't want to see a preview we just evaluate the javascript code
+                eval(editor.getValue());
+            }
+            if (renderPreview != "false" && js != "true") {
+
+                var previewFrame = document.getElementById('preview-' + id);
+                if (previewFrame) {
+                    // here you can set the height, I delete it first, then I make it again
+                    //    previewFrame.height = "";
+                    //  previewFrame.height = previewFrame.contentWindow.document.body.scrollHeight + "px";
+
+
+                    var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+
+                    preview.open();
+                    preview.write(editor.getValue());
+                    preview.close();
+                    var body = previewFrame.contentWindow.document.body;
+                    if (body) {
+                        previewFrame.height = body.scrollHeight + "px";
+                    }
+                }
+            }
+
+        }
+
+        setTimeout(updatePreview, 300);
+
+        function saveTextAsFile() {
+            var textToWrite = document.getElementById(id).value;
+            var textFileAsBlob = new Blob([textToWrite], {
+                type: 'text/plain'
+            });
+            var fileNameToSaveAs = "myfile.html";
+
+            var downloadLink = document.createElement("a");
+            downloadLink.download = fileNameToSaveAs;
+            downloadLink.innerHTML = "Download File";
+            if (window.webkitURL != null) {
+                // Chrome allows the link to be clicked
+                // without actually adding it to the DOM.
+                downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+            } else {
+                // Firefox requires the link to be added to the DOM
+                // before it can be clicked.
+                downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                downloadLink.onclick = destroyClickedElement;
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+            }
+
+            downloadLink.click();
+        }
+
+        function destroyClickedElement(event) {
+            document.body.removeChild(event.target);
+        }
+
+        function loadfile(input) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                editor.setValue(e.target.result);
+            }
+            reader.readAsText(input.files[0]);
+        }
+
+        var input = document.getElementById("select");
+
+        function selectTheme() {
+            var theme = input.options[input.selectedIndex].innerHTML;
+            editor.setOption("theme", theme);
+        }
+
+        var choice = document.location.search && decodeURIComponent(document.location.search.slice(1));
+        if (choice) {
+            input.value = choice;
+            editor.setOption("theme", choice);
+        }
+
+
+        // init with file or code
+        if (file != "") {
+            $.get(file, function (data) {
+                editor.setValue(data);
+
+            });
+        } else if (code != "") {
+
+            editor.setValue(code);
+
+        }
+
+
+    }
+
+
+</script>
+</header>
+
+<header class="post-header">
+    <h1>DOM Manipulation & D3 Fundamentals</h1>
+
+</header>
+
+<article class="post-content">
+    <p><em>Material based on the lecture by <a href="http://cscheid.net/courses/spr15/cs444/lectures/week3.html">Carlos Scheidegger</a>, the <a href="http://vadim.ogievetsky.com/IntroD3/">D3 Intro by Vadim Ogievetsky</a>, Scott Murray’s Interactive Data Analysis for the Web, and the <a href="http://d3js.org/">D3 website</a>.</em></p>
+
+<h2 id="dom-manipulation">DOM Manipulation</h2>
+<p>After we covered the basics of JavaScript last lecture it’s now time to explore how javascript interacts with the DOM and thus makes all the interesting things in the browser happen. <br />
+Like we’ve seen before, the HTML we write is represented as a tree inside a web browser. What we are going to turn to now are the JavaScript APIs that web browsers provide to let you edit the DOM dynamically, so that we can build our visualizations with code instead of text editors.</p>
+
+<p>While we will manipulate the DOM mainly through libraries (we will use mainly <a href="http://d3js.org/">D3</a>, but <a href="https://jquery.com/">JQuery</a> is the most popular DOM manipulation library) you can also manipulate the DOM directly through the standard DOM API through the <code>document</code> object. Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/API/document">MDN reference</a> on the document object.</p>
+
+<p>Here are the very first steps:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="dom_manipulation" name="dom_manipulation"></textarea>
+
+
+<iframe id="preview-dom_manipulation" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("dom_manipulation", "dom_manipulation.html", "", "false", "true");
+</script>
+<i><a href="dom_manipulation.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p><code>document</code> is a global javascript object that contains the dom. If you log the document object you will see exactly the same as in the DOM view in the web inspector. It is this object that we are manipulating dynamically and that the browser then renders. The document object contains functions, like the <code>getElementByID</code> method we’re using here, or the <code>createElement</code> or the <code>createTextNode</code> functions used to create new content.</p>
+
+<p>Now we can make use of the features we learned about last lecture to make more complicated programs that write websites:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="dom_manipulation2" name="dom_manipulation2"></textarea>
+
+
+<iframe id="preview-dom_manipulation2" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("dom_manipulation2", "dom_manipulation2.html", "", "false", "true");
+</script>
+<i><a href="dom_manipulation2.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>We can also control the attributes of elements, e.g., for styling and positioning with CSS:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="dom_manipulation_styling" name="dom_manipulation_styling"></textarea>
+
+
+<iframe id="preview-dom_manipulation_styling" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("dom_manipulation_styling", "dom_manipulation_styling.html", "", "false", "true");
+</script>
+<i><a href="dom_manipulation_styling.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Remember that in JavaScript we can attach new fields to existing objects. You can do this to DOM elements returned by the API, and that turns out to be very powerful. Note how in the snippet below, we are adding a new method <code>update</code> to the node returned by <code>divWithText</code>. When this method is called, we add the passed value to the current amount (stored at <code>v</code>), compute new positions from <code>v</code>, and update the text content of the node. By calling the update method we can get an <strong>animation</strong>:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="dom_animation" name="dom_animation"></textarea>
+
+
+<iframe id="preview-dom_animation" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("dom_animation", "dom_animation.html", "", "false", "true");
+</script>
+<i><a href="dom_animation.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Notice the <code>tickForever</code> function. We can’t use an infinte while loop here. If we did, the element attributes would be changed, but the user of the web browser does not get to see it, because the web browser does not ever get a chance to update the graphical representation of the DOM. The way to solve this problem is by using a special browser API called <code>requestAnimationFrame</code>. This API lets you tell a web browser that you’d like the opportunity to change something in the DOM. The next time the web browser is sitting idly, after having drawn all of its needed graphics, it will call the function passed as a parameter. Then, we just need to make sure that after updating the graphics, we call requestAnimationFrame again. The solution is a recursive version of the endless loop above <code>(function f() { tick(); f(); })</code>. The fundamental difference here is that instead of making the recursive call directly, we ask the browser to make the recursive call, after it has updated the graphics. This way there’s always a step in between every update where the web browser updates the UI and graphics, and you get nice animations as a result.</p>
+
+<p>While we’ve worked with regular HTML elements here, the possibilities of demonstrated equally apply to SVG, of course. So in theory, you would have all the tools to create data driven visualizations. Of course, libraries such as D3 make our lives easier!</p>
+
+<h2 id="javascript-events">JavaScript Events</h2>
+
+<p>Up to this point we have only dealt with documents that are independent from user interaction. For data visualization, however, interaction is critical. Here we will introduce a couple of elementary concepts of how you can define and listen to events in JavaScript. We will be using DOM event handlers, as always, take a look at the <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers">MDN documentation</a>.</p>
+
+<p>Here is the most simple example possible for events, using two different methods:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="simple_event" name="simple_event"></textarea>
+
+
+<iframe id="preview-simple_event" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("simple_event", "simple_event.html", "", "false", "true");
+</script>
+<i><a href="simple_event.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>The first button defines the function to be called - <code>messageMe()</code> directly in HTML. When the button is clicked, the corresponding function is called. The second button has an identifier. In the script we retrieve the button and add the function to be called dynamically.</p>
+
+<p><code>onclick</code> is of course not the only event that we can listen to. Here is an example for how to react to changes in a dropdown box with the <code>onchange</code> events.</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="event_change" name="event_change"></textarea>
+
+
+<iframe id="preview-event_change" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("event_change", "event_change.html", "", "false", "true");
+</script>
+<i><a href="event_change.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Other <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">useful events</a> are <code>onload</code>, <code>onmouseover</code>, <code>onmouseout</code>, <code>onresize</code>, etc.</p>
+
+<p>And finally, we can of course listen to events that are triggered by interacting with any kind of DOM element, not only with form elements such as buttons and drop-downs. Here is an example for SVG:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="event_svg" name="event_svg"></textarea>
+
+
+<iframe id="preview-event_svg" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("event_svg", "event_svg.html", "", "false", "true");
+</script>
+<i><a href="event_svg.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>So far so good - you can now write interactive code! If you know how to use these events you should be able to deal with all the interaction that you will encounter in the course of this class!</p>
+
+<h2 id="running-a-web-server">Running a web server</h2>
+
+<p>Before we start doing data driven visualization, we need to briefly talk about web servers. All of the code we talked about up to this point can simply be run by opening any of the html files on your local computer. As we go forward, however, this will no longer be possible. Many browsers have restrictions on loading local files via JavaScript, for security reasons. So, as soon as we start working with data stored in files we need a web server to test our code. There are many different servers and you’re welcome to use whichever one you like. I’ll briefly introduce two simple solutions:</p>
+
+<h3 id="the-python-simplehttpserver">The Python SimpleHTTPServer</h3>
+
+<p>If you have python installed you can run the built in simple server. To do this, <code>cd</code> to the directory where your code is located and run the following command:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> python -m SimpleHTTPServer</code></pre></div>
+
+<p>Open <code>[http://localhost:8000/](http://localhost:8000/)</code> to get you to the server.<br />
+You can only have one server at the same time (unless you specify ports explicitly). Hit Control-C to quit the server.</p>
+
+<h3 id="running-a-server-and-debugging-with-webstorm">Running a Server and Debugging with WebStorm</h3>
+
+<p>As you know, we made educational licenses of WebStorm available for you in this class. If you develop your code in an IDE like webstorm you get many powerful features, such as code completion, syntax highlighting, refactoring and interactive debuggin. While you can use the chrome developer tools to debug your code, it’s more convenient to debug the code in the place you’re writing it, as you can immediately edit if you see something wrong. To debug code, you first have to run it on a webserver. Webstorm comes with a built-in webserver, that you can activate via the <code>Run</code> menue. Here is an example configuration:</p>
+
+<p><img src="images/debug_config.png" alt="WebStorm debug configuration" /></p>
+
+<p>You should install the <a href="https://www.jetbrains.com/webstorm/help/using-jetbrains-chrome-extension.html">Chrome Plugin for Webstorm</a> to get a fully-fledged debugging solution. Here I’ve set a breakpoint in the event handler function we just discussed:</p>
+
+<p><img src="images/debugging.png" alt="WebStorm debug configuration" /></p>
+
+<p>Especially when you’re working on larger projects I recommend using a good IDE, as it will make you much more efficient, once you’ve learned to use it.</p>
+
+<h2 id="d3-data-driven-documents">D3: Data Driven Documents</h2>
+
+<p>D3 is a javascript library for manipulating the DOM based on data. D3 was originally written by Mike Bostock, Vadim Ogievetsky, and Jeff Heer; at this point it has a large number of contributors, and it’s one of the overall most popular projects on GitHub (!). D3 certainly owes some of its popularity to riding the everything-on-the-web wave. Nevertheless, the way in which you can express relationships between data and visual elements is fundamentally superior than any other library available, open source or not! It is nothing short of a breakthrough in the way we use code to express visual encodings.</p>
+
+<p>D3 can be used to manipulate pure HTML, but most commonly it’s used in combination with SVG, i.e., we will be producing SVG charts using D3.</p>
+
+<p>In addition to the introduction in Scott Murray’s book (the mandatory reading) you should work with the <a href="https://github.com/mbostock/d3/wiki/API-Reference">D3 API Reference</a> to look up particulars of all the features of D3. And of course, you should be learning by examples. A great collection are <a href="http://bl.ocks.org/mbostock">Mie Bostock’s blocks</a> which contain simple examples, such as a <a href="http://bl.ocks.org/mbostock/2368837">bar chart</a> to complex examples such as <a href="http://bl.ocks.org/mbostock/4063318">this calendar view</a>.</p>
+
+<p>You can download the library to run locally on your computer from the <a href="http://d3js.org/">D3 Website</a>, or you can link directly to the latest release with this snippet:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="de_include" name="de_include"></textarea>
+
+
+<script>
+    renderCode("de_include", "d3_include.html", "", "false", "false");
+</script>
+<i><a href="d3_include.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<h3 id="selections">Selections</h3>
+
+<p><a href="https://github.com/mbostock/d3/wiki/Selections">See API Reference</a></p>
+
+<p>Here is a minimal D3 example taken from the D3 website:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_select" name="d3_select"></textarea>
+
+
+<iframe id="preview-d3_select" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_select", "d3_select.html", "", "false", "true");
+</script>
+<i><a href="d3_select.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>You can see that we achieve a similar result to the DOM manipulation examples we had before. We select an existing element in the DOM, here the first <code>&lt;p&gt;</code> element, and apply a style.  However, you can also see differences: instead of having to use the API standard <code>document.getElementsByTagName</code> we use <code>d3.select</code>; and instead of using <code>setAttribute("style", "color: steelblue;")</code> we use D3’s <code>style</code> method.</p>
+
+<p><code>d3.select</code> selects the first element that matches a selector. <strong>Selectors</strong> can specify tags (<code>p</code> in our example above), classes, and IDs, all through the same interface:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_selectors" name="d3_selectors"></textarea>
+
+
+<iframe id="preview-d3_selectors" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_selectors", "d3_selectors.html", "", "false", "true");
+</script>
+<i><a href="d3_selectors.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Notice, however, that as mentioned previously, only the first element that matches is selected. Of course, it is more practical to select all elements of a certain type, which we can achieve with <code>d3.selectAll</code></p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_selectall" name="d3_selectall"></textarea>
+
+
+<iframe id="preview-d3_selectall" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_selectall", "d3_selectall.html", "", "false", "true");
+</script>
+<i><a href="d3_selectall.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>The last example illustrates the <strong>declarative approach of D3</strong>: we don’t have to iterate over a list of elements and apply the style. Instead we select a set of elements through rules and declare properties.</p>
+
+<p>Once you have a selection, you can bulk-modify it’s content, not only in terms of style, but we can modify <a href="https://github.com/mbostock/d3/wiki/Selections#property">arbitrary properties</a> using <code>selection.property(name[, value])</code>, the <a href="https://github.com/mbostock/d3/wiki/Selections#text">textual content of the elements</a> with <code>selection.text([value])</code>, etc. We can also append elements:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_append" name="d3_append"></textarea>
+
+
+<iframe id="preview-d3_append" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_append", "d3_append.html", "", "false", "true");
+</script>
+<i><a href="d3_append.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Here is a code snippet that we will use in future examples, included as run.js:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno">1</span> <span class="kd">var</span> <span class="nx">button</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">);</span>
+<span class="lineno">2</span> <span class="nx">button</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Run!&quot;</span><span class="p">);</span>
+<span class="lineno">3</span> <span class="nx">button</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="nx">execute</span><span class="p">);</span></code></pre></div>
+
+<p>Here we have three SVG rectangles and use selectAll to apply a new style to them:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_selectallsvg" name="d3_selectallsvg"></textarea>
+
+
+<iframe id="preview-d3_selectallsvg" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_selectallsvg", "d3_selectallsvg.html", "", "false", "true");
+</script>
+<i><a href="d3_selectallsvg.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<h3 id="data">Data</h3>
+<p>Mapping existing element to data:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_data" name="d3_data"></textarea>
+
+
+<iframe id="preview-d3_data" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_data", "d3_data.html", "", "false", "true");
+</script>
+<i><a href="d3_data.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>What happens if we have more datapoints than elements?</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_enter1" name="d3_enter1"></textarea>
+
+
+<iframe id="preview-d3_enter1" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_enter1", "d3_enter1.html", "", "false", "true");
+</script>
+<i><a href="d3_enter1.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>There are still only three elements, it doesn’t matter how many data points we have - we can’t use more than there are elements to select. What to do? <strong>Enter</strong>!</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_enter2" name="d3_enter2"></textarea>
+
+
+<iframe id="preview-d3_enter2" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_enter2", "d3_enter2.html", "", "false", "true");
+</script>
+<i><a href="d3_enter2.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Progress - we have one element for each data item, but it doesn’t look good:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_enter3" name="d3_enter3"></textarea>
+
+
+<iframe id="preview-d3_enter3" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_enter3", "d3_enter3.html", "", "false", "true");
+</script>
+<i><a href="d3_enter3.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Now, that works! But we’re duplicating code. So instead we can do this shorter version:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_enter4" name="d3_enter4"></textarea>
+
+
+<iframe id="preview-d3_enter4" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_enter4", "d3_enter4.html", "", "false", "true");
+</script>
+<i><a href="d3_enter4.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>So what if we don’t have initialized svg elements?</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_enter5" name="d3_enter5"></textarea>
+
+
+<iframe id="preview-d3_enter5" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_enter5", "d3_enter5.html", "", "false", "true");
+</script>
+<i><a href="d3_enter5.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Now let’s try to get rid of some of the elements:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_exit1" name="d3_exit1"></textarea>
+
+
+<iframe id="preview-d3_exit1" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_exit1", "d3_exit1.html", "", "false", "true");
+</script>
+<i><a href="d3_exit1.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>We have a similar problem as before - we need to remove the element that’s not bound.</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_exit2" name="d3_exit2"></textarea>
+
+
+<iframe id="preview-d3_exit2" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_exit2", "d3_exit2.html", "", "false", "true");
+</script>
+<i><a href="d3_exit2.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<h3 id="transitions">Transitions</h3>
+
+<p>One of the cool features of D3 is that transitions are baked in!</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_transition1" name="d3_transition1"></textarea>
+
+
+<iframe id="preview-d3_transition1" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_transition1", "d3_transition1.html", "", "false", "true");
+</script>
+<i><a href="d3_transition1.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Cool, but we’re missing the enter again:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_transition2" name="d3_transition2"></textarea>
+
+
+<iframe id="preview-d3_transition2" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_transition2", "d3_transition2.html", "", "false", "true");
+</script>
+<i><a href="d3_transition2.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<h3 id="drawing-lines">Drawing Lines</h3>
+
+<p>Here’s one way to draw a line:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_lines1" name="d3_lines1"></textarea>
+
+
+<iframe id="preview-d3_lines1" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_lines1", "d3_lines1.html", "", "false", "true");
+</script>
+<i><a href="d3_lines1.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>But we already know that. There must be something better, and there is!</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_lines2" name="d3_lines2"></textarea>
+
+
+<iframe id="preview-d3_lines2" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_lines2", "d3_lines2.html", "", "false", "true");
+</script>
+<i><a href="d3_lines2.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+
+</article>
+
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <h2 class="footer-heading">CS 171</h2>
+
+    <div class="footer-col-1 column">
+      <ul>
+        <!--<li>
+          <a href="https://piazza.com/class/ihv3pvmbyc86g7">Online discussions - Piazza</a>
+        </li>-->
+        <li><a href="mailto:staff@cs171.org">staff@cs171.org</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+
+        
+        
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">© Harvard University, 2015/2016</p>
+    </div>
+
+  </div>
+
+</footer>
+
+    <!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+    </body>
+</html>

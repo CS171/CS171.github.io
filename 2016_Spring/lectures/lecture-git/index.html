@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Visualization - Version Control with Git, HTML Basics</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Visualization Class at Harvard University">
+  <link rel="canonical" href="http://www.cs171.org//2016/lectures/lecture-git/">
+  <link href='http://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/2016/css/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/2016/favicon.png">
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+<div class="site-title-all">
+    <div><a class="site-title" href="/2016/">Visualization</a></div>
+    <div class="site-subtitle">CS-171 / CSCI E-171</div>
+</div>
+
+    <div id="harvardLogo"><img id="harvardLogoImg" src="/2016/assets/i/harvard.svg" alt="harvard-logo" onerror="this.src='/2016/assets/i/harvard.png'" /></div>
+
+
+  </div>
+
+  <div class="wrap">
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+
+
+        
+
+        
+        
+        
+        
+        
+        <a class="page-link" href="/2016/feed.xml"></a>
+        
+        
+        
+        <a class="page-link" href="/2016/"></a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="page-link" href="/2016/">Home</a>
+        
+        
+        
+        <a class="page-link" href="/2016/syllabus/">Syllabus</a>
+        
+        
+        
+        <a class="page-link" href="/2016/schedule/">Schedule</a>
+        
+        
+        
+        <a class="page-link" href="/2016/project/">Project</a>
+        
+        
+        
+        <a class="page-link" href="/2016/resources/">Resources</a>
+        
+        
+        
+        
+        
+        
+        <a class="page-link" href="/2016/fame/">Fame</a>
+        
+        
+        <a class="page-link" href="https://canvas.harvard.edu/courses/9586">Canvas</a>
+        <a class="page-link" href="https://piazza.com/class/ihv3pvmbyc86g7">Piazza</a>
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  
+  <header class="post-header">
+    <h1>Version Control with Git, HTML Basics</h1>
+  </header>
+  
+
+  <article class="post-content">
+  <p>Welcome to CS-5630 / CS-6630 - Visualization. In this class we will use a mix of traditional slides and interactive documents to teach, but you can also use that as a reference for reading. This is first of those interactive lectures. We will cover the basics of version control with git, as well as the basics of the web stack.</p>
+
+<h2 id="git">Git</h2>
+
+<p>We will be using a version control tool called git to track changes to our code. We’ll also be using Github, an online tool for hosting git repositories.</p>
+
+<p>You should already have git installed, if not see the <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">official documentation</a> on how to install git on your operating system.</p>
+
+<h3 id="why-version-control">Why version Control?</h3>
+
+<ul>
+  <li><strong>Keep copies of multiple states of files</strong> <br />
+  By committing you record a state of the file to which you can go back any time.</li>
+  <li><strong>Create alternative states</strong><br />
+ Imagine you just want to try out something, but you realize you have to modify multiple files. You’re not sure whether it works or is worth it. With version control you can just create a <strong>branch</strong> where you can experiment or develop new features without disturbing the main or other branches.</li>
+  <li><strong>Collaborate in Teams</strong> <br />
+ Nobody wants to send code via e-mail. Version control lets you keep your code remotely and has dedicated ways to merge and deal with conflicts.</li>
+  <li><strong>Keep your work safe</strong><br />
+ Your hard drive breaks. Your computer is stolen. But your code is safe because you store it not only on your computer but also on a remote server.</li>
+  <li><strong>Share</strong><br />
+ You developed something awesome and want to share it. But not only do you want to make it available, you’re also happy about contributions from others!</li>
+</ul>
+
+<p><img src="images/centralized.png" alt="Version Control with Central Repository" /></p>
+
+<h3 id="types-of-version-control-central-repository">Types of Version Control: Central Repository</h3>
+
+<ul>
+  <li>Everybody needs to write to one server</li>
+  <li>All operations (history, commit, branches) require server connection</li>
+  <li>Common traditional model: CVS, SVN, etc.</li>
+  <li>Pros:
+    <ul>
+      <li>Simple Model</li>
+    </ul>
+  </li>
+  <li>Cons:
+    <ul>
+      <li>Complex for larger projects
+        <ul>
+          <li>Who is allowed to write?</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="types-of-version-control-distributed-version-control">Types of Version Control: Distributed Version Control</h3>
+
+<p><img src="images/distributed.png" alt="Distribute Version Control" /></p>
+
+<ul>
+  <li>Everybody has a full history of the repository locally</li>
+  <li>No defined server - every node is equal.
+    <ul>
+      <li>In practice: often server is used for one “official” copy of code.<br />
+ But: server by convention only, no technical difference.</li>
+    </ul>
+  </li>
+  <li>Pros:
+    <ul>
+      <li>No access issues
+        <ul>
+          <li>Make a copy and hack away</li>
+          <li>Ask if partner wants to accept your changes</li>
+        </ul>
+      </li>
+      <li>Everything is local
+        <ul>
+          <li>Fast!</li>
+          <li>No internet connection required</li>
+          <li>Commit often model (once per feature) - don’t sync all the time.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Cons:
+    <ul>
+      <li>Extra effort to distinguish between committing and pushing/pulling (synchronizing).</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="implementations">Implementations</h3>
+
+<ul>
+  <li>Centralized
+    <ul>
+      <li>CVS</li>
+      <li>SVN</li>
+      <li>Team Foundation Server</li>
+      <li>…</li>
+    </ul>
+  </li>
+  <li>Distributed
+    <ul>
+      <li>git</li>
+      <li>Mercurial</li>
+      <li>…</li>
+    </ul>
+  </li>
+  <li>We will be using git in this lecture.</li>
+</ul>
+
+<h3 id="git-1">git</h3>
+
+<ul>
+  <li>Created by Linus Torvalds, 2005</li>
+  <li>Meaning: British English slang roughly equivalent to “unpleasant person”.</li>
+  <li>git – the stupid content tracker.</li>
+</ul>
+
+<p><em>I’m an egotistical bastard, and I name all my projects after myself. First ‘Linux’, now ‘git’. – Linus Torvalds</em></p>
+
+<h3 id="why-git">Why git?</h3>
+
+<ul>
+  <li>Popular (~50% of open source projects)</li>
+  <li>Truly distributed</li>
+  <li>Very fast</li>
+  <li>Everything is local</li>
+  <li>Free</li>
+  <li>Safe against corruptions</li>
+  <li>GitHub!</li>
+</ul>
+
+<h3 id="git-model">git model</h3>
+
+<p>Whiteboard sketch of git with a server. A git repository is essentially a large graph.</p>
+
+<h3 id="git-tutorial">git tutorial</h3>
+
+<p>This is a quick intro to git, used in combination with GitHub. This is not a complete tutorial, but will use the most important git features.</p>
+
+<p>We start by configuring git</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span>git config --global user.name <span class="s2">&quot;YOUR NAME&quot;</span>
+<span class="lineno">2</span> <span class="nv">$ </span>git config --global user.email <span class="s2">&quot;YOUR EMAIL ADDRESS&quot;</span></code></pre></div>
+
+<p>Make sure that his is set to your official school address and your correct name!</p>
+
+<p><strong>Create a folder for your project</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span>mkdir myProject 
+<span class="lineno">2</span> <span class="nv">$ </span><span class="nb">cd </span>myProject/</code></pre></div>
+
+<p><strong>Initalize the git repository</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span>git init 
+<span class="lineno">2</span> Initialized empty Git repository in ../myProject/.git/</code></pre></div>
+
+<p><strong>What does git do to your file system?</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="c"># Let&#39;s look at what git creates</span>
+<span class="lineno"> 2</span> <span class="nv">$ </span>ls .git/ 
+<span class="lineno"> 3</span> branches  config  description  HEAD  hooks  info  objects  refs
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> <span class="c"># The interesting stuff is in the config file</span>
+<span class="lineno"> 6</span> <span class="nv">$ </span>cat .git/config
+<span class="lineno"> 7</span> <span class="o">[</span>core<span class="o">]</span>
+<span class="lineno"> 8</span>         <span class="nv">repositoryformatversion</span> <span class="o">=</span> 0
+<span class="lineno"> 9</span>         <span class="nv">filemode</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="lineno">10</span> <span class="nb">        </span><span class="nv">bare</span> <span class="o">=</span> <span class="nb">false</span>
+<span class="lineno">11</span> <span class="nb">        </span><span class="nv">logallrefupdates</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span> 
+<span class="lineno">14</span> <span class="c"># More interesting for a project with branches and remotes </span>
+<span class="lineno">15</span> <span class="nv">$ </span>cat .git/config 
+<span class="lineno">16</span> <span class="o">[</span>core<span class="o">]</span>
+<span class="lineno">17</span>         <span class="nv">repositoryformatversion</span> <span class="o">=</span> 0
+<span class="lineno">18</span>         <span class="nv">filemode</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="lineno">19</span> <span class="nb">        </span><span class="nv">bare</span> <span class="o">=</span> <span class="nb">false</span>
+<span class="lineno">20</span> <span class="nb">        </span><span class="nv">logallrefupdates</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="lineno">21</span> <span class="o">[</span>remote <span class="s2">&quot;origin&quot;</span><span class="o">]</span>
+<span class="lineno">22</span>         <span class="nv">url</span> <span class="o">=</span> https://github.com/CS171/HW1.git
+<span class="lineno">23</span>         <span class="nv">fetch</span> <span class="o">=</span> +refs/heads/*:refs/remotes/origin/*
+<span class="lineno">24</span> <span class="o">[</span>branch <span class="s2">&quot;master&quot;</span><span class="o">]</span>
+<span class="lineno">25</span>         <span class="nv">remote</span> <span class="o">=</span> origin
+<span class="lineno">26</span>         <span class="nv">merge</span> <span class="o">=</span> refs/heads/master</code></pre></div>
+
+<p><strong>Now let’s create a file</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span><span class="nb">echo</span> <span class="s1">&#39;Hello World&#39;</span> &gt; demo.txt
+<span class="lineno">2</span> <span class="nv">$ </span>cat demo.txt 
+<span class="lineno">3</span> Hello World</code></pre></div>
+
+<p><strong>Let’s add it to version control</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span>git add demo.txt</code></pre></div>
+
+<p><strong>Let’s look at what is going on with the repository</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="nv">$ </span>git status
+<span class="lineno"> 2</span> <span class="c"># On branch master</span>
+<span class="lineno"> 3</span> <span class="c">#</span>
+<span class="lineno"> 4</span> <span class="c"># Initial commit</span>
+<span class="lineno"> 5</span> <span class="c">#</span>
+<span class="lineno"> 6</span> <span class="c"># Changes to be committed:</span>
+<span class="lineno"> 7</span> <span class="c">#   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="lineno"> 8</span> <span class="c">#</span>
+<span class="lineno"> 9</span> <span class="c">#       new file:   demo.txt</span>
+<span class="lineno">10</span> <span class="c">#</span></code></pre></div>
+
+<p>That means: git knows that it’s supposed to track this file, but it’s not yet versioned.</p>
+
+<p><strong>Let’s commit the file.</strong> Once a file is committed, it’s state is recorded and you can go back to previous versions any time.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="c"># The -m option specifies the commit message. If you don&#39;t use it you&#39;ll go into an editor to enter your commit message.  </span>
+<span class="lineno"> 2</span> <span class="nv">$ </span>git commit -m <span class="s2">&quot;Committing the test file&quot;</span> 
+<span class="lineno"> 3</span> <span class="o">[</span>master <span class="o">(</span>root-commit<span class="o">)</span> 3be5e8c<span class="o">]</span> Wrote to demo
+<span class="lineno"> 4</span>  <span class="m">1</span> file changed, <span class="m">1</span> insertion<span class="o">(</span>+<span class="o">)</span>
+<span class="lineno"> 5</span>  create mode <span class="m">100644</span> demo.txt
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span> <span class="c"># Did it work?</span>
+<span class="lineno"> 8</span> <span class="nv">$ </span>git status
+<span class="lineno"> 9</span> <span class="c"># On branch master</span>
+<span class="lineno">10</span> nothing to commit, working directory clean</code></pre></div>
+
+<p>That means that now the file is tracked and committed to git. But it’s still only stored on this one computer!</p>
+
+<p><strong>Next, we change a file and commit it again.</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="c"># Now let&#39;s change something</span>
+<span class="lineno"> 2</span> <span class="nv">$ </span><span class="nb">echo</span> <span class="s1">&#39;Are you still spinning?&#39;</span> &gt;&gt; demo.txt 
+<span class="lineno"> 3</span> <span class="nv">$ </span>cat demo.txt 
+<span class="lineno"> 4</span> Hello World!
+<span class="lineno"> 5</span> Are you still spinning?
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span> <span class="c"># Let&#39;s check the status of git!</span>
+<span class="lineno"> 8</span> <span class="nv">$ </span>git status
+<span class="lineno"> 9</span> <span class="c"># On branch master</span>
+<span class="lineno">10</span> <span class="c"># Changes not staged for commit:</span>
+<span class="lineno">11</span> <span class="c">#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="lineno">12</span> <span class="c">#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="lineno">13</span> <span class="c">#</span>
+<span class="lineno">14</span> <span class="c">#       modified:   demo.txt</span>
+<span class="lineno">15</span> <span class="c">#</span>
+<span class="lineno">16</span> no changes added to commit <span class="o">(</span>use <span class="s2">&quot;git add&quot;</span> and/or <span class="s2">&quot;git commit -a&quot;</span><span class="o">)</span>
+<span class="lineno">17</span> 
+<span class="lineno">18</span> <span class="c"># So git knows that something has changed, but hasn&#39;t recorded it. Let&#39;s commit. </span>
+<span class="lineno">19</span> <span class="nv">$ </span>git commit -m <span class="s2">&quot;Added a line to the demo file&quot;</span> 
+<span class="lineno">20</span> On branch master
+<span class="lineno">21</span> Changes not staged <span class="k">for</span> commit:
+<span class="lineno">22</span> 	modified:   demo.txt
+<span class="lineno">23</span> 	
+<span class="lineno">24</span> <span class="c"># That didn&#39;t work! You have to add all the files you want to commit every time. There is a shorthand that you can use to add all the tracked files: append &#39;-a&#39;.</span>
+<span class="lineno">25</span> <span class="nv">$ </span>git commit -a -m <span class="s2">&quot;added a line to the demo file&quot;</span> 
+<span class="lineno">26</span> <span class="o">[</span>master b03178f<span class="o">]</span> added a line to the demo file
+<span class="lineno">27</span>  <span class="m">1</span> file changed, <span class="m">1</span> insertion<span class="o">(</span>+<span class="o">)</span>
+<span class="lineno">28</span> 
+<span class="lineno">29</span> <span class="c"># Better. Now, let&#39;s look at what happened up to now</span>
+<span class="lineno">30</span> <span class="nv">$ </span>git log
+<span class="lineno">31</span> commit a939cdfeaf0a7ffb972e6616549e9053917e0673
+<span class="lineno">32</span> Author: Alexander Lex &lt;alex@seas.harvard.edu&gt;
+<span class="lineno">33</span> Date:   Thu Jan <span class="m">30</span> 20:35:37 <span class="m">2014</span> -0500
+<span class="lineno">34</span> 
+<span class="lineno">35</span>     spinning
+<span class="lineno">36</span> 
+<span class="lineno">37</span> commit 3be5e8c4b3691a70598d784483ef9cf35d5663ba
+<span class="lineno">38</span> Author: Alexander Lex &lt;alex@seas.harvard.edu&gt;
+<span class="lineno">39</span> Date:   Thu Jan <span class="m">30</span> 20:29:52 <span class="m">2014</span> -0500
+<span class="lineno">40</span> 
+<span class="lineno">41</span>     Wrote to demo</code></pre></div>
+
+<p>Commits have a unique ID. This ID is a hash of your complete history.  When we retreive your homeworks, we will tell you the commit ID of the homework we grade. Check whether that’s the correct ID!</p>
+
+<p>Through this cycle of editing, adding and committing, you can develop software in a linear fashion. Now let’s see how we can create alternate versions.</p>
+
+<h3 id="branching">Branching</h3>
+
+<p><strong>Now let’s create a branch</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span>git branch draft
+<span class="lineno">2</span> 
+<span class="lineno">3</span> <span class="c"># This created a branch with the name draft. Let&#39;s look at all the other branches</span>
+<span class="lineno">4</span> <span class="nv">$ </span>git branch
+<span class="lineno">5</span>   draft
+<span class="lineno">6</span> * master</code></pre></div>
+
+<p>We have two branches, draft and master. The * tells us the active branch (the HEAD).</p>
+
+<p>The files in your folders are in the state as they are stored in the active branch. When you change the branch the files are changed, removed or added to the state of the target branch.</p>
+
+<p><strong>Let’s switch the branch.</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="nv">$ </span>git checkout draft
+<span class="lineno"> 2</span> Switched to branch <span class="s1">&#39;draft&#39;</span>
+<span class="lineno"> 3</span> 
+<span class="lineno"> 4</span> <span class="c"># Let&#39;s see if there is something different</span>
+<span class="lineno"> 5</span> <span class="nv">$ </span>cat demo.txt 
+<span class="lineno"> 6</span> Hello World!
+<span class="lineno"> 7</span> Are you still spinning?
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="c"># No - it&#39;s the same! Now let&#39;s edit.</span>
+<span class="lineno">10</span> <span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;Spinning round and round&quot;</span> &gt;&gt; demo.txt 
+<span class="lineno">11</span> <span class="nv">$ </span>cat demo.txt 
+<span class="lineno">12</span> Hello World!
+<span class="lineno">13</span> Are you still spinning?
+<span class="lineno">14</span> Spinning round and round
+<span class="lineno">15</span> 
+<span class="lineno">16</span> <span class="c"># And commit</span>
+<span class="lineno">17</span> <span class="nv">$ </span>git commit -a 
+<span class="lineno">18</span> <span class="o">[</span>draft 059daaa<span class="o">]</span> Confirmed, spinning
+<span class="lineno">19</span>  <span class="m">1</span> file changed, <span class="m">1</span> insertion<span class="o">(</span>+<span class="o">)</span></code></pre></div>
+
+<p>We have now written changes to the new branch, draft. The master branch should remain unchanged. Let’s see if that’s true.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="c"># Now let&#39;s switch back to master again</span>
+<span class="lineno">2</span> <span class="nv">$ </span>git checkout master
+<span class="lineno">3</span> Switched to branch <span class="s1">&#39;master&#39;</span>
+<span class="lineno">4</span> 
+<span class="lineno">5</span> <span class="nv">$ </span>cat demo.txt 
+<span class="lineno">6</span> Hello World!
+<span class="lineno">7</span> Are you still spinning?</code></pre></div>
+
+<p>The text we added isn’t here, as expected! Next we’re going to change something in the main branch and thus cause a conflict.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="c"># Writing something to the front and to the end in an editor</span>
+<span class="lineno"> 2</span> <span class="nv">$ </span>cat demo.txt 
+<span class="lineno"> 3</span> I am here!
+<span class="lineno"> 4</span> Hello World!
+<span class="lineno"> 5</span> Are you still spinning?
+<span class="lineno"> 6</span> Indeed!
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span> <span class="c"># comitting again</span>
+<span class="lineno"> 9</span> <span class="nv">$ </span>git commit -a 
+<span class="lineno">10</span> <span class="o">[</span>master 8437327<span class="o">]</span> Front and back
+<span class="lineno">11</span>  <span class="m">1</span> file changed, <span class="m">2</span> insertions<span class="o">(</span>+<span class="o">)</span></code></pre></div>
+
+<p>At this point we have changed the file in two different branches of the repository. This is great for working on new features without breaking a stable codebase, but it can result in conflicts. <br />
+<strong>Let’s try to merge those two branches.</strong></p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="c"># the git merge command merges the specified branch into the currently active one. &quot;master&quot; is active, and we want to merge in &quot;draft&quot;. </span>
+<span class="lineno"> 2</span> <span class="nv">$ </span>git merge draft
+<span class="lineno"> 3</span> Auto-merging demo.txt
+<span class="lineno"> 4</span> CONFLICT <span class="o">(</span>content<span class="o">)</span>: Merge conflict in demo.txt
+<span class="lineno"> 5</span> Automatic merge failed<span class="p">;</span> fix conflicts and <span class="k">then</span> commit the result.
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span> <span class="c"># The result</span>
+<span class="lineno"> 8</span> <span class="nv">$ </span>cat demo.txt 
+<span class="lineno"> 9</span> I am here!
+<span class="lineno">10</span> Hello World!
+<span class="lineno">11</span> Are you still spinning?
+<span class="lineno">12</span> <span class="o">&lt;&lt;&lt;&lt;&lt;&lt;</span>&lt; HEAD
+<span class="lineno">13</span> Indeed!
+<span class="lineno">14</span> <span class="o">=======</span>
+<span class="lineno">15</span> Spinning round and round
+<span class="lineno">16</span> &gt;&gt;&gt;&gt;&gt;&gt;&gt; draft
+<span class="lineno">17</span> 
+<span class="lineno">18</span> <span class="c"># The first line was merged without problems, The final line, where we have two alternative versions is a conflict. We have to manually resolve the conflict.</span>
+<span class="lineno">19</span> 
+<span class="lineno">20</span> <span class="c"># Once this is done, we can commit again.</span>
+<span class="lineno">21</span> <span class="nv">$ </span>git commit -a 
+<span class="lineno">22</span> <span class="o">[</span>master 4dad82f<span class="o">]</span> Merge branch <span class="s1">&#39;draft&#39;</span>
+<span class="lineno">23</span> 
+<span class="lineno">24</span> <span class="c"># Everything back in order.</span>
+<span class="lineno">25</span> <span class="nv">$ </span>git status 
+<span class="lineno">26</span> <span class="c"># On branch master</span>
+<span class="lineno">27</span> nothing to commit, working directory clean</code></pre></div>
+
+<p>These are the basics of git on a local server. Now we’ll learn how to sync with other people. This can be done with just git, but we’ll be using GitHub as we’re also using GitHub in the homeworks.</p>
+
+<h3 id="working-with-github">Working with GitHub</h3>
+
+<p>First, we’ll create a new repository on github by going to  <a href="https://github.com/new">https://github.com/new</a>.</p>
+
+<p><img src="images/newrepo.png" alt="New repo interface on GitHub" /></p>
+
+<p>Now let’s clone the repository from GitHub.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="nv">$ </span>git clone https://github.com/alexsb/Demo.git
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="c"># Let&#39;s see how the config looks for this one.</span>
+<span class="lineno"> 4</span> <span class="nv">$ </span>cat .git/config 
+<span class="lineno"> 5</span> <span class="o">[</span>core<span class="o">]</span>
+<span class="lineno"> 6</span> 	<span class="nv">repositoryformatversion</span> <span class="o">=</span> 0
+<span class="lineno"> 7</span> 	<span class="nv">filemode</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="lineno"> 8</span> <span class="nb">	</span><span class="nv">bare</span> <span class="o">=</span> <span class="nb">false</span>
+<span class="lineno"> 9</span> <span class="nb">	</span><span class="nv">logallrefupdates</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="lineno">10</span> <span class="nb">	</span><span class="nv">ignorecase</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="lineno">11</span> <span class="nb">	</span><span class="nv">precomposeunicode</span> <span class="o">=</span> <span class="nb">true</span>
+<span class="lineno">12</span> <span class="o">[</span>remote <span class="s2">&quot;origin&quot;</span><span class="o">]</span>
+<span class="lineno">13</span> 	<span class="nv">url</span> <span class="o">=</span> https://github.com/alexsb/demo.git
+<span class="lineno">14</span> 	<span class="nv">fetch</span> <span class="o">=</span> +refs/heads/*:refs/remotes/origin/*
+<span class="lineno">15</span> <span class="o">[</span>branch <span class="s2">&quot;master&quot;</span><span class="o">]</span>
+<span class="lineno">16</span> 	<span class="nv">remote</span> <span class="o">=</span> origin
+<span class="lineno">17</span> 	<span class="nv">merge</span> <span class="o">=</span> refs/heads/master</code></pre></div>
+
+<p>This creates a local copy of the (empty) GitHub repository. We will just start working with that and commit and push the code to the server. If you’d like to add an existing repository to GitHub, follow <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">these instructions</a>.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="c"># What&#39;s currently in the repository?</span>
+<span class="lineno"> 2</span> <span class="nv">$ </span>ls
+<span class="lineno"> 3</span> LICENSE    README.md
+<span class="lineno"> 4</span> <span class="c"># Write something to demo.txt.</span>
+<span class="lineno"> 5</span> <span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;Hello world!&quot;</span> &gt; demo.txt
+<span class="lineno"> 6</span> <span class="nb">echo</span> <span class="s2">&quot;Hello world&quot;</span> &gt; demo.txt
+<span class="lineno"> 7</span> <span class="c"># Add demo.txt to the repository.</span>
+<span class="lineno"> 8</span> <span class="nv">$ </span>git add demo.txt
+<span class="lineno"> 9</span> <span class="c"># Commit the file to the repository.</span>
+<span class="lineno">10</span> <span class="nv">$ </span>git commit -a -m <span class="s2">&quot;added demo file&quot;</span> 
+<span class="lineno">11</span> <span class="o">[</span>master 2e1918d<span class="o">]</span> added demo file
+<span class="lineno">12</span>  <span class="m">1</span> file changed, <span class="m">1</span> insertion<span class="o">(</span>+<span class="o">)</span>
+<span class="lineno">13</span>  create mode <span class="m">100644</span> demo.txt
+<span class="lineno">14</span> <span class="c"># Pushing it to the server!</span>
+<span class="lineno">15</span> <span class="nv">$ </span>git push 
+<span class="lineno">16</span> Counting objects: 3, <span class="k">done</span>.
+<span class="lineno">17</span> Delta compression using up to <span class="m">8</span> threads.
+<span class="lineno">18</span> Compressing objects: 100% <span class="o">(</span>2/2<span class="o">)</span>, <span class="k">done</span>.
+<span class="lineno">19</span> Writing objects: 100% <span class="o">(</span>3/3<span class="o">)</span>, <span class="m">324</span> bytes <span class="p">|</span> <span class="m">0</span> bytes/s, <span class="k">done</span>.
+<span class="lineno">20</span> Total <span class="m">3</span> <span class="o">(</span>delta 0<span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta 0<span class="o">)</span>
+<span class="lineno">21</span> To https://github.com/alexsb/demo.git
+<span class="lineno">22</span>    8e1ecd1..2e1918d  master -&gt; master</code></pre></div>
+
+<p>We have now committed a file locally and pushed it to the server, i.e., our local copy is in sync with the server copy. <br />
+Note that the <code>git push</code> command uses the origin defined in the config file. You can also push to other repositories!</p>
+
+<p>Next, we will make changes at another place. We’ll use the GitHub web interface to do that.</p>
+
+<p>Once these changes are done, our local repository is out of sync with the remote repository. To get these changes locally, we have to pull from the repository:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno"> 1</span> <span class="nv">$ </span>git pull
+<span class="lineno"> 2</span> remote: Counting objects: 3, <span class="k">done</span>.
+<span class="lineno"> 3</span> remote: Compressing objects: 100% <span class="o">(</span>2/2<span class="o">)</span>, <span class="k">done</span>.
+<span class="lineno"> 4</span> remote: Total <span class="m">3</span> <span class="o">(</span>delta 1<span class="o">)</span>, reused <span class="m">0</span> <span class="o">(</span>delta 0<span class="o">)</span>, pack-reused 0
+<span class="lineno"> 5</span> Unpacking objects: 100% <span class="o">(</span>3/3<span class="o">)</span>, <span class="k">done</span>.
+<span class="lineno"> 6</span> From https://github.com/alexsb/demo
+<span class="lineno"> 7</span>    2e1918d..5dd3090  master     -&gt; origin/master
+<span class="lineno"> 8</span> Updating 2e1918d..5dd3090
+<span class="lineno"> 9</span> Fast-forward
+<span class="lineno">10</span>  demo.txt <span class="p">|</span> <span class="m">1</span> +
+<span class="lineno">11</span>  <span class="m">1</span> file changed, <span class="m">1</span> insertion<span class="o">(</span>+<span class="o">)</span>
+<span class="lineno">12</span> <span class="c"># Let&#39;s see whether the changes are here </span>
+<span class="lineno">13</span> <span class="nv">$ </span>cat demo.txt 
+<span class="lineno">14</span> Hello world
+<span class="lineno">15</span> Are you still spinning?</code></pre></div>
+
+<h3 id="other-github-features">Other GitHub Features</h3>
+
+<ul>
+  <li><strong>GitHub Issues</strong> <br />
+ Github Issues are a great way to keep track of open tasks and problems. Issues can be references and closed from commits.</li>
+  <li><strong>Forking</strong> <br />
+ Forking is essentially making use of the distributed nature of git, while having the benefits of a server. When you fork a repository you make a clone of someone else’s code that you are not allowed to read. The repository appears in your github account and you can start editing the code. If you think you improved the code, you can send a “pull request” to the original owner. The owner can then review your code and merge your modifications into his main repository. Forking is hence virtually the same as branching, with the exception that it resolves issues with write permissions.</li>
+</ul>
+
+<h3 id="gui-clients">GUI Clients</h3>
+
+<ul>
+  <li><strong>GitHub Desktop</strong> <br />
+Good option if you want a GUI client. <a href="https://desktop.github.com/">Download here</a></li>
+  <li><strong>Integrated in IDEs</strong> <br />
+Many operations can be done out of a IDE such as WebStorm</li>
+</ul>
+
+<h3 id="setting-up-your-homework-repositories">Setting up your homework repositories.</h3>
+
+<p>The homeworks are hosted in a git repository. Every time we release a homework we will just update the repository. You can then pull from that repository to get the latest homework on your computer.</p>
+
+<p>To get the homework repository, run the following:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span>git clone https://github.com/dataviscourse/2015-dataviscourse-homework -o homework
+<span class="lineno">2</span> <span class="nv">$ </span><span class="nb">cd </span>2015-dataviscourse-homework</code></pre></div>
+
+<p>Note that by using the <code>-o homework</code> option we’re not using the default remote <code>origin</code> but a user-defined remote called <code>homework</code>.</p>
+
+<p>Next, create a new repository on the Github website following the <code>dataviscourse15-hw-lastname-firstname</code> naming convention. <strong>Use all lowercase for your repository name. It is important that your repository be named exactly as above so that we can access it for grading.</strong></p>
+
+<p>Ensure your new repository is private and don’t click the option to “Initialize the repository with a README”.</p>
+
+<p>Run the two commands described on GitHub under the heading “Push an existing repository from the command line”. For my repository these are:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span>git remote add origin https://github.com/alexsb/dataviscourse15-hw-lex-alexander.git
+<span class="lineno">2</span> <span class="nv">$ </span>git push -u origin master</code></pre></div>
+
+<p>On GitHub, go to the repository settings and navigate to the Collaborators page. Add <a href="https://github.com/datavis-ta"><code>datavis-ta</code></a> as a collaborator to your private repository.</p>
+
+<p>Now your homework repository is all set!</p>
+
+<h3 id="committing">Committing</h3>
+
+<p>While working on homework assignments, periodically run the following:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span>git add -A
+<span class="lineno">2</span> <span class="nv">$ </span>git commit -m <span class="s2">&quot;Describe your changes&quot;</span>
+<span class="lineno">3</span> <span class="nv">$ </span>git push</code></pre></div>
+
+<p>Remember, the <code>git commit</code> operation takes a snapshot of your code at that point in time but doesn’t write to the server.</p>
+
+<p>The <code>git push</code> operation pushes your local commits to the remote repository. It is important that you push your changes or others will not be able to see them.</p>
+
+<p>You should do this frequently: as often as you have an incremental, standalone improvement.</p>
+
+<h4 id="submitting-your-homework">Submitting your homework</h4>
+
+<p>We will automatically copy your repository after each homework deadline. <strong>You do not need to do anything else to submit your work (but make sure that you have pushed the latest version of your homework).</strong> We will count the time of your last commit to the Github repository as your submission time.</p>
+
+<p>Refer to the <a href="http://www.dataviscourse.net/2015/homework/">homework page</a> for more information on how to submit your homework.</p>
+
+<h4 id="getting-new-homework-assignments">Getting new homework assignments</h4>
+
+<p>When we release a new assignment we will simply add it to the <a href="https://github.com/dataviscourse/2015-dataviscourse-homework">homework github repository</a>.</p>
+
+<p>To get the latest homework assignments and potential updates or corrections to the assignment, run the following.</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="lineno">1</span> <span class="nv">$ </span>git pull homework master</code></pre></div>
+
+<p>Make sure to have all your changes committed before you do that.</p>
+
+
+  </article>
+
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <h2 class="footer-heading">CS 171</h2>
+
+    <div class="footer-col-1 column">
+      <ul>
+        <!--<li>
+          <a href="https://piazza.com/class/ihv3pvmbyc86g7">Online discussions - Piazza</a>
+        </li>-->
+        <li><a href="mailto:staff@cs171.org">staff@cs171.org</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+
+        
+        
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">© Harvard University, 2015/2016</p>
+    </div>
+
+  </div>
+
+</footer>
+
+    <!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+    </body>
+</html>

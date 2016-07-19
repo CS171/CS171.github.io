@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Linear Scale</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+</head>
+<body>
+<svg height="300" width="800">
+</svg>
+</body>
+<script>
+    var execute = function () {
+        // a dataset that doesn't work well in screen coordinates
+        var data = [0.3, 0.01, 1.5];
+
+        // here we define the scale
+        var xScale = d3.scale.linear()
+                // the domain defines the value range of the input dataset
+                .domain([0, d3.max(data)])
+                // the range defines to which range you want to map the input dataset.
+                .range([0, 800]);
+
+        var svg = d3.select("svg");
+        svg.selectAll("rect")
+                .data(data)
+                .enter()
+                .append("rect")
+                .attr("x", 0)
+                .attr("y", function (d, i) {
+                    return i * 90 + 50
+                })
+                .attr("width", function (d, i) {
+                    // here we call the scale function.
+                    return xScale(d);
+                })
+                .attr("height", 20)
+                .style("fill", "steelblue")
+    }
+</script>
+<script src="run.js" charset="utf-8"></script>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>D3: Cities</title>
+    <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+    <style>
+        path {
+            fill: none;
+            stroke-width: 1px;
+            stroke: #888;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    var w = 800;
+    var h = 500;
+    var projection = d3.geo.albersUsa()
+            .translate([w / 2, h / 2])
+            .scale([700]);
+
+    var path = d3.geo.path()
+            .projection(projection);
+
+    var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+    d3.json("us-states.json", function (json) {
+
+        svg.selectAll("path")
+                .data(json.features)
+                .enter()
+                .append("path")
+                .attr("d", path);
+        //Load in cities data
+        d3.csv("us-cities.csv", function (data) {
+            svg.selectAll("circle")
+                    .data(data)
+                    .enter()
+                    .append("circle")
+                    .attr("cx", function (d) {
+                        return projection([d.lon, d.lat])[0];
+                    })
+                    .attr("cy", function (d) {
+                        return projection([d.lon, d.lat])[1];
+                    })
+                    .attr("r", function (d) {
+                        return Math.sqrt(parseInt(d.population) * 0.00004);
+                    })
+                    .style("fill", "steelblue")
+                    .style("opacity", 0.8);
+        });
+    });
+</script>
+</body>
+</html>

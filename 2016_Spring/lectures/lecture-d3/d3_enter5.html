@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 SelectAll</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <style>
+        rect {
+              stroke: darkgray;
+            stroke-width: 2px
+        }
+    </style>
+</head>
+<body>
+<svg height="300" width="800">
+</svg>
+</body>
+<script>
+    var execute = function () {
+        var svg = d3.select("svg")
+      // here you are running selectAll on an empty set!
+        svg.selectAll("rect")
+                .data([127, 61, 256])
+                .enter().append("rect")
+                .attr("x", 0)
+                .attr("y", function(d,i) { return i*60+50 })
+                .attr("width", function(d,i) { return d; })
+                .attr("height", 20)
+                .style("fill", "steelblue")
+    }
+</script>
+<script src="run.js" charset="utf-8"></script>
+
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Visualization - Advanced D3&#58; Layouts and Maps</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Visualization Class at Harvard University">
+  <link rel="canonical" href="http://www.cs171.org//2016/lectures/lecture-d3-layouts-maps/">
+  <link href='http://fonts.googleapis.com/css?family=Baumans' rel='stylesheet' type='text/css'>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/2016/css/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="/2016/favicon.png">
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+<div class="site-title-all">
+    <div><a class="site-title" href="/2016/">Visualization</a></div>
+    <div class="site-subtitle">CS-171 / CSCI E-171</div>
+</div>
+
+    <div id="harvardLogo"><img id="harvardLogoImg" src="/2016/assets/i/harvard.svg" alt="harvard-logo" onerror="this.src='/2016/assets/i/harvard.png'" /></div>
+
+
+  </div>
+
+  <div class="wrap">
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+
+
+        
+
+        
+        
+        
+        
+        
+        <a class="page-link" href="/2016/feed.xml"></a>
+        
+        
+        
+        <a class="page-link" href="/2016/"></a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a class="page-link" href="/2016/">Home</a>
+        
+        
+        
+        <a class="page-link" href="/2016/syllabus/">Syllabus</a>
+        
+        
+        
+        <a class="page-link" href="/2016/schedule/">Schedule</a>
+        
+        
+        
+        <a class="page-link" href="/2016/project/">Project</a>
+        
+        
+        
+        <a class="page-link" href="/2016/resources/">Resources</a>
+        
+        
+        
+        
+        
+        
+        <a class="page-link" href="/2016/fame/">Fame</a>
+        
+        
+        <a class="page-link" href="https://canvas.harvard.edu/courses/9586">Canvas</a>
+        <a class="page-link" href="https://piazza.com/class/ihv3pvmbyc86g7">Piazza</a>
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <!-- Source: http://liveweave.com/JlSG6D -->
+<html class="post">
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src='http://codemirror.net/lib/codemirror.js'></script>
+<script src='http://codemirror.net/mode/xml/xml.js'></script>
+<script src='http://codemirror.net/mode/javascript/javascript.js'></script>
+<script src='http://codemirror.net/mode/css/css.js'></script>
+<script src='http://codemirror.net/mode/htmlmixed/htmlmixed.js'></script>
+<link rel='stylesheet' href='http://codemirror.net/lib/codemirror.css'>
+<style type='text/css'>
+    .CodeMirror {
+        float: left;
+        width: 100%;
+        border: 1px solid gray;
+        height: auto;
+    }
+
+    .CodePreview {
+        width: 100%;
+        float: left;
+        border: 1px solid gray;
+    }
+</style>
+<script>
+
+    function renderCode(id, file, code, js, renderPreview) {
+        var delay;
+
+        var boilerplateHTML = "<!DOCTYPE html><html lang='en'><head> <meta charset='UTF-8'><title><\/title><\/head><body><script src='/2016/lectures/logger.js'\/>\n";
+        var endHTML = "\n<\/script><div id='log'></div><\/body><\/html>";
+
+        var highlightLanguage = "text/html";
+        if (js == "true") {
+            highlightLanguage = "text/javascript"
+        }
+
+        // Initialize CodeMirror editor
+        var editor = CodeMirror.fromTextArea(document.getElementById(id), {
+            mode: highlightLanguage,
+            tabMode: 'indent',
+            lineNumbers: true,
+            lineWrapping: true,
+            autoCloseTags: true
+        });
+
+        // Live preview
+        editor.on("change", function () {
+            clearTimeout(delay);
+            delay = setTimeout(updatePreview, 1000);
+        });
+
+        function updatePreview() {
+
+            if (renderPreview == "false" && js == "true") {
+                // if we don't want to see a preview we just evaluate the javascript code
+                eval(editor.getValue());
+            }
+            if (renderPreview != "false" && js != "true") {
+
+                var previewFrame = document.getElementById('preview-' + id);
+                if (previewFrame) {
+                    // here you can set the height, I delete it first, then I make it again
+                    //    previewFrame.height = "";
+                    //  previewFrame.height = previewFrame.contentWindow.document.body.scrollHeight + "px";
+
+
+                    var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+
+                    preview.open();
+                    preview.write(editor.getValue());
+                    preview.close();
+                    var body = previewFrame.contentWindow.document.body;
+                    if (body) {
+                        previewFrame.height = body.scrollHeight + "px";
+                    }
+                }
+            }
+
+        }
+
+        setTimeout(updatePreview, 300);
+
+        function saveTextAsFile() {
+            var textToWrite = document.getElementById(id).value;
+            var textFileAsBlob = new Blob([textToWrite], {
+                type: 'text/plain'
+            });
+            var fileNameToSaveAs = "myfile.html";
+
+            var downloadLink = document.createElement("a");
+            downloadLink.download = fileNameToSaveAs;
+            downloadLink.innerHTML = "Download File";
+            if (window.webkitURL != null) {
+                // Chrome allows the link to be clicked
+                // without actually adding it to the DOM.
+                downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+            } else {
+                // Firefox requires the link to be added to the DOM
+                // before it can be clicked.
+                downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                downloadLink.onclick = destroyClickedElement;
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+            }
+
+            downloadLink.click();
+        }
+
+        function destroyClickedElement(event) {
+            document.body.removeChild(event.target);
+        }
+
+        function loadfile(input) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                editor.setValue(e.target.result);
+            }
+            reader.readAsText(input.files[0]);
+        }
+
+        var input = document.getElementById("select");
+
+        function selectTheme() {
+            var theme = input.options[input.selectedIndex].innerHTML;
+            editor.setOption("theme", theme);
+        }
+
+        var choice = document.location.search && decodeURIComponent(document.location.search.slice(1));
+        if (choice) {
+            input.value = choice;
+            editor.setOption("theme", choice);
+        }
+
+
+        // init with file or code
+        if (file != "") {
+            $.get(file, function (data) {
+                editor.setValue(data);
+
+            });
+        } else if (code != "") {
+
+            editor.setValue(code);
+
+        }
+
+
+    }
+
+
+</script>
+</header>
+
+<header class="post-header">
+    <h1>Advanced D3&#58; Layouts and Maps</h1>
+
+</header>
+
+<article class="post-content">
+    <p><em>Material based on Scott Murray’s book and <a href="http://bl.ocks.org/mbostock/3887235">blocks</a> <a href="http://bl.ocks.org/mbostock/4062045">by</a> Mike Bostock</em></p>
+
+<h2 id="layouts">Layouts</h2>
+
+<p>Layouts make it easier to lay elements representing your data out on the screen. While we’ve produced layouts ourselves already, we’ve only used simple position and size assignments that were directly driven by the data. In this lecture we will learn how to use D3’s layout features to produce more complex layouts.</p>
+
+<p>Layouts don’t actually draw things for us, rather they perform a data transformation that we can use to draw specific objects on the screen. Let’s start with a simple example, a pie chart.</p>
+
+<h3 id="a-pie-chart">A Pie Chart</h3>
+
+<p>Pie charts are not a very good visaulization technique, they have multiple weaknesses compared to their alternatives. We’ll talk about those in class, but for now, we’ll draw a pie chart because it’s one of the simplest layouts we can do.</p>
+
+<p>In the following example, we use the <a href="https://github.com/mbostock/d3/wiki/Pie-Layout">D3 pie layout</a> to calculate the angles and the <a href="https://github.com/mbostock/d3/wiki/SVG-Shapes#arc">D3.svg.arc</a> function to calculate the arcs used for drawing the wedges.</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_pie" name="d3_pie"></textarea>
+
+
+<iframe id="preview-d3_pie" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_pie", "d3_pie.html", "", "false", "true");
+</script>
+<i><a href="d3_pie.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p><img src="images/pie.png" alt="Pie data structure" /><br />
+The interesting intermediate stages here are the values produced by the pie layout and the path drawn by the arc function. The pie layout produces a specific data object that we can use to bind to the DOM elements, shown on the right. We ge an array with one ojbect for each wedge. The first member of the object is <code>data</code>, which stores the raw data. We also have <code>startAngel</code> and <code>endAngle</code> (in radians). <br /><br /> <br /> <br /> <br /></p>
+
+<p>The path that is generated by the arc function, is the second piece of information: <code>M1.1634144591899855e-14,-190A190,190 0 1,1 -176.58002257840997,-70.13911623486732L0,0Z</code>. This defines the actual path drawn.</p>
+
+<h3 id="a-force-directed-graph-layout">A Force-Directed Graph Layout</h3>
+
+<p>We’ve mainly talked about tabluar data up to this point. As we will soon learn, there are other data forms. A major other data form is the graph or network. Graphs describe relations between elements. The elements are usually referred to as nodes or vertices, the relationships as links or edges. A common, but not the only representation for graphs are node link diagrams, where nodes are often rendered as circles and edges as lines connecting the circles. There are many ways to lay the nodes in a graph out. We could have all nodes on a circle, or in a grid, or use some other method for laying them out. A common method is a force-directed layout. The idea behind a force directed layout is a physical model: the nodes repulse each other, while the edges are considered springs that pull each other close. The idea behind this is that as nodes that are tightly connected will be close to each other, i.e., form visible clusters, whereas nodes that are not connected are far from each other. The D3 implementation does not actually model this as springs, but as <a href="https://github.com/mbostock/d3/wiki/Force-Layout#linkDistance">geometric constraints</a>, but the mental model is still useful.</p>
+
+<p>This happens in an iterative process, i.e., the forces for each node to each other node are calculated in a single step and the system is adjusted, then the next loop starts, etc. Eventually, the system will (hopefully) find an equilibrium. This is computationally expensive, as we will learn, but works fine for smaller graphs.</p>
+
+<p>The following example illustrates a node-link diagram based on character co-occurrences in Les Miserables. It is based on the <a href="http://bl.ocks.org/mbostock/4062045">standard D3 force layout example</a>.</p>
+
+<p>The data is stored in <a href="miserables.json">a json file</a>. Here is a sample of this file:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="p">{</span>
+<span class="lineno"> 2</span>   <span class="s2">&quot;nodes&quot;</span><span class="o">:</span><span class="p">[</span>
+<span class="lineno"> 3</span>     <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Myriel&quot;</span><span class="p">,</span><span class="s2">&quot;group&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+<span class="lineno"> 4</span>     <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Napoleon&quot;</span><span class="p">,</span><span class="s2">&quot;group&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+<span class="lineno"> 5</span>     <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Mlle.Baptistine&quot;</span><span class="p">,</span><span class="s2">&quot;group&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+<span class="lineno"> 6</span>     <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Mme.Magloire&quot;</span><span class="p">,</span><span class="s2">&quot;group&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">},</span>
+<span class="lineno"> 7</span>     <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;CountessdeLo&quot;</span><span class="p">,</span><span class="s2">&quot;group&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="lineno"> 8</span>   <span class="p">],</span>
+<span class="lineno"> 9</span>   <span class="s2">&quot;links&quot;</span><span class="o">:</span><span class="p">[</span>
+<span class="lineno">10</span>     <span class="p">{</span><span class="s2">&quot;source&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;target&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="lineno">11</span>     <span class="p">{</span><span class="s2">&quot;source&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;target&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="mi">8</span><span class="p">},</span>
+<span class="lineno">12</span>     <span class="p">{</span><span class="s2">&quot;source&quot;</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;target&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="mi">10</span><span class="p">},</span>
+<span class="lineno">13</span>     <span class="p">{</span><span class="s2">&quot;source&quot;</span><span class="o">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;target&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="mi">6</span><span class="p">},</span>
+<span class="lineno">14</span>     <span class="p">{</span><span class="s2">&quot;source&quot;</span><span class="o">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;target&quot;</span><span class="o">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;value&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="lineno">15</span>   <span class="p">]</span>
+<span class="lineno">16</span> <span class="p">}</span></code></pre></div>
+
+<p>The file contains a list of nodes, followed by a list of edges (links), a common format to store graph data. In the array of <code>nodes</code>, we have objects with the values <code>name</code> and <code>group</code>, the <code>links</code> array contain the edges that are defined via a <code>source</code> and <code>target</code>, which are indices into the nodes array (e.g., source 1 is Napoleon, traget 0 is Myriel).</p>
+
+<p>First we will used D3’s <a href="https://github.com/mbostock/d3/wiki/Requests">XMLHttpRequest module (XHR)</a>, specifically the JSON method to load the data. Two things are important to note:</p>
+
+<ol>
+  <li>Once the  data is loaded it will be available in an object, just as we see it in the json file.</li>
+  <li>The XMLHttpRequest methods load <strong>asynchronously</strong>. That means that we’ll not get a return value from the loading function right away, but rather pass a function that is executed when the data loading is complete. The benefit of the asynchronous function is, of course, that other processes can continue, e.g., a user interface wouldn’t freeze up while a dataset is loaded.</li>
+</ol>
+
+<p>We then use the <a href="https://github.com/mbostock/d3/wiki/Force-Layout">force layout</a> to calculate the initial positions and update them in “ticks”:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_force" name="d3_force"></textarea>
+
+
+<iframe id="preview-d3_force" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_force", "d3_force.html", "", "false", "true");
+</script>
+<i><a href="d3_force.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>The layout uses a “cooling” factor that stops the iteration cycle.</p>
+
+<h3 id="other-layouts">Other Layouts</h3>
+
+<p>There are <a href="https://github.com/mbostock/d3/wiki/Layouts">many other layouts</a> that can be very valuable, for. We’ll revisit the layouts in class when we talk about the specific techniques they implement, but the principle is always the same: they take data and calculate derived data, which you then can use to position/scale graphical primitives on the canvas. You shouldn’t have a hard time understanding any of the other layout examples.</p>
+
+<h2 id="maps">Maps</h2>
+
+<p>Maps, finally! But before we start talking about how to draw maps, a word of caution: maps are heavily over-used. A lot of information that is printed on top of maps would be better of in another type of chart. If we compare data of the five largest cities in the US, we don’t need to do that on a map, everyone knows where New York, Los Angeles, Chicago, Houston, and Philadelphia are, but if we plot this on a map we give up our most important visual channel: position. We’re no longer free to place things where we want!</p>
+
+<p>But let’s get to how we do maps with D3. Generally, there are two approaches:</p>
+
+<ol>
+  <li><strong>Street Map with Data</strong>: If you want to show something in the context of a real street map, your best bet is to use something like the <a href="https://developers.google.com/maps/?hl=en">Google Maps API</a> - <a href="http://bl.ocks.org/mbostock/899711">here’s an example of how it’s used with D3</a>, or the <a href="http://wiki.openstreetmap.org/wiki/API">OpenStreetMap API</a>. You can use D3 to draw things on top of those, but you’ll mainly work with the API provided by the vendor.</li>
+  <li><strong>Data Maps</strong>: If you want to present data on an abstract map, e.g., only showing counties or state borders, D3 is the way to go! We’ll be taking about data maps from now on.</li>
+</ol>
+
+<p>D3 Maps are based on the <a href="http://geojson.org/">GeoJSON format</a> (or the <a href="https://github.com/mbostock/topojson/wiki">TopoJSON variety</a>). The GeoJSON format describes the contained geography as a combination of longitude and latitude coordinates, so that each entry forms a polygon. Here is a sample from the <a href="us-states.json">data file containing US states</a>.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="p">{</span>
+<span class="lineno"> 2</span>      <span class="s2">&quot;type&quot;</span><span class="o">:</span>  <span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
+<span class="lineno"> 3</span>      <span class="s2">&quot;features&quot;</span><span class="o">:</span>
+<span class="lineno"> 4</span>      <span class="p">[</span>
+<span class="lineno"> 5</span>          <span class="p">{</span>
+<span class="lineno"> 6</span>              <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+<span class="lineno"> 7</span>              <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;01&quot;</span><span class="p">,</span>
+<span class="lineno"> 8</span>              <span class="s2">&quot;properties&quot;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Alabama&quot;</span><span class="p">},</span>
+<span class="lineno"> 9</span>              <span class="s2">&quot;geometry&quot;</span><span class="o">:</span> <span class="p">{</span>
+<span class="lineno">10</span>                 <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span> 
+<span class="lineno">11</span>                 <span class="s2">&quot;coordinates&quot;</span><span class="o">:</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">87.359296</span><span class="p">,</span> <span class="mf">35.00118</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">85.606675</span><span class="p">,</span> <span class="mf">34.984749</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">85.431413</span><span class="p">,</span><span class="mf">34.124869</span><span class="p">],[</span><span class="o">-</span><span class="mf">85.184951</span><span class="p">,</span><span class="mf">32.859696</span><span class="p">],</span> <span class="p">...</span> 
+<span class="lineno">12</span>  <span class="p">}</span></code></pre></div>
+
+<p>You can see that the coordinates are within the geometry object, and that the properties tell us that this is the shape repesenting Alabama. <br />
+ These polygons can be easily converted into an SVG path with <code>d3.geo.path()</code> (as always, see the <a href="https://github.com/mbostock/d3/wiki/Geo-Paths">API documentation here</a>).</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_basic_map" name="d3_basic_map"></textarea>
+
+
+<iframe id="preview-d3_basic_map" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_basic_map", "d3_basic_map.html", "", "false", "true");
+</script>
+<i><a href="d3_basic_map.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>The previous map uses the geographical information with a default projection. Projections are necessary because the earth is a sphere and can not be directly depicted, without a projection, on a flat surface. There are many projections, with various advantages and disadvantages - we’ll talk about them in class. Let’s center the map and try out a couple:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_projections" name="d3_projections"></textarea>
+
+
+<iframe id="preview-d3_projections" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_projections", "d3_projections.html", "", "false", "true");
+</script>
+<i><a href="d3_projections.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>There are a lot of map projections implemented in D3. <a href="http://bl.ocks.org/mbostock/3711652">Here is a showreel</a>.</p>
+
+<p>Here is an example for a choropleth map, coloring each state by its agricultural output. The trick here is to join the data about the ouptut to the geography information:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_choropleth" name="d3_choropleth"></textarea>
+
+
+<iframe id="preview-d3_choropleth" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_choropleth", "d3_choropleth.html", "", "false", "true");
+</script>
+<i><a href="d3_choropleth.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<p>Here is an example for how we can draw marks on top of maps, in this case the size of cities:</p>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+
+</head>
+
+<body>
+<textarea id="d3_cities" name="d3_cities"></textarea>
+
+
+<iframe id="preview-d3_cities" class="CodePreview"></iframe>
+<!--<input type="file" onchange="loadfile(this)"> <a href="#my-header" onclick='saveTextAsFile()'>Save/Download</a>-->
+
+<script>
+    renderCode("d3_cities", "d3_cities.html", "", "false", "true");
+</script>
+<i><a href="d3_cities.html">See output in new page.</a></i>
+
+</body>
+
+</html>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>This concludes our introduction to D3 and JavaScript. We will (probably) have another lecture on designing larger systems, event handling, etc in the next couple of weeks.</p>
+
+
+</article>
+
+</div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <h2 class="footer-heading">CS 171</h2>
+
+    <div class="footer-col-1 column">
+      <ul>
+        <!--<li>
+          <a href="https://piazza.com/class/ihv3pvmbyc86g7">Online discussions - Piazza</a>
+        </li>-->
+        <li><a href="mailto:staff@cs171.org">staff@cs171.org</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+
+        
+        
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text">© Harvard University, 2015/2016</p>
+    </div>
+
+  </div>
+
+</footer>
+
+    <!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+    </body>
+</html>

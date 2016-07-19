@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+<div id="mainDiv"></div>
+<script>
+    function divWithText(text) {
+        var result = document.createElement("div");
+        var textNode = document.createTextNode(text);
+        result.appendChild(textNode);
+        return result;
+    }
+
+    // Styling the text by setting the position and color.
+    function textAt(text, x, y) {
+        var node = divWithText(text);
+        node.setAttribute("style", "position:absolute; left: " + x + "px; top: " + y + "px; color: rgb(" + text%255 + ", " + 0 + ", 0)");
+        return node;
+    }
+
+    function radians(v) {
+        return v * (Math.PI / 180);
+    }
+
+    // computing the position of the text
+    for (i = 0; i < 360; i += 30) {
+        mainDiv.appendChild(textAt(
+                String(i),
+                100 + 100 * Math.cos(radians(i)),
+                100 + 100 * Math.sin(radians(i))));
+    }
+
+</script>
+</body>
+</html>
