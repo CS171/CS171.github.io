@@ -1,6 +1,6 @@
-### CS 5630 / CS 6630
+### CS 171
 
-The 2015 Visualization website is built with [Jekyll](http://jekyllrb.com).
+The 2016 Visualization website is built with [Jekyll](http://jekyllrb.com).
 
 #### Ubuntu Prerequisites
 
