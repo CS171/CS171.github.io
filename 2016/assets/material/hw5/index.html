@@ -310,17 +310,17 @@ sup {
 
 <h1 id="toc_0">Homework 5</h1>
 
-<p><strong>This homework is due on <em>Monday, February 29th 2016 at 11:59 pm EST</em>.</strong></p>
+<p><strong>This homework is due on <em>Monday, October 10th 2016 at 11:59 pm EST</em>.</strong></p>
 
-<p>This homework requires that you have read the article &ldquo;Enter, Update, Exit&rdquo; by Christian Behrens:
+<p>This homework requires that you have read the article &quot;Enter, Update, Exit&quot; by Christian Behrens:
 <a href="https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36#.3mzg93bya">https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36#.3mzg93bya</a></p>
 
-<p>Optional reading: <a href="http://bost.ocks.org/mike/join/">Mike Bostock&rsquo;s &lsquo;Thinking with Joins&rsquo;</a>, and chapters 9-10 in <em>D3 - Interactive Data Visualization for the Web</em>.</p>
+<p>Optional reading: <a href="http://bost.ocks.org/mike/join/">Mike Bostock&#39;s &#39;Thinking with Joins&#39;</a>, and chapters 9-10 in <em>D3 - Interactive Data Visualization for the Web</em>.</p>
 
-<h2 id="toc_1">1) FIFA World Cup™ - All Time Statistics</h2>
+<h2 id="toc_1">1) FIFA World Cup™ - All Time Statistics (3 points)</h2>
 
 <blockquote>
-<p>The FIFA World Cup™ is the biggest single-event sporting competition in the world and is played by the senior men&rsquo;s national teams from the 209 Member Associations of FIFA. The competition has been played every four years since the inaugural tournament in 1930, except in 1942 and 1946 when it was not held because of the Second World War.</p>
+<p>The FIFA World Cup™ is the biggest single-event sporting competition in the world and is played by the senior men&#39;s national teams from the 209 Member Associations of FIFA. The competition has been played every four years since the inaugural tournament in 1930, except in 1942 and 1946 when it was not held because of the Second World War.</p>
 
 <p>The 20 FIFA World Cup tournaments have been won by eight different national teams.</p>
 
@@ -329,9 +329,9 @@ sup {
 
 <h3 id="toc_2">Template</h3>
 
-<p>To help you get started with this homework assignment we have prepared a template that you can use. It is based on the front-end framework <em>Bootstrap</em> and it includes the JS libraries: <em>D3</em>, <em>D3-tip</em> (tooltips) and <em>jQuery</em>. Furthermore, a CSV file (<code>fifa-world-cup.csv</code>) is stored in the folder <em>&ldquo;data&rdquo;</em>. Of course, you can also start with an empty project and just copy the dataset.</p>
+<p>To help you get started with this homework assignment we have prepared a template that you can use. It is based on the front-end framework <em>Bootstrap</em> and it includes the JS libraries: <em>D3</em>, <em>D3-tip</em> (tooltips) and <em>jQuery</em>. Furthermore, a CSV file (<code>fifa-world-cup.csv</code>) is stored in the folder <em>&quot;data&quot;</em>. Of course, you can also start with an empty project and just copy the dataset.</p>
 
-<p><a href="http://www.cs171.org/2016/assets/scripts/hw5/template_data.zip">http://www.cs171.org/2016/assets/scripts/hw5/template_data.zip</a></p>
+<p><a href="http://www.cs171.org/2016/assets/scripts/hw5/template14113.zip">http://www.cs171.org/2016/assets/scripts/hw5/template14113.zip</a></p>
 
 <h3 id="toc_3">Overview</h3>
 
@@ -346,7 +346,7 @@ sup {
 <ol>
 <li><p><strong>Download the resources</strong></p>
 
-<p>Please download the template and the CSV file as a ZIP file: <a href="http://www.cs171.org/2016/assets/scripts/hw5/template_data.zip">http://www.cs171.org/2016/assets/scripts/hw5/template_data.zip</a></p></li>
+<p>Please download the template and the CSV file as a ZIP file: <a href="http://www.cs171.org/2016/assets/scripts/hw5/template14113.zip">http://www.cs171.org/2016/assets/scripts/hw5/template14113.zip</a></p></li>
 <li><p><strong>Familiarize yourself with the provided framework and the FIFA World Cup data</strong></p>
 
 <p><em>main.js</em></p>
@@ -370,14 +370,14 @@ year     // Returns: &quot;2020&quot;</code></pre></li>
 <ul>
 <li>Create the inital scales and axes. Make sure to pick appropriate scales, especially for the x axis!</li>
 <li>Keep in mind that you should update the input domains each time the data changes.</li>
-<li>We recommend that you first implement the y-axis for showing the data attribute <em>&ldquo;goals&rdquo;</em>. After you have implemented the initial line chart, you will then connect your visualization with a select box to create a dynamic y-axis (in Activity II, part 6). This will allow the user to interactively change the attribute that is being visualized on the y axis.</li>
+<li>We recommend that you first implement the y-axis for showing the data attribute <em>&quot;goals&quot;</em>. After you have implemented the initial line chart, you will then connect your visualization with a select box to create a dynamic y-axis (in Activity II, part 6). This will allow the user to interactively change the attribute that is being visualized on the y axis.</li>
 </ul></li>
 <li><p><strong>Use the <code>d3.svg.line</code> function to map the data to an SVG path and draw the line chart</strong></p>
 
 <ul>
-<li>Read more about D3&rsquo;s path generator: <a href="https://github.com/mbostock/d3/wiki/SVG-Shapes#path-data-generators">https://github.com/mbostock/d3/wiki/SVG-Shapes#path-data-generators</a></li>
+<li>Read more about D3&#39;s path generator: <a href="https://github.com/mbostock/d3/wiki/SVG-Shapes#path-data-generators">https://github.com/mbostock/d3/wiki/SVG-Shapes#path-data-generators</a></li>
 <li>Create a path by using the d3.svg.line function. </li>
-<li>Try different values for the <strong><em>interpolate</em></strong> property (<em>linear</em>, <em>monotone</em>, &hellip;) and choose a setting that fits best.</li>
+<li>Try different values for the <strong><em>interpolate</em></strong> property (<em>linear</em>, <em>monotone</em>, ...) and choose a setting that fits best.</li>
 <li>Make sure that you can update the path with new data afterwards</li>
 <li>Debugging hint: Make sure you only draw a single path!</li>
 </ul>
@@ -434,7 +434,7 @@ year     // Returns: &quot;2020&quot;</code></pre></li>
 <li>Create two HTML input fields (lower and upper bound) and a button to update the visualization. Optionally, if you feel confident in JavaScript and were able to finish the last steps quickly, you can also implement a range slider.</li>
 <li>The default values should cover the whole time period of the data (20 FIFA World Cups).</li>
 <li>After the user modifies the time frame you have to filter the dataset, update the scales/axes and redraw the SVG elements (<code>updateVisualization()</code>).</li>
-<li>You don&rsquo;t need to worry about error handling here. We expect that the user enters a valid time frame.</li>
+<li>You don&#39;t need to worry about error handling here. We expect that the user enters a valid time frame.</li>
 <li>Adjust the transition of the circles and the path in the line chart: Think about how you can best visually represent the filtering action in the transition. The transition should be intuitive and not break the mental model the user has of the data. Use the animation below as guidance.</li>
 </ul>
 
@@ -454,7 +454,7 @@ year     // Returns: &quot;2020&quot;</code></pre></li>
 <p>Maintain good spacing between UI components, overall layout, font size, color scheme, etc. Also, make sure that transitions are intuitive and clear.</p></li>
 </ol>
 
-<h2 id="toc_5">2) Interaction Design</h2>
+<h2 id="toc_5">2) Interaction Design (1 point)</h2>
 
 <ol>
 <li><p><strong>Chose a visualization</strong></p>
@@ -476,24 +476,37 @@ year     // Returns: &quot;2020&quot;</code></pre></li>
 </ul></li>
 </ol>
 
-<h2 id="toc_6">3) Submit Homework on Vocareum</h2>
+<h2 id="toc_6">3) Bonus Task (0.5 points)</h2>
+
+<p>Please make sure to finish al previous tasks before you start with the bonus activity. Extra credits are only given if the rest of the homework has been completed. This task is intended for those of you who have already more experience with web development and JS libraries.</p>
+
+<p>Implement a range slider in your project, instead or in addition to the input fields. The user should be able to select a specific time period and the line chart should get updated automatically. If you want to explore more facets of the powerful D3 library you can try to implement the slider either with D3 or you can use another JS library, such as NoUiSlider (<a href="http://refreshless.com/nouislider/">http://refreshless.com/nouislider/</a>). The range of the slider should be extracted dynamically from the dataset. Please use labels or tooltips to indicate the chosen time period.</p>
+
+<p><em>Example:</em></p>
+
+<p><img src="cs171-hw5-range-slider.gif?raw=true" alt="Homework 5 Range Slider" title="Homework 5 Range Slider"></p>
+
+<h2 id="toc_7">4) Submit Homework on Vocareum</h2>
 
 <p>Submission instructions:</p>
 
 <ol>
-<li><p><strong>Upload your D3 homework under &lsquo;work/hw/implementation&rsquo;.</strong> 
+<li><p><strong>Upload your D3 homework under &#39;work/hw/implementation&#39;.</strong> 
 (Depending on your project structure you might have to create new directories in Vocareum. You can upload multiple files at once into the same directory or directly upload your zipped directory tree.)</p></li>
-<li><p><strong>Upload your design part as a PDF file under &lsquo;work/hw/design&rsquo;.</strong> (Make sure to keep the overall size of your submission under 5MB! Sketches don&rsquo;t have to be in the highest resolution, but should still be readable.)</p></li>
-<li><p><strong>Upload the completed lab (activity I, II, and III) under &lsquo;work/lab&rsquo;</strong></p></li>
-<li><p><strong>For DCE students, upload your lecture activities under &lsquo;work/lecture&rsquo;</strong></p></li>
+<li><p><strong>Upload your design part as a PDF file under &#39;work/hw/design&#39;.</strong> (Make sure to keep the overall size of your submission under 5MB! Sketches don&#39;t have to be in the highest resolution, but should still be readable.)</p></li>
+<li><p><strong>Upload the completed lab (activity I, II, and III) under &#39;work/lab&#39;</strong></p></li>
 </ol>
+
+<!-- [DCE]
+4. **For DCE students, upload your lecture activities under 'work/lecture'**
+-->
 
 <p>For your final submission you will have to:</p>
 
 <ul>
-<li>Click the &lsquo;submit&rsquo; button</li>
-<li>Double-check your &lsquo;latest submission&rsquo;, check that all the visualizations are working as expected. You can run them directly in Vocareum and look at them in a new window</li>
-<li>Upload a teaser image of your homework (under &lsquo;Action&rsquo;/&lsquo;upload gallery thumbnail&rsquo;. This teaser will show up in the classes gallery and should motivate other students to look at your solution in more detail.</li>
+<li>Click the &#39;submit&#39; button</li>
+<li>Double-check your &#39;latest submission&#39;, check that all the visualizations are working as expected. You can run them directly in Vocareum and look at them in a new window</li>
+<li>Upload a teaser image of your homework (under &#39;Action&#39;/&#39;upload gallery thumbnail&#39;. This teaser will show up in the classes gallery and should motivate other students to look at your solution in more detail.</li>
 </ul>
 
 

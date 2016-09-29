@@ -324,9 +324,9 @@ sup {
 <h3 id="toc_2">Prerequisites</h3>
 
 <ul>
-<li>You have read the article &ldquo;Enter, Update, Exit&rdquo; by Christian Behrens:
+<li>You have read the article &quot;Enter, Update, Exit&quot; by Christian Behrens:
 <a href="https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36#.3mzg93bya">https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36#.3mzg93bya</a></li>
-<li>Optional reading: <a href="http://bost.ocks.org/mike/join/">Mike Bostock&rsquo;s &lsquo;Thinking with Joins&rsquo;</a>. Chapter 9-10 in <em>D3 - Interactive Data Visualization for the Web</em>.</li>
+<li>Optional reading: <a href="http://bost.ocks.org/mike/join/">Mike Bostock&#39;s &#39;Thinking with Joins&#39;</a>. Chapter 9-10 in <em>D3 - Interactive Data Visualization for the Web</em>.</li>
 <li>You have successfully filled in the pre-quiz for the fifth lab.</li>
 </ul>
 
@@ -338,7 +338,7 @@ sup {
 
 <p>→ <strong><em>We will accomplish this by using the D3 update pattern (enter → update → exit).</em></strong></p>
 
-<h3 id="toc_4"><em>&ldquo;Updating data&rdquo;</em> means <em>&ldquo;joining data&rdquo;</em></h3>
+<h3 id="toc_4"><em>&quot;Updating data&quot;</em> means <em>&quot;joining data&quot;</em></h3>
 
 <p>A data-join is followed by operations on the three virtual selections: <strong>enter</strong>, <strong>update</strong> and <strong>exit</strong>.</p>
 
@@ -376,7 +376,7 @@ sup {
     .attr(&quot;cx&quot;, function(d, index) { return (index * 80) + 50 })
     .attr(&quot;cy&quot;, 80);</code></pre>
 
-<p>(You might have noticed that we&rsquo;ve actually already used this pattern multiple times in previous labs.)</p>
+<p>(You might have noticed that we&#39;ve actually already used this pattern multiple times in previous labs.)</p>
 
 <p>But often you want to do the exact opposite operation. If someone filters the dataset you may want to remove existing elements. In this case, you have to use the <code>exit</code> selection. <code>exit</code> contains the leftover elements for which there is no corresponding data anymore.</p>
 
@@ -439,9 +439,9 @@ function updateChart(data) {
 <pre><code class="language-javascript">var circle = svg.selectAll(&quot;circle&quot;)
     .data([5, 10, 15]);</code></pre>
 
-<p>The code <code>.selectAll(&quot;circle&quot;)</code> selects all circle-elements and if we chain it with <code>.data([5, 10, 15])</code> we are joining the given data with the selected circles. The default key function applies and the keys are assigned by index. In our example it will use the first three circles that it finds. The first datum (first item in our array) and the first circle have the key &ldquo;0&rdquo;, the second datum and circle have the key &ldquo;1&rdquo;, and so on.</p>
+<p>The code <code>.selectAll(&quot;circle&quot;)</code> selects all circle-elements and if we chain it with <code>.data([5, 10, 15])</code> we are joining the given data with the selected circles. The default key function applies and the keys are assigned by index. In our example it will use the first three circles that it finds. The first datum (first item in our array) and the first circle have the key &quot;0&quot;, the second datum and circle have the key &quot;1&quot;, and so on.</p>
 
-<p>Assume, that we have implemeted the &ldquo;enter, update, exit&rdquo;-pattern and appended the three circles to the webpage.</p>
+<p>Assume, that we have implemeted the &quot;enter, update, exit&quot;-pattern and appended the three circles to the webpage.</p>
 
 <p>We can now start the pipeline again, with a slightly different array:</p>
 
@@ -474,10 +474,10 @@ circle = svg.selectAll(&quot;circle&quot;)
 <blockquote>
 <p>Additionally, a comment from Mike Bostock regarding <em>key functions</em>:</p>
 
-<p><em>&ldquo;The key function also determines the enter and exit selections: the new data for which there is no corresponding key in the old data become the enter selection, and the old data for which there is no corresponding key in the new data become the exit selection. The remaining data become the default update selection.&rdquo;</em></p>
+<p><em>&quot;The key function also determines the enter and exit selections: the new data for which there is no corresponding key in the old data become the enter selection, and the old data for which there is no corresponding key in the new data become the exit selection. The remaining data become the default update selection.&quot;</em></p>
 </blockquote>
 
-<p>If you are still unclear about the concept of key functions, we encourage you to look at <a href="http://cscheid.net/courses/spr15/cs444/lectures/week5.html">Carlos Scheidegger&rsquo;s expanation</a> at home.</p>
+<p>If you are still unclear about the concept of key functions, we encourage you to look at <a href="http://cscheid.net/courses/spr15/cs444/lectures/week5.html">Carlos Scheidegger&#39;s explanation</a> at home.</p>
 
 <hr>
 
@@ -517,7 +517,7 @@ circle = svg.selectAll(&quot;circle&quot;)
 <li>The current order queue is stored in the variable <code>orders</code>. You can access the data in the function <code>updateVisualization()</code>. The function is called automatically by our script every few seconds.</li>
 <li>Implement the D3 update pattern and make sure to append new elements for new orders and delete elements after orders are processed (default key function; map by index).</li>
 <li>The design decisions are up to you but please choose appropriate circle radii and spacings.</li>
-<li>The SVG text label should be updated too. Don&rsquo;t append a new label every time the queue changes, just update the text. (Hint: Create the label once, but update it every time <code>updateVisualization</code> is called.)</li>
+<li>The SVG text label should be updated too. Don&#39;t append a new label every time the queue changes, just update the text. (Hint: Create the label once, but update it every time <code>updateVisualization</code> is called.)</li>
 </ul></li>
 <li><p><strong>Change the circle color</strong></p>
 
@@ -618,7 +618,7 @@ function update(data) {
 <pre><code class="language-javascript">var yAxisGroup = svg.append(&quot;g&quot;)
     .attr(&quot;class&quot;, &quot;y-axis axis&quot;);</code></pre>
 
-<p>In comparison to last week (without using the <em>update pattern</em>) we don&rsquo;t call the y-axis function immediately. We select the <em>group</em> and call the axis function afterwards, every time the data change.</p>
+<p>In comparison to last week (without using the <em>update pattern</em>) we don&#39;t call the y-axis function immediately. We select the <em>group</em> and call the axis function afterwards, every time the data change.</p>
 
 <pre><code class="language-javascript">function update(data) {
     // Update scales and visual elements
@@ -658,7 +658,7 @@ function update(data) {
 
 <ul>
 <li>We have created a new SVG drawing area (using the D3 margin convention)</li>
-<li><p>We have used an ordinal scale function for the x-axis (listing all coffee shops) and a linear scale function for the y-axis (number of stores). You don&rsquo;t necessarily need an ordinal scale for a bar chart but it makes your code much cleaner. You can use the JS array method <strong><em>map()</em></strong> to set <em>domains</em> for ordinal scales:</p>
+<li><p>We have used an ordinal scale function for the x-axis (listing all coffee shops) and a linear scale function for the y-axis (number of stores). You don&#39;t necessarily need an ordinal scale for a bar chart but it makes your code much cleaner. You can use the JS array method <strong><em>map()</em></strong> to set <em>domains</em> for ordinal scales:</p>
 
 <pre><code class="language-javascript">x.domain(data.map(function(d) { return d.company; }));</code></pre></li>
 <li><p>We have separated the loading of the CSV file and the actual drawing of the bar chart. The function <code>loadData()</code> reads the data and saves it in the variable <code>data</code>. The function <code>updateVisualization()</code> should include all the dynamic chart elements and should be called every time something changes.</p></li>
@@ -693,9 +693,9 @@ function update(data) {
 <p>We provide you with the code below, but you need to decide where to best integrate it in your code:</p>
 
 <pre><code class="language-javascript">data.sort(function(a, b) { return b.stores - a.stores; });</code></pre></li>
-<li><p><strong>React to the user&rsquo;s selection</strong></p>
+<li><p><strong>React to the user&#39;s selection</strong></p>
 
-<p>There is a select box in the HTML document that should enable the user to switch the ranking from <em>&ldquo;number of stores&rdquo;</em> to <em>&ldquo;revenue&rdquo;</em>.</p>
+<p>There is a select box in the HTML document that should enable the user to switch the ranking from <em>&quot;number of stores&quot;</em> to <em>&quot;revenue&quot;</em>.</p>
 
 <ul>
 <li><p>Listen to an event (select-box option change) with D3 or HTML/JS:</p>
@@ -741,7 +741,7 @@ d3.select(&quot;#select-box&quot;).on(&quot;change&quot;, doSomething);
 
 <p>We selected all <em>circles</em> and changed the <em>fill color</em>.</p>
 
-<p>D3 evaluates every <em>attr()</em> statement immediately, so the changes happen right away. But sometimes it is important to show the user what&rsquo;s happening between the states and not just the final result. D3 provides the <strong><em>transition()</em></strong> method that makes it easy to create these smooth, animated transitions between states:</p>
+<p>D3 evaluates every <em>attr()</em> statement immediately, so the changes happen right away. But sometimes it is important to show the user what&#39;s happening between the states and not just the final result. D3 provides the <strong><em>transition()</em></strong> method that makes it easy to create these smooth, animated transitions between states:</p>
 
 <pre><code class="language-javascript">d3.selectAll(&quot;circle&quot;).transition().attr(&quot;fill&quot;, &quot;blue&quot;);</code></pre>
 
@@ -761,7 +761,7 @@ d3.select(&quot;#select-box&quot;).on(&quot;change&quot;, doSomething);
 <h4 id="toc_11">Transitions Are Per-Element and Exclusive</h4>
 
 <blockquote>
-<p><em>&ldquo;Each element transitions independently. When you create a transition from a selection, think of it as a set of transitions, one per element, rather than a single mega-transition running on multiple elements. Different elements can have different delays and duration, and even different easing and tweens. Additionally, transition events are dispatched separately for each element. When you receive an end event for a given element, its transition has ended, but other transitions may still be running on other elements.&rdquo;</em> - (Mike Bostock, <a href="http://bost.ocks.org/mike/transition/">http://bost.ocks.org/mike/transition/</a>)</p>
+<p><em>&quot;Each element transitions independently. When you create a transition from a selection, think of it as a set of transitions, one per element, rather than a single mega-transition running on multiple elements. Different elements can have different delays and duration, and even different easing and tweens. Additionally, transition events are dispatched separately for each element. When you receive an end event for a given element, its transition has ended, but other transitions may still be running on other elements.&quot;</em> - (Mike Bostock, <a href="http://bost.ocks.org/mike/transition/">http://bost.ocks.org/mike/transition/</a>)</p>
 </blockquote>
 
 <p>If you need to delay an animation, you can add the <strong><em>delay()</em></strong> method right after <em>transition()</em>.</p>
@@ -796,13 +796,13 @@ circle.exit()
 <blockquote>
 <h3 id="toc_13">Animation for Visualization</h3>
 
-<p>If done right, animations make a visualization better and help engage the user. If done wrong (i.e., you don&rsquo;t follow key principles), you will achieve exactly the opposite results.</p>
+<p>If done right, animations make a visualization better and help engage the user. If done wrong (i.e., you don&#39;t follow key principles), you will achieve exactly the opposite results.</p>
 
 <h4 id="toc_14">Pros</h4>
 
 <ul>
 <li>Transitions show what is happening between states, adding a sense of continuity and finer resolution to your visualization</li>
-<li>Animations can draw the user&rsquo;s attention to specific elements or aspects</li>
+<li>Animations can draw the user&#39;s attention to specific elements or aspects</li>
 <li>Animations can provide the user with interactive feedback</li>
 </ul>
 
@@ -828,7 +828,7 @@ data analysis. In this case, use a static comparison of several charts/images (e
 <p><em>Try also different time spans and examine it in the web browser.</em></p></li>
 <li><p><strong>Add transitions to the x- and y-axis</strong></p></li>
 <li><p><strong>Think about the different animations. Which transitions are useful? Would it be better to omit some of them?</strong>
-We want you to think about the pros and cons of transitions, but you don&rsquo;t have to hand anything in for this question.</p></li>
+We want you to think about the pros and cons of transitions, but you don&#39;t have to hand anything in for this question.</p></li>
 </ol>
 
 <hr>
@@ -854,7 +854,7 @@ We want you to think about the pros and cons of transitions, but you don&rsquo;t
 
 <ul>
 <li>Call <em>updateVisualization()</em> every time the user clicks on the button. It will process the data-join and run through the enter-update-exit sequence</li>
-<li>Don&rsquo;t call <em>updateVisualization()</em> and select the SVG rectangles directly without running through the <em>update pattern</em>.</li>
+<li>Don&#39;t call <em>updateVisualization()</em> and select the SVG rectangles directly without running through the <em>update pattern</em>.</li>
 </ul>
 
 <p><strong><em>In both cases you have to update the input domain of your ordinal scale and you have to call the x-axis function to redraw the axis.</em></strong></p></li>
@@ -866,7 +866,7 @@ We want you to think about the pros and cons of transitions, but you don&rsquo;t
     .duration(1000)
     ...</code></pre>
 
-<p>Make sure to not only lower the opacity during a transition, but to also re-set it after the transition (in another transition). Don&rsquo;t forget: You can chain transitions together!</p>
+<p>Make sure to not only lower the opacity during a transition, but to also re-set it after the transition (in another transition). Don&#39;t forget: You can chain transitions together!</p>
 
 <p>During the last activities you have probably used the default key function to bind data to the rectangles. This leads to a distorted and difficult to follow transition. As you have learned at the beginning of this lab you can add a key function (callback-function) to the <code>.data()</code> property to specify a custom key, instead of an index.</p></li>
 </ol>
@@ -891,7 +891,7 @@ We want you to think about the pros and cons of transitions, but you don&rsquo;t
 
 <h4 id="toc_19">Submission of lab (activity II, and III) as part of homework 5</h4>
 
-<p>Please upload the code of your completed lab (the final interactive bar chart of activities II and III) with your homework 5 submission! Make sure to upload all files of this lab in a subfolder called &ldquo;lab&rdquo;.</p>
+<p>Please upload the code of your completed lab (the final interactive bar chart of activities II and III) with your homework 5 submission! Make sure to upload all files of this lab in a subfolder called &quot;lab&quot;.</p>
 
 <hr>
 

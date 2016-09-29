@@ -38,4 +38,4 @@ http://jekyll-windows.juthilo.com/1-ruby-and-devkit/
 
 ### Deployment
 
-just push your changes. An automatic build will compile it using jekyll 2.4.0 and push it to the public repository  
+Just push your changes. An automatic build will compile it using jekyll 2.4.0 and push it to the public repository  
