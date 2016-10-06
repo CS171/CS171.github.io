@@ -1,4 +1,4 @@
-### CS 171 
+### CS 171
 
 The 2016 Visualization website is built with [Jekyll](http://jekyllrb.com).
 

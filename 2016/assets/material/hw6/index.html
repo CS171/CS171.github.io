@@ -1,0 +1,552 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>README</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<p><img src="cs171-logo.png" width="200"></p>
+
+<p>&nbsp;</p>
+
+<h1 id="toc_0">Homework 6</h1>
+
+<p><strong>This homework is due on <em>Monday, October 17th 2016 at 11:59 pm EST</em>.</strong></p>
+
+<p>This homework requires that you have read and <strong>programmed</strong> along with:</p>
+
+<ul>
+<li><a href="http://www.cs171.org/2016/assets/material/cs171-lab6-reading.pdf">http://www.cs171.org/2016/assets/material/cs171-lab6-reading.pdf</a></li>
+<li>The four chapters about JS objects at <a href="http://www.w3schools.com/js/js_object_definition.asp">http://www.w3schools.com/js/js<em>object</em>definition.asp</a> (repetition of JS objects with more examples)</li>
+<li>Optional reading: <a href="https://software.intel.com/en-us/xdk/blog/javascript-this-that-and-the-other-thing">Scope and <em>this</em> in JavaScript</a></li>
+</ul>
+
+<h2 id="toc_1">1) A survey about the diffusion of microfinance loans (2.5 points)</h2>
+
+<p>In this homework you will work with survey data on microfinance loans. Banerjee et al [1] collected the data in order to develop a model of information diffusion in social networks. To come right to the point: you don&#39;t need any knowledge or additional information on microfinance. We will only cover a very small part of the collected data to demonstrate you how to visualize survey results efficiently with JS and D3.</p>
+
+<p>The authors of the study collected detailed demographic and network data in 75 villages in India, six months before a microfinance institution began offering their products to these villagers. The combination of the original survey, information about first-informed villagers and results of the subsequent participation made it possible to draw conclusions on the diffusion of information.</p>
+
+<p>If you are interested in the study you can get the paper here:
+<a href="http://science.sciencemag.org/content/341/6144/1236498">http://science.sciencemag.org/content/341/6144/1236498</a></p>
+
+<p>[1] Banerjee, Abhijit, et al. &quot;The diffusion of microfinance.&quot; <em>Science</em> (2013).</p>
+
+<h3 id="toc_2">Data</h3>
+
+<ul>
+<li><strong>Household characteristics</strong> has demographic information about a household&#39;s home (own or rent, electricity, number of rooms, latrine type, etc.)</li>
+<li>Individual characteristics with detailed demographic information (age, language skills, occupation, etc.) were collected for some households</li>
+<li>Extensive data about relationships between these households</li>
+</ul>
+
+<p><em>In this assignment you will only work with the household characteristics dataset. You will have to use the following columns:</em></p>
+
+<ul>
+<li><code>survey</code> ... this variable was generated by us. Imagine it is the date when the household was surveyed.</li>
+<li><code>ownrent</code> ... if the home is owned, rented or given by government</li>
+<li><code>hohreligion</code> ... religion they belong</li>
+<li><code>electricity</code> ... whether the household has private/government/no electricity </li>
+<li><code>latrine</code> ... type of latrine (own/common/no) in the household</li>
+</ul>
+
+<h3 id="toc_3">Template</h3>
+
+<p>To help you get started with this homework assignment we have prepared a template that you can use. It is based on the front-end framework <em>Bootstrap</em> and it includes the JS libraries: <em>D3</em> and <em>jQuery</em>. Furthermore, a CSV file (<code>household_charateristics.csv</code>) is stored in the folder <em>&quot;data&quot;</em>. Of course, you can also start with an empty project and just copy the dataset.</p>
+
+<p><a href="http://www.cs171.org/2016/assets/scripts/hw6/template9273.zip">http://www.cs171.org/2016/assets/scripts/hw6/template9273.zip</a></p>
+
+<h3 id="toc_4">Overview</h3>
+
+<p>In the last lab you have learned how to link multiple views with each other, how to make visualization components reusable and how to use D3&#39;s brush component to filter the data.</p>
+
+<p>You should now apply what you have learned to create an interactive visualization with multiple views. Your final webpage should contain an area chart and several barcharts. Whenever the user changes the selection - via the brushing component in the area chart - all the bar charts should be updated accordingly.</p>
+
+<p><em>You can use the following mockup as a guide:</em></p>
+
+<p><img src="cs171-hw6-preview.gif?raw=true" alt="Homework 6 Preview" title="Homework 6 Preview"></p>
+
+<p><strong>Implementation checklist:</strong></p>
+
+<ul>
+<li>Create a 2-column layout in HTML &amp; CSS</li>
+<li>Implement visualizations (area and bar charts) as reusable components</li>
+<li>Use D3&#39;s brushing component to engage users and help them to filter data efficiently</li>
+<li>Link all the bar charts to the selected region of the brushing component</li>
+<li>Use transitions to make changes smoother</li>
+<li>Make your webpage/visualization responsive for different screen sizes </li>
+</ul>
+
+<h3 id="toc_5">Implementation</h3>
+
+<ol>
+<li><p><strong>Download the resources</strong></p>
+
+<p>Please download the template and the CSV file as a ZIP file: <a href="http://www.cs171.org/2016/assets/scripts/hw6/template9273.zip">http://www.cs171.org/2016/assets/scripts/hw6/template9273.zip</a></p></li>
+<li><p><strong>Familiarize yourself with the provided framework and the dataset</strong></p></li>
+<li><p><strong>Specifiy the webpage layout</strong></p>
+
+<p>You should create a 2-column layout in HTML and CSS. The area chart with the time period filter should be in the left column and the bar charts should be in the right column. We have included <em>Bootstrap</em> in the template so that you can complete this task quickly.</p></li>
+<li><p><strong>Load the CSV data and create the bar chart objects</strong></p>
+
+<p>We have already prepared a few code snippets to help you get started. Open the files <code>main.js</code> and <code>barchart.js</code> and get an overview.</p>
+
+<p>Similar to our last lab you have to implement visualizations as reusable components. This is especially important if you want to use the same visualization type (e.g., bar charts) several times on the same webpage with different data in each visualization (e.g., bar chart).</p>
+
+<p>The goal is to implement a generic bar chart object in <code>barchart.js</code> that can be used in <code>main.js</code> multiple times for these variables:</p>
+
+<ul>
+<li> <code>ownrent</code></li>
+<li> <code>electricity</code></li>
+<li> <code>latrine</code></li>
+<li> <code>hohreligion</code></li>
+</ul>
+
+<p>Example: You can find the values <em>Christianity</em>, <em>Hinduism</em> and <em>Islam</em> in the column <code>hohreligion</code>. One of your bar charts should show how many households belong to which religion.</p>
+
+<p><img src="cs171-hw6-barchart.png?raw=true" alt="Homework 6 Barchart" title="Homework 6 Barchart"></p>
+
+<p>Each bar chart should contain a title, a y-axis and labels for each bar.</p>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<h4 id="toc_6">Grouping data with d3.nest</h4>
+
+<p>D3 includes a powerful functionality to transform a flat data structure into a nested one. With <code>d3.nest()</code> you can group data by a categorical variable. If you work with temporal data you can combine all values for each day. We would highly recommend you to use this function to prepare the data for your bar charts.</p>
+
+<p><strong>Example</strong></p>
+
+<p><em>CSV-Data:</em></p>
+
+<pre><code class="language-none">student,city
+John,Boston
+Sarah,Boston
+Stacy,New York
+Anna,London
+Mike,Boston</code></pre>
+
+<p>First, let&#39;s use <em>d3.nest()</em> to group the rows by <em>city</em>:</p>
+
+<pre><code class="language-javascript">var studentsByCity = d3.nest()
+    .key(function(d) { return d.city; })
+    .entries(students);</code></pre>
+
+<p>As a result we get a nested structure:</p>
+
+<pre><code class="language-javascript">studentsByCity = [
+    { key: &quot;Boston&quot;, values: [
+        {student: &quot;John&quot;, city: &quot;Boston&quot; },
+        {student: &quot;Sarah&quot;, city: &quot;Boston&quot; },
+        {student: &quot;Mike&quot;, city: &quot;Boston&quot; }
+    ]},
+    { key: &quot;New York&quot;, values: [{student: &quot;Stacy&quot;, city: &quot;New York&quot;}] },
+    { key: &quot;London&quot;, values: [{student: &quot;Anna&quot;, city: &quot;London&quot;}] }
+];</code></pre>
+
+<p>We can further extend the d3.nest() function with <code>rollup</code> to aggregate the values for each group (e.g. sum, count, avg):</p>
+
+<pre><code class="language-javascript">var countStudentsByCity = d3.nest()
+    .key(function(d) { return d.city; })
+    .rollup(function(leaves) { return leaves.length; })
+    .entries(students);</code></pre>
+
+<p>This example gives us the number of students for each city:</p>
+
+<pre><code class="language-javascript">countStudentsByCity = [
+    { key: &quot;Boston&quot;, values: 3 },
+    { key: &quot;New York&quot;, values: 1 },
+    { key: &quot;London&quot;, values: 1 }
+];</code></pre>
+
+<p>You can read more about D3&#39;s nest functionalities and see some examples here:</p>
+
+<ul>
+<li><a href="http://bl.ocks.org/phoebebright/raw/3176159/">http://bl.ocks.org/phoebebright/raw/3176159/</a></li>
+<li><a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Arrays.md#d3_nest">https://github.com/d3/d3-3.x-api-reference/blob/master/Arrays.md#d3_nest</a></li>
+</ul>
+
+<hr>
+
+<p>&nbsp;</p></li>
+<li><p><strong>Implement the area chart</strong></p>
+
+<p>The area chart should display the number of surveys that were conducted over time. Furthermore, it should enable the user to specify a desired time range which automatically influences the bar charts in the right column.</p>
+
+<ol>
+<li>Create a new area chart object</li>
+<li>Define the SVG drawing area and the axes</li>
+<li>Prepare the data in the <code>wrangleData()</code> function. You can use d3.nest() again to count the number of surveys for each day. Make sure that you have the date variable stored as a date object and that the days are in correct order.</li>
+<li>Initialize D3&#39;s path generator for the area (<code>d3.svg.area()</code>)</li>
+<li>Call the area function and draw the actual paths</li>
+</ol></li>
+<li><p><strong>Use a brushing component in your area chart as a time period filter</strong></p>
+
+<p>The idea of brushing is to allow the user to select a subset of data interactively. Changes are automatically reflected in the linked visualizations, which are the bar charts in our case.</p>
+
+<p>Initialize the brushing component (<code>d3.svg.brush()</code>) and append it to the drawing area. Whenever the user changes the selection, call the <code>brushed()</code> function in <code>main.js</code>.</p></li>
+<li><p><strong>Implement the <code>brushed()</code> function and connect it with the bar charts</strong></p>
+
+<p>Get the range of the selected region (start and end date) in the area chart and call the <code>selectionChanged()</code> function in all the linked bar charts.</p></li>
+<li><p><strong>Use transitions to make changes smoother</strong></p>
+
+<p>Integrate D3&#39;s transitions into your bar charts (rectangles, labels).</p></li>
+<li><p><strong>Make your webpage and your visualizations responsive</strong></p>
+
+<p>Until now you have probably specified a fixed size for your SVG drawing areas every time. This is more convenient but actually far from ideal if you want to address users with different screen resolutions, which is our goal in most scenarios. </p>
+
+<p>There are different ways of implementing more flexible visualizations. In our case, Bootstrap - a responsive, mobile-friendly front-end framework - makes it already very easy to create a responsive webpage, just by using the <em>fluid grid system</em> (<a href="http://getbootstrap.com/css/#grid">http://getbootstrap.com/css/#grid</a>). You can use the grid classes to set up the page layout and to define at which point columns should wrap onto a new line.</p>
+
+<p>In addition you can create your own CSS media queries to make individual adjustments (e.g. font size, spacings, ...) for different screen sizes. You can read more about it here: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">https://developer.mozilla.org/en-US/docs/Web/CSS/Media<em>Queries/Using</em>media_queries</a></p>
+
+<p>You should now be able to display the area and bar charts below each other if the screen is not wide enough. But this doesn&#39;t solve the problem of the fixed-sized SVG areas, so you need one further extension. Whenever you initialize a new visualization you can check the width of the parent container and set the SVG width accordingly. The height can remain unchanged.</p>
+
+<p><em>Example for getting the width of a div element with jQuery:</em></p>
+
+<pre><code class="language-javascript">$(&quot;#chart-area&quot;).width()</code></pre>
+
+<p>Try this concept in your current webpage and make the visualizations more flexible!</p></li>
+<li><p><strong>Create a proper style for your webpage</strong></p>
+
+<p>Maintain good spacing between UI components, overall layout, font size, color scheme, etc.</p></li>
+</ol>
+
+<h2 id="toc_7">2) Design (1.5 points)</h2>
+
+<p>TODO</p>
+
+<h2 id="toc_8">3) Bonus Task (0.5 points)</h2>
+
+<p>Please make sure to finish al previous tasks before you start with the bonus activity. Extra credit is only given if the rest of the homework has been completed. This task is intended for those of you who have more experience with web development and JS.</p>
+
+<p>You have implemented multiple visualization components and made them responsive to different screen sizes so far. If you have followed our concept you may have noticed that the layout will break if you resize your browser window.</p>
+
+<p>Think about an efficient way how to handle this and implement it in your current webpage. </p>
+
+<h2 id="toc_9">4) Submit Homework on Vocareum</h2>
+
+<p>Submission instructions:</p>
+
+<ol>
+<li><p><strong>Upload your D3 homework under &#39;work/hw/implementation&#39;.</strong> 
+(Depending on your project structure you might have to create new directories in Vocareum. You can upload multiple files at once into the same directory or directly upload your zipped directory tree.)</p></li>
+<li><p><strong>Upload your design part as a PDF file under &#39;work/hw/design&#39;.</strong> (Make sure to keep the overall size of your submission under 5MB! Sketches don&#39;t have to be in the highest resolution, but should still be readable.)</p></li>
+<li><p><strong>Upload the completed lab (activity I, II, and III) under &#39;work/lab&#39;</strong></p></li>
+</ol>
+
+<!-- [DCE]
+4. **For DCE students, upload your lecture activities under 'work/lecture'**
+-->
+
+<p>For your final submission you will have to:</p>
+
+<ul>
+<li>Click the &#39;submit&#39; button</li>
+<li>Double-check your &#39;latest submission&#39;, check that all the visualizations are working as expected. You can run them directly in Vocareum and look at them in a new window</li>
+<li>Upload a teaser image of your homework (under &#39;Action&#39;/&#39;upload gallery thumbnail&#39;. This teaser will show up in the classes gallery and should motivate other students to look at your solution in more detail.</li>
+</ul>
+
+
+</body>
+
+</html>
