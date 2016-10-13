@@ -308,597 +308,556 @@ sup {
 
 <p>&nbsp;</p>
 
+<p><img src="cs171-lab7-banner.png?raw=true" alt="Lab 7" title="Lab 7"></p>
+
 <h1 id="toc_0">Lab 7</h1>
 
 <h3 id="toc_1">Learning Objectives</h3>
 
 <ul>
-<li>Know how to <em>link</em> multiple views with each other</li>
-<li>Understand the concept behind D3&rsquo;s brush component</li>
-<li>Understand the JS keyword <em>this</em> and the scope of execution</li>
-<li>Get a better understanding of <em>system design</em> and <em>code structure</em></li>
+<li>Understand the concept of D3 layouts and be able to use D3 layouts for advanced visualizations (e.g., graphs, trees or stacked area charts)</li>
+<li>Know how to work with the GeoJSON and TopoJSON file format</li>
+<li>Have a basic understanding of geographical projections</li>
+<li>Know how to load multiple files sequential and parallel</li>
+<li>Know how to convert geodata to screen coordinates with D3 in order to create interactive maps</li>
 </ul>
 
 <h3 id="toc_2">Prerequisites</h3>
 
 <ul>
-<li>You have read and <strong>programmed</strong> along with:
-
-<ul>
-<li><a href="http://www.cs171.org/2016/assets/material/cs171-lab7-reading.pdf">http://www.cs171.org/2016/assets/material/cs171-lab7-reading.pdf</a></li>
-<li>The four chapters about JS objects at <a href="http://www.w3schools.com/js/js_object_definition.asp">http://www.w3schools.com/js/js<em>object</em>definition.asp</a> (repetition of JS objects with more examples)</li>
-<li><em>[Optional]</em> <a href="https://software.intel.com/en-us/xdk/blog/javascript-this-that-and-the-other-thing">Scope and <em>this</em> in JavaScript</a></li>
-</ul></li>
-<li>You have successfully filled in the pre-quiz for the 7th lab.</li>
+<li>You have read and <strong>programmed</strong> along with chapter 11 (p. 201-214) and 12 (p. 217-229) in <em>D3 - Interactive Data Visualization for the Web</em>.</li>
+<li>Optional reading: p. 230-245 in <em>D3 - Interactive Data Visualization for the Web</em>.</li>
+<li>You have completed the pre-quiz for the 7th lab.</li>
 </ul>
 
-<p>In the last weeks you have learned the fundamentals of the JS library D3 and you have gained some implementation expertise during previous labs and homeworks. You should be comfortable with the major concepts and be able to implement common charts as well as interactive and more advanced visualizations with D3.</p>
+<p>In this lab you will learn how to use D3 layout methods to implement more complex visualizations (as compared to scatterplots and simple bar charts). In the second part of the lab you will learn how to map and display geographical data. </p>
 
-<p>In this lab you will work on a new problem set. It is continuous, a bit longer than the usual activities, and it will give you a better understanding of <em>linked views</em> and <em>system design</em>.</p>
+<p>This lab covers two different concepts (layouts and maps) that are vital for your final projects. The lab is longer than usual, but you do not have to complete a separate homework this week. The homework consists of just submitting your completed lab!</p>
 
-<p>We will provide a template and many additional code snippets so that your main tasks will focus on the structure and the event handling components. However, please make sure that you understand the code in the provided templates, and take your time to read through it!</p>
-
-<h2 id="toc_3">Data</h2>
-
-<p><strong>Purchases for Household Supplies in the UK</strong></p>
-
-<p>In this lab you will work with a dataset that contains detailed annual statistics on family food and drink purchases in the UK.</p>
-
-<p>We have already extracted the major information and created a JSON file with data between 1974 and 2013.</p>
-
-<p>The JSON file is divided into two major arrays with objects: </p>
-
-<ul>
-<li><code>years</code> contain the average weekly spending on food and drinks in pence (GBX) per person</li>
-<li><code>layers</code> also contain the average weekly spending, but separated into 21 different <em>food</em> categories</li>
-</ul>
-
-<p><em>JSON Structure:</em></p>
-
-<pre><code class="language-javascript">{
-    &quot;years&quot;: [
-        { &quot;Year&quot;: 1974, &quot;Expenditures&quot;: 331.437 },
-        ...
-        { &quot;Year&quot;: 2013, &quot;Expenditures&quot;: 2986.373 }
-    ],
-    &quot;layers&quot;: [
-        {
-            &quot;Year&quot;: 1974,
-            &quot;Milk and milk products excluding cheese&quot;: 29.228,
-            &quot;Cheese&quot;: 8.694,
-            &quot;Carcase meat&quot;: 44.479,
-            &quot;Non-carcase meat and meat products&quot;: 55.915,
-            &quot;Fish&quot;: 13.652,
-            &quot;Eggs&quot;: 11.429,
-            &quot;Fats&quot;: 14.537,
-            ....
-        },
-        {
-            &quot;Year&quot;: 1975,
-            &quot;Milk and milk products excluding cheese&quot;: 37.239,
-            &quot;Cheese&quot;: 10.377,
-            ...
-        },
-        ...
-    ]
-}
-</code></pre>
-
-<p>The data is part of the annual <em>Family Food Report</em>, it is published through UK&rsquo;s open government platform <em>gov.uk</em> and is updated every year. However, the dataset is not completely accurate and there is a lack of data in some areas. For example, alcoholic and soft drink figures appear for the first time in 1992, but we can assume that people have consumed these products before.</p>
-
-<p><em>Source: <a href="https://www.gov.uk/government/statistical-data-sets/family-food-datasets">https://www.gov.uk/government/statistical-data-sets/family-food-datasets</a></em></p>
-
-<h2 id="toc_4">Template</h2>
-
-<p>This lab will bring you a step closer to implementing more complex visualizations which makes it necessary to adapt the way how we organize our application. However, the provided template is quite similar to previous labs and homeworks. It is based on Bootstrap and it contains a basic HTML structure, some CSS rules and pieces of JS code.</p>
-
-<p>During this lab we will introduce a concept which will help you to structure a D3 project with multiple visualizations. For this reason, we will also describe the file structure in more detail. The main change is that each visualization is a separate JS object and the implementation of the different visualizations is moved into separate JS files.</p>
-
-<h2 id="toc_5">Preview</h2>
-
-<p><em>After implementing all tasks your visualization should look like this:</em></p>
-
-<p><img src="cs171-lab7-preview.gif?raw=true" alt="Lab 7 - Preview" title="Lab 7 - Preview"></p>
-
-<h2 id="toc_6">Conceptual and technical background</h2>
-
-<p>Thinking about the structure of your project early on can save you a lot of time and will make your implementation more robust, extensible and reusable.</p>
-
-<h3 id="toc_7">Files and folders</h3>
-
-<p><em>The provided template is structured as follows:</em></p>
-
-<ul>
-<li><strong>index.html</strong> is the default file that appears when a user invokes your webpage. It should include a basic structure and placeholders for your visualizations. </li>
-<li><strong>/js</strong> contains the JS files for the visualization and external libraries (can be further sub-divided)</li>
-<li><strong>/data</strong> contains the data files</li>
-<li><strong>/css</strong> contains the stylesheet files</li>
-</ul>
-
-<h3 id="toc_8">Divide and conquer</h3>
-
-<p>You should always try to split a complex problem into smaller, easier-to-tackle sub-problems. Each sub-problem will be solved independently and afterwards integrated into the final system.</p>
-
-<p><strong>Visualizations should be organized and structured into individual code components</strong> and, if possible, implemented as flexible and reusable components. Therefore, we will organize each visualization as an object.</p>
-
-<p>The visualization specific implementation should be done in object functions and should follow this pipeline:</p>
-
-<p><img src="cs171-vis-object.png?raw=true" alt="Vis object" title="Vis Object"></p>
-
-<h3 id="toc_9">Visualizations as objects</h3>
-
-<p><em>The following example will give you a better understanding of these steps.</em></p>
-
-<p>We can create an instance of an object by using the keyword <code>new</code>. The object constructor should be used to define properties:</p>
-
-<pre><code class="language-javascript">// Create an object instance
-var barchart = new BarChart(&quot;bar-chart-container&quot;, data);</code></pre>
-
-<p>We can define properties within an object by using the keyword <code>this</code>:</p>
-
-<pre><code class="language-javascript">// Object constructor function
-BarChart = function(_parentElement, _data){
-    this.parentElement = _parentElement;
-    this.data = _data;
-
-    // Call an object function
-    this.initVis();
-}</code></pre>
-
-<p>We will implement methods as <code>Object.prototype</code> properties:</p>
-
-<pre><code class="language-javascript">BarChart.prototype.initVis = function(){
-    ...
-}</code></pre>
+<h2 id="toc_3">D3 Layouts</h2>
 
 <blockquote>
-<p><strong>Object.prototype</strong></p>
-
-<ul>
-<li>All JavaScript objects inherit their properties and methods from their <em>prototype</em></li>
-<li>The methods are in the execution context of the object</li>
-<li>The object property <code>prototype</code> allows you to add new properties/methods to an existing prototype</li>
-</ul>
+<p>The D3 layout methods have no direct visual output. Rather, D3 layouts take data that you provide and re-map or otherwise transform it, thereby generating new data that is more convenient for a specific task. (Scott Murray)</p>
 </blockquote>
 
-<p>The variables should be stored in the visualization object by using the <code>this</code> keyword. We would recommend to create another variable (for example <code>vis</code> or <code>_this</code>) to store the <em>this</em>-accessor. Otherwise the scope of <code>this</code> will change and it will cause undesirable side-effects:</p>
+<p>D3 offers a number of different layouts, each with distinct characteristics. Layouts are invoked using <em>d3.layout</em>:</p>
 
-<pre><code class="language-javascript">BarChart.prototype.initVis = function(){
-    var vis = this;
-    
-    vis.margin = { top: 20, right: 0, bottom: 60, left: 60 };
+<p><img src="cs171-d3-layouts.png?raw=true" alt="D3 Layouts" title="D3 Layouts"></p>
 
-    vis.width = 800 - vis.margin.left - vis.margin.right,
-    vis.height = 400 - vis.margin.top - vis.margin.bottom;
-  
-    vis.svg = d3.select(&quot;#&quot; + vis.parentElement).append(&quot;svg&quot;)
-        .attr(&quot;width&quot;, vis.width + vis.margin.left + vis.margin.right)
-        ...
-}</code></pre>
+<p>Each layout may have distinct features not shared by other layouts, so make sure to consult the D3 documentation (<a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Layouts.md">https://github.com/d3/d3-3.x-api-reference/blob/master/Layouts.md</a>) for implementation details. You will learn more about a few selected layouts in this lab.</p>
 
-<p>At the end of <code>initVis()</code> we call the function <code>wrangleData()</code> to follow our implementation pipeline:</p>
+<h3 id="toc_4">Pie Layout</h3>
 
-<pre><code class="language-javascript">BarChart.prototype.initVis = function(){
-    ...
-    
-    vis.wrangleData();
-}</code></pre>
+<p>The <strong><em>d3.layout.pie()</em></strong> methods can be used to compute the start and end angles of arcs that comprise a pie or donut chart.</p>
 
-<p>It is quite usual that you have to process and prepare data (filter, aggregate, &hellip;) for a visualization whenever the data changes or after a user interaction. The function <code>wrangleData()</code> should take the raw data and modify it in a way that it can be mapped to the screen afterwards (<code>updateVis()</code>):</p>
+<p><em>Example:</em></p>
 
-<pre><code class="language-javascript">BarChart.prototype.wrangleData = function(){
-    var vis = this;
+<pre><code class="language-javascript">// Initialize data
+var data = [45,30,10];
 
-    // Filter example
-    vis.displayData = vis.data.filter(function(d){
-        return d.year &gt; 2000;
-    });
-    
-    // Draw visualization
-    vis.updateVis();
-}</code></pre>
+// Define a default pie layout
+var pie = d3.layout.pie();
 
-<p>You should already be familiar with the last part. The function <code>updateVis()</code> contains the D3 update pattern (<em>enter, update, exit</em>). We use the variable <code>displayData</code> that we have created in <code>wrangleData()</code> before:</p>
+// Call the pie function
+pie(data);</code></pre>
 
-<pre><code class="language-javascript">BarChart.prototype.updateVis = function(){
-    var vis = this;
+<p><em>Console Output:</em></p>
 
-    // Update domains
-    vis.y.domain([0, d3.max(vis.displayData, function(d) { return d.price; })]);
-    ...
-    
-    // Draw the actual bar chart
-    var bar = svg.selectAll(&quot;.bar&quot;)
-      .data(data);
-  
-    bar.enter().append(&quot;rect&quot;)
-        .attr(&quot;class&quot;, &quot;bar&quot;)
-        ...
-}
-</code></pre>
+<p><img src="cs171-d3-pie-console-output.png?raw=true" alt="D3 Pie Layout Generator" title="D3 Pie Layout Generator"></p>
 
-<h3 id="toc_10">Project overview</h3>
+<p>The D3 pie layout takes a dataset and creates an array of objects. Each of those objects contains a value from the original dataset, along with additional data, like <em>startAngle</em> and <em>endAngle</em>.</p>
 
-<p>The previous example showed the implementation of a bar chart in an object-oriented way. To follow the main divide-and-conquer concept (i.e., splitting up a complex problem into various sub-tasks) we should also apply this to the file structure of our project.</p>
+<p>That&#39;s all there is to the D3 pie layout. It has no visual output, but transforms the input data in a way that it is much more convenient for drawing a pie chart. </p>
 
-<p><img src="cs171-lab7-overview.png?raw=true" alt="Project Overview" title="Project Overview"></p>
+<p>Now, we&#39;ll draw a pie chart. We use the function <strong><em>d3.svg.arc()</em></strong> to generate the paths for the pie segments. Take a few minutes to look through the following code example:</p>
 
-<p>We separate the visualization specific code into external files and create object instances in the file <code>main.js</code>, which is the entry point of our application. For example, if we want to use the same data for multiple charts we have to load the data only once in <em>main.js</em>. Thereby, our code stays clean and understandable. </p>
+<pre><code class="language-javascript">// SVG drawing area
+var width = 300,
+    height = 300;
 
-<p>This methodology will become very helpful for developing larger systems and more sophisticated interaction mechanisms.</p>
+// Position the pie chart (currently only a placeholder) in the middle of the SVG area
+var svg = d3.select(&quot;body&quot;).append(&quot;svg&quot;)
+    .attr(&quot;width&quot;, width)
+    .attr(&quot;height&quot;, height)
+  .append(&quot;g&quot;)
+    .attr(&quot;transform&quot;, &quot;translate(&quot; + width / 2 + &quot;,&quot; + height / 2 + &quot;)&quot;);
 
-<h3 id="toc_11">Implementation</h3>
+// Initialize the data
+var data = [45,30,10];
 
-<h4 id="toc_12">Activity I - Load data and create an instance of the stacked area chart</h4>
+// Define a default pie layout
+var pie = d3.layout.pie();
 
-<p>For all implementation parts in this lab, you should keep in mind that visualizations are implemented as objects. So if you want to store variables that belong to the visualization, make sure that you store it in the correct context (e.g., <code>vis.my_variable</code>). The same goes for accessing object parameters. If you get an error that a variable is undefined, make sure that you access it correctly! </p>
+// Ordinal color scale (10 default colors)
+var color = d3.scale.category10();
 
-<p>For simplicity reasons, in the example code below, we have not always included the object oriented way of accessing variables - you will have to adjust that code to your overall code structure.</p>
+// Pie chart settings
+var outerRadius = width / 2;
+var innerRadius = 0;      // Relevant for donut charts
+
+// Path generator for the pie segments
+var arc = d3.svg.arc()
+    .innerRadius(innerRadius)
+    .outerRadius(outerRadius);
+
+// Append a group for each pie segment
+var g = svg.selectAll(&quot;.arc&quot;)
+    .data(pie(data))
+    .enter()
+    .append(&quot;g&quot;)
+    .attr(&quot;class&quot;, &quot;arc&quot;);
+
+// Use the path generator to draw the arcs
+g.append(&quot;path&quot;)
+    .attr(&quot;d&quot;, arc)
+    .style(&quot;fill&quot;, function(d, index) { return color(index); });</code></pre>
+
+<p><em>Result:</em></p>
+
+<p><img src="cs171-d3-pie-layout.png?raw=true" alt="D3 Pie Layout" title="D3 Pie Layout"></p>
+
+<p>The screenshot shows text labels for each pie segment that highlight the data values. These labels are not generated automatically, but are easy to add:</p>
+
+<pre><code class="language-javascript">// Position the labels by using arc.centroid(), which calculates the center for each pie chart segment
+g.append(&quot;text&quot;)
+    .attr(&quot;transform&quot;, function(d) { return &quot;translate(&quot; + arc.centroid(d) + &quot;)&quot;; })
+    .attr(&quot;text-anchor&quot;, &quot;middle&quot;)
+    .attr(&quot;fill&quot;, &quot;#fff&quot;)
+    .text(function(d) { return d.value; });</code></pre>
+
+<blockquote>
+<p><strong>Important Notice</strong></p>
+
+<p>We have used a pie chart as an example because it is one of the most popular chart types and it demonstrates the concept of D3 layouts very well. However, it is also very important to mention that pie charts are often not the best way to represent data! Humans are not very good at comparing slices of a circle, and pie charts easily lead to misunderstandings or give false impressions of the data. 
+Usually, other visualization methods are more effective, so most of the time you shouldn&#39;t use pie charts. If you do, make sure to compare only a very low number of elements within these charts. </p>
+</blockquote>
+
+<h3 id="toc_5">Force Layouts</h3>
+
+<p>The force layout or force-directed layout is typically used to create network graphs, or also called node-link-diagrams. It consists of nodes and edges (links connecting the nodes) and helps us to visualize networks and the relationships between objects (e.g., social networks, relationships between politicians, protein–protein interaction networks, business relations, ...).</p>
+
+<p>The name force-directed layout comes from the fact that these layouts use simulations of physical forces to arrange elements on the screen. The goal is to reduce the number of crossing edges, so that is easy for the user to analyze the whole network.</p>
+
+<p><a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Force-Layout.md">https://github.com/d3/d3-3.x-api-reference/blob/master/Force-Layout.md</a></p>
+
+<p><img src="cs171-d3-force.png?raw=true" alt="D3 Force Layout" title="D3 Force Layout"></p>
+
+<hr>
+
+<h4 id="toc_6">Activity I</h4>
+
+<p>In this activity you will use a force layout to create connections between the world&#39;s busiest airports. The connections are randomly generated and give an example of a simple <em>network structure</em>.</p>
+
+<p><em>Preview:</em> </p>
+
+<p><img src="cs171-activity1-preview.png?raw=true" alt="Activity 1 - Preview" title="Activity 1 - Preview"></p>
 
 <ol>
 <li><p><strong>Download the template</strong></p>
 
 <p><a href="http://www.cs171.org/2016/assets/scripts/lab7/template.zip">http://www.cs171.org/2016/assets/scripts/lab7/template.zip</a></p>
 
-<p>Check the <code>index.html</code> file and get a quick overview of the template.</p>
+<p>The provided template includes</p>
 
 <ul>
-<li>The file <code>js/main.js</code> is the entry point of our application. It contains general scripts (e.g., loading the data) and it should create instances of the visualizations</li>
-<li>The file <code>js/stackedAreaChart.js</code> contains the specific implementation of the stacked area chart (see bar chart example above)</li>
-</ul>
+<li>the data, which is already conveniently stored in JSON format (<code>data/airports.json</code>)</li>
+<li>the HTML file <code>index.html</code> with a basic document structure</li>
+<li>and the JS file <code>js/activity1.js</code></li>
+</ul></li>
+<li><p><strong>Analyze the dataset</strong></p>
 
-<p>The data loading script is already complete and we have also created the file <em>stackedAreaChart.js</em> with boilerplate code.</p></li>
-<li><p><strong>Create an instance of <code>StackedAreaChart</code></strong></p>
+<p>The file <code>activity1.js</code> already creates an SVG area and loads the dataset.</p>
 
-<p>After the data is loaded completely, the function <code>createVis()</code> in <em>main.js</em> is getting called. We will use this function to create instances of the visualizations.</p>
+<p><em>Create a debug message and analyze the</em> <strong><em>airport data</em></strong> <em>in the web console.</em></p></li>
+<li><p><strong>Implement the force-directed graph</strong></p>
 
-<p>→ Create an instance of <code>StackedAreaChart</code> and use the constructor to specify the properties: <strong><em>parentElement</em></strong> (&ldquo;stacked-area-chart&rdquo;) and <strong><em>data</em></strong> (&ldquo;allData.layers&rdquo;).</p>
-
-<p>→ Open the webpage in your browser! If everything worked, you should see the loaded data in the web console and an SVG area with placeholders for the axes in the web inspector. If you get an error message in the web console you should fix it before going further.</p></li>
-</ol>
-
-<hr>
-
-<h3 id="toc_13">Stack Layout</h3>
-
-<p>As you have seen in the preview at the beginning of this lab, you have to create a stacked area chart to visualize the different categories of UK&rsquo;s household expenditures. Instead of calculating the coordinates of these layers manually you can use the <em>d3.layout.stack()</em> to generate a baseline value for each datum, so you can &ldquo;stack&rdquo; layers of data on top of each other.</p>
-
-<p>And as a reminder from the previous lab: <em>The D3 layout methods have no direct visual output. They take data that you provide and re-map or otherwise transform it, thereby generating new data that is more convenient for a specific task.</em></p>
-
-<p><em>Example:</em></p>
-
-<pre><code class="language-javascript">// Example data
-var data = [
-    {
-        &quot;name&quot;: &quot;Milk&quot;,
-        &quot;values&quot;: [
-            { &quot;Year&quot;: 2015, &quot;y&quot;: 10 },
-            { &quot;Year&quot;: 2016, &quot;y&quot;: 12 },
-            { &quot;Year&quot;: 2017, &quot;y&quot;: 11 }
-        ]
-    },
-    {
-        &quot;name&quot;: &quot;Water&quot;,
-        &quot;values&quot;: [
-            { &quot;Year&quot;: 2015, &quot;y&quot;: 4 },
-            { &quot;Year&quot;: 2016, &quot;y&quot;: 6 },
-            { &quot;Year&quot;: 2017, &quot;y&quot;: 7 }
-        ]
-    }
-];
-
-// Initialize layout function
-// with the &#39;values&#39; accessor due to the multi-dimensional array
-var stack = d3.layout.stack()
-    .values(function(d) { return d.values; });
-
-// Call layout function on the dataset
-stack(data);
-
-console.log(data);</code></pre>
-
-<p><em>Result:</em></p>
-
-<p><img src="cs171-stacked-data.png?raw=true" alt="Stacked Data" title="Stacked Data"></p>
-
-<p>In the stacked data, each object has been given a y0 value. This is the <em>baseline</em> value. Notice that the y0 baseline value is equal to the sum of all the y values in the preceding categories. The category <em>&ldquo;Milk&rdquo;</em> is our first category and starts at the bottom, which means that the y0 values are zero.</p>
-
-<h3 id="toc_14">Stacked Area</h3>
-
-<p>To stack these categories visually, we can create <em>stacked bar charts</em> or <em>stacked area charts</em>. In this lab you will create a stacked area chart. But it should be easy to adopt the workflow to a bar chart.</p>
-
-<p>You have already created an area chart (see <em>HW4 - Za&#39;atari Refugee Camp</em>) and a line chart (see <em>HW5 - FIFA World Cup</em>) and you should know how to use the D3 path generator. The built-in <code>d3.svg.area()</code> is ideally suited for the stacked area chart too. It just needs some slight modifications of the <code>y0()</code> and <code>y1()</code> parameters to consider the different baselines:</p>
-
-<pre><code class="language-javascript">// Basic: area
-var area = d3.svg.area()
-    .interpolate(&quot;cardinal&quot;)
-    .x(function(d) { return x(d.Year); })
-    .y0(height)
-    .y1(function(d) { return y(d.y); });
-
-// Extended: stacked area
-var area = d3.svg.area()
-    .interpolate(&quot;cardinal&quot;)
-    .x(function(d) { return x(d.Year); })
-    .y0(function(d) { return y(d.y0); })
-    .y1(function(d) { return y(d.y0 + d.y); });</code></pre>
-
-<p><em>The cardinal interpolation is optional and can be used to create smooth shapes.</em></p>
-
-<hr>
-
-<h4 id="toc_15">Activity II - Create a stacked area chart</h4>
-
-<p><em>The file <code>stackedAreaChart.js</code> contains some functions with code snippets (append SVG, initialize scales and axes, etc). Try to get a quick overview and extend the implementation by running trough the following steps:</em></p>
-
-<ol>
-<li><p><strong>Stack the data</strong></p>
-
-<p><em>This task should be done only once, so we would recommend an implementation in the <code>initVis()</code> function. If you want to filter the data, you can do this afterwards in the <code>wrangleData()</code> function directly on the &ldquo;stacked&rdquo; data.</em></p>
-
-<p>D3 Wiki: <a href="https://github.com/mbostock/d3/wiki/Stack-Layout">https://github.com/mbostock/d3/wiki/Stack-Layout</a></p>
-
-<p>It might seem pretty easy to &ldquo;stack&rdquo; the data with the built-in layout method <code>d3.layout.stack</code> (like in the example above) but for this to work, the raw data must be in a special format. You can compare the output in the web console with the <em>&ldquo;Milk and water&rdquo;</em>-example above and you will notice the difference.</p>
-
-<p>Therefore, our first step is to transpose the loaded data and rearrange it in an array of arrays (do this directly after you init the D3 stack layout, but before you call the layout function on the dataset, all within <code>initVis()</code>):</p>
+<p><em>We have included a few comments in the JS file to show you the basic structure.</em></p>
 
 <ul>
-<li><p><strong><em>Get all categories</em></strong></p>
+<li><p>Initialize the <em>d3.layout.force()</em></p>
 
-<p>You can reuse <code>colorScale.domain()</code> to get all category names. In the file <em>main.js</em>, after the initial data preparation, we have used <em>d3.keys</em> to set the domain of the color scale. Take a look at that part in the code in <em>main.js</em> to make sure you understand what is going on, before getting the categories in <code>initVis()</code> as shown below.</p>
+<pre><code class="language-javascript">var force = d3.layout.force()
+    .size([width, height]);</code></pre></li>
+<li><p>Define the data separately, as <em>nodes</em> and <em>edges</em> (note that this is different than the procedure for the pie layout):</p>
 
-<pre><code class="language-javascript">var dataCategories = colorScale.domain();</code></pre></li>
-<li><p><strong><em>Transpose the data</em></strong></p>
+<pre><code class="language-javascript">force
+    .nodes(nodes)
+    .links(links);</code></pre></li>
+<li><p>Another important feature of force layouts is the positioning of elements. While the pie layout returns the angles of the segments that we can map to the screen by using the <em>d3.svg.arc()</em> function, we now <strong><em>have to tell the force layout to start running  simulations of the physical forces that hold the graph together.</em></strong> (This is why it&#39;s called a &quot;force&quot; layout.)</p>
 
-<p>Currently the dataset consists of JSON objects for each year with 21 food categories and the corresponding date. Now, you have to transpose the data into layers. Each layer contains a name and a <em>values</em> array with the category-specific data for each year.</p>
+<pre><code class="language-javascript">force.start();</code></pre>
 
-<pre><code class="language-javascript">// Required format
-var data = [
-    {
-        &quot;name&quot;: &quot;Milk&quot;,
-        &quot;values&quot;: [
-            { &quot;Year&quot;: 2015, &quot;y&quot;: 10 },
-            { &quot;Year&quot;: 2016, &quot;y&quot;: 12 }
-        ]
-    },
-    {
-        &quot;name&quot;: &quot;Water&quot;,
-    ...
-];</code></pre>
+<p>Each iteration of the force-layout is called a &quot;tick&quot;, similar to iterations in other physics simulations. With each tick, the force layout adjusts the x/y coordinates for each node and edge.</p></li>
+<li><p>Map the data (nodes and edges) to visual elements.</p>
 
-<p>You can rearrange the data by using the array <em>map()</em> function and iterating over all categories:</p>
+<p><em>Create an SVG circle for each node and an SVG line for each edge of the network. You should define the properties (class, radius, stroke, fill color etc.) as usual but without setting the x/y coordinates, since they are not calculated until the simulation has started.</em></p>
 
-<pre><code class="language-javascript">// Rearrange data into layers
-var transposedData = dataCategories.map(function(name) {
-    return {
-        name: name,
-        values: vis.data.map(function(d) {
-            return {Year: d.Year, y: d[name]};
-        })
-    };
+<pre><code class="language-javascript">// Draw nodes
+var node = svg.selectAll(&quot;.node&quot;)
+        .data(data.nodes)
+    .enter().append(&quot;circle&quot;)
+        .attr(&quot;class&quot;, &quot;node&quot;)
+        .attr(&quot;r&quot;, 5)
+        .attr(&quot;fill&quot;, &quot;green&quot;);
+
+// Draw edges
+...</code></pre></li>
+<li><p>D3 triggers a &quot;tick&quot; event at each iteration. You should take these x/y values and update the SVG elements in your DOM tree:</p>
+
+<pre><code class="language-javascript">force.on(&quot;tick&quot;, function() {
+
+    // Update node coordinates
+    node
+        .attr(&quot;cx&quot;, function(d) { return d.x; })
+        .attr(&quot;cy&quot;, function(d) { return d.y; });
+
+    // Update edge coordinates
+    ...  
 });</code></pre></li>
 </ul>
 
-<p>We are providing you with a lot of code here that is quite complex on first sight. Make sure that you think through each step of the data pre-processing and use debug statements until you understand what each <code>map()</code> is doing! (You could also use a bunch of for loops to rearrange the data, but using <code>map()</code> is more efficient and easier to read.)</p>
+<p>Run your code and check if you have successfully implemented the force layout!</p></li>
+<li><p><strong>Implement draggable nodes</strong></p>
+
+<p>The <em>force.drag()</em> method allows interactive dragging of nodes. Use this method in conjunction with the call operator on the nodes:</p>
+
+<pre><code class="language-javascript">node.call(force.drag);</code></pre></li>
+<li><p><strong>Change the fill color of the nodes</strong></p>
+
+<p>Draw airports in the Unites States <strong><em>blue</em></strong> and all other airports <strong><em>red</em></strong></p></li>
+<li><p><strong>Show airport names</strong></p>
+
+<p>After drawing the graph and setting different colors we can already recognize different aspects, but it would be helpful to identify the individual airports. You can either implement a click listener or show tooltips on <em>mouseover</em>.</p>
+
+<p>Instead of creating your own tooltips (as in previous labs/homeworks), you can use the browser&#39;s default tooltips by appending a <strong><em>title</em></strong> element.</p>
+
+<pre><code class="language-javascript">node.append(&quot;title&quot;)
+  .text(function(d) { return d.name; });</code></pre>
+
+<p>After including this code snippet, you can hover over a node to see the airport name.</p></li>
+<li><p><strong>Customize the D3 force layout</strong></p>
+
+<p>Until now we used the default parameters for the force layout. But D3 offers plenty of methods to customize the simulation. This becomes very important when you have to deal with larger networks.</p>
+
+<p>Define custom settings using chain syntax and observe the differences in the rendered graphs.</p>
+
+<pre><code class="language-javascript">// Example with custom link distance
+var force = d3.layout.force().linkDistance(20);</code></pre>
 
 <ul>
-<li><p><strong><em>Stack the data</em></strong></p>
+<li>linkDistance</li>
+<li>charge</li>
+<li>gravity</li>
+<li>alpha</li>
+<li>...</li>
+</ul>
 
-<p>After initializing a D3 stack layout you can call it on the dataset:</p>
+<p>The different settings are explained in the D3 wiki:
+<a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Force-Layout.md">https://github.com/d3/d3-3.x-api-reference/blob/master/Force-Layout.md</a></p>
 
-<pre><code class="language-javascript">var stackedData = stack(transposedData);</code></pre></li>
-</ul></li>
-<li><p><strong>Initialize the D3 path generator in <code>initVis()</code></strong></p>
-
-<p>After transforming the data into layers you have to initialize a path generator which maps the actual values to screen coordinates. The <code>updateVis()</code> function will use it later to draw the chart.</p>
-
-<p><em>Make sure to save the path generator in the variable <code>area</code>:</em></p>
-
-<pre><code class="language-javascript">vis.area = d3.svg.area() ...</code></pre></li>
-<li><p><strong>Call the <code>wrangleData()</code> function and draw the chart</strong></p>
-
-<p>This function will be used to filter/aggregate the dataset every time the visualization is rendered. Therefore, remove the comment and call <em>wrangleData()</em> at the end of the <em>initVis()</em> function. This will automatically call <em>updateVis()</em>. You will have to extend <em>wrangleData()</em> later.</p>
-
-<p>We have already implemented a basic version of the <code>updateVis()</code> function for you. It will update the y-axis domain, create visual elements for the stacked layers by using your path generator and finally update the axis labels. </p>
-
-<p>If you have completed the above implementation steps correctly, you should see the stacked area chart in your browser.</p>
-
-<p><em>Otherwise, debug your code and make sure that the data preparation (stacked data) and the path generator (<code>vis.area</code>) is working as required.</em></p></li>
+<p>Congratulations, you have finished your first network visualization! Of course there are many ways to improve this initial visualization, but this should have given you an idea on how to use D3 layouts.</p></li>
 </ol>
 
 <hr>
 
-<h3 id="toc_16">Focus+Context via Brushing</h3>
+<p>Now that you have been introduced to <a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Layouts.md">D3 layouts</a> feel free to explore the different layouts, their features, and their differences to each other! Pie charts and network diagrams are just the beginning!</p>
 
-<p>In the next task you will extend the visualization with a second chart (a basic area chart; see <em>Preview</em>), to give the user the possibility to zoom and to select a specific time range. </p>
+<hr>
 
-<h4 id="toc_17">Focus+Context</h4>
+<p>&nbsp;</p>
 
-<ul>
-<li>The stacked area chart should show selected regions in greater detail (<em>focus</em>)</li>
-<li>The basic area chart preserves a global view at reduced detail without layers (<em>context</em>)</li>
-</ul>
+<h2 id="toc_7">Geomapping</h2>
 
-<p><em>This technique allows us to show the user detailed information linked with an overview (context) simultaneously.</em></p>
+<p>In the second part of this lab we will focus on a different topic: We want to show you how to convert geographical data to screen coordinates, in order to create interactive maps. These maps can show specific regions, countries or whole continents. You will learn how to render geographic data as paths, how to assign colors and how to draw data points on top of the map.</p>
 
-<h4 id="toc_18">Brushing &amp; Linking</h4>
+<h3 id="toc_8">GeoJSON</h3>
 
-<p>The idea of <em>brushing</em> is to allow the user to select a subset of data interactively. In combination with <em>linking</em> - changes are automatically reflected in <em>linked</em> visualizations - you can get the desired focus+context visualization.</p>
+<p>GeoJSON is a JSON-based standard for encoding a variety of geographic data structures. We need the data (e.g., country boundaries, points of interests) in a proper format to generate visualizations of geographic data. Web browsers and especially D3 are not able to render traditional shapefiles, which are used by experts in geographic information systems (GIS). Therefore, GeoJSON has been established as a common way to store this information for use in web browsers.</p>
 
-<p><img src="cs171-focus-context.gif?raw=true" alt="Focus + Context" title="Focus + Context"></p>
+<p>The sub-units in GeoJSON files are called <strong><em>Features</em></strong>. They contain the geodata (points, polygons, lines, ...) and very often additional information about the objects, for example, the names and the ISO codes of countries. All the features are part of the main object, the <strong><em>FeatureCollection</em></strong>.</p>
 
-<h4 id="toc_19">Brushing with D3</h4>
+<p><em>Example:</em></p>
 
-<p>D3 Wiki: <a href="https://github.com/mbostock/d3/wiki/SVG-Controls">https://github.com/mbostock/d3/wiki/SVG-Controls</a></p>
-
-<p>The D3 brush is comparable to D3&rsquo;s axis component. You have to initialize the brush and assign a scale, which (most of the time) is the same scale function that is already used for the x-axis.</p>
-
-<p>The property <strong><code>on</code></strong> must be used to set an event listener, whereby you can choose between three different events:</p>
-
-<ul>
-<li><code>brushstart</code> - on mousedown</li>
-<li><code>brush</code> - on mousemove, if the brush extent has changed</li>
-<li><code>brushend</code> - on mouseup</li>
-</ul>
-
-<pre><code class="language-javascript">// Initialize time scale (x-axis)
-var xContext = d3.time.scale()
-    .range([0, width])
-    .domain(d3.extent(displayData, function(d) { return d.Year; }));
-
-// Initialize brush component
-var brush = d3.svg.brush()
-    .x(xContext)
-    .on(&quot;brush&quot;, brushed);</code></pre>
-
-<p>We can react to the <em>event</em> and update the linked visualizations in a separate function. Particularly noteworthy is the property <code>brush.extent()</code> which returns the current brush extent or in other words, it returns the user&rsquo;s selection.</p>
-
-<pre><code class="language-javascript">function brushed() {
-    // Set new domain if brush (user selection) is not empty
-    xFocus.domain(
-        brush.empty() ? xContext.domain() : brush.extent()
-    );
-    
-    // Update focus chart (detailed information)
-    ...
+<pre><code class="language-javascript">{
+    &quot;type&quot; : &quot;FeatureCollection&quot;,
+    &quot;features&quot; : [
+        {
+          &quot;type&quot;: &quot;Feature&quot;,
+          &quot;geometry&quot;: {
+            &quot;type&quot;: &quot;Point&quot;,
+            &quot;coordinates&quot;: [51.507351, -0.127758]
+          },
+          &quot;properties&quot;: {
+            &quot;name&quot;: &quot;London&quot;
+          }
+        },
+        {
+            ...
+        }
+    ]
 }</code></pre>
 
-<p>We have initialized the brush component and implemented an event listener. In the last step it is necessary to append the brush to the <em>context chart</em>. This step is also comparable to appending a D3 axis. An additional rectangle, within the SVG group element, should indicate the current selection for the user: </p>
+<p>In this example we have a feature which represents a single geographical point. The coordinates of the point are specified as an array with longitude and latitude values (<code>[-0.127758, 51.507351]</code>). In GeoJSON the first element indicates the longitude, the second element the latitude value.</p>
 
-<pre><code class="language-javascript">// Append brush component
-svg.append(&quot;g&quot;)
-      .attr(&quot;class&quot;, &quot;x brush&quot;)
-      .call(brush)
-    .selectAll(&quot;rect&quot;)
-      .attr(&quot;y&quot;, -6)
-      .attr(&quot;height&quot;, height + 7);</code></pre>
+<p>In many more cases, GeoJSON files contain complex polygon data that represent the boundaries of multiple regions or countries instead of a plain list of points:</p>
+
+<pre><code class="language-javascript">&quot;geometry&quot;: {
+    &quot;type&quot;: &quot;MultiPolygon&quot;,
+    &quot;coordinates&quot;: [[[[-131.602021,55.117982],
+        [-131.569159,55.28229],[-131.355558,55.183705],
+        [-131.38842,55.01392],[-131.645836,55.035827], ...
+    ]]]
+}</code></pre>
+
+<p>Depending on the resolution of the dataset, each feature will include more or less longitude/latitude pairs. As you can imagine, the size of a GeoJSON file becomes tremendously high if you store the boundaries of a whole continent in high resolution.</p>
+
+<h3 id="toc_9">TopoJSON</h3>
+
+<p>TopoJSON is an extension of GeoJSON that encodes topology. The generated geographical data is substantially more compact than GeoJSON and results in a file size reduction of roughly 80%.</p>
+
+<p>Depending on your needs, you will probably find appropriate TopoJSON files online (e.g., the US and the world atlas: <a href="https://github.com/mbostock/topojson/tree/master/examples">https://github.com/mbostock/topojson/tree/master/examples</a>)</p>
+
+<p>You can also generate custom TopoJSON files from various formats with the TopoJSON command-line tool: <a href="https://github.com/mbostock/topojson/wiki/Command-Line-Reference">https://github.com/mbostock/topojson/wiki/Command-Line-Reference</a></p>
+
+<p>→ <strong><em>Whenever you want to use a TopoJSON file in D3, you will need the TopoJSON JavaScript library to convert the data to GeoJSON for display in a web browser:</em></strong> <a href="http://d3js.org/topojson.v1.min.js">http://d3js.org/topojson.v1.min.js</a></p>
+
+<p>In addition to the GeoJSON conversion, the JS library provides further methods, for example, to get the neighbors of objects or to combine multiple regions (<em>topojson.mesh()</em>).</p>
+
+<h3 id="toc_10">Workflow to implement a map with D3</h3>
+
+<p><strong><em>Create projection ⇒ Create D3 geo path ⇒ Map TopoJSON data to the screen</em></strong></p>
+
+<h4 id="toc_11">D3 projections</h4>
+
+<p>Drawing a geographical map in D3 requires the mapping of geographical coordinates (longitude, latitude) to screen coordinates (x, y). The functions to process the mapping are called projection methods. D3 already includes a set of the most common geo projections.</p>
+
+<p><em>This image shows four different projections in D3:</em></p>
+
+<p><img src="cs171-d3-projections.png?raw=true" alt="D3 Projections" title="D3 Projections"></p>
+
+<p><em>(You can take a look at the <a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md">documentation</a> to see more examples of geo projections.)</em></p>
+
+<p>When projecting positions from a sphere (i.e., the world) to a 2D plane, these different projection methods can have very different results. Different projection methods have different characteristics (e.g., distance, direction, shape, area) and show different levels of distortion.</p>
+
+<p>The following code defines a projection function (<em>&quot;albersUsa&quot;</em>), which is designed specifically for displaying North America, and sets the center to the middle of the visualization (SVG area):</p>
+
+<pre><code class="language-javascript">var projection = d3.geo.albersUsa()
+        .translate([width / 2, height / 2]);</code></pre>
+
+<p><em>The projection can be further customized by using parameters like <code>.scale()</code>, <code>.rotate()</code>, <code>.clipAngle()</code>, ...</em></p>
+
+<h4 id="toc_12">D3 geo path</h4>
+
+<p>The path generator takes the projected 2D geometry from the last step and formats it appropriately for SVG. Or in other words, the generator maps the GeoJSON coordinates to SVG paths by using the projection function.</p>
+
+<pre><code class="language-javascript">var path = d3.geo.path()
+    .projection(projection);</code></pre>
+
+<h4 id="toc_13">Load TopoJSON data and map it to geo path elements</h4>
+
+<p>After defining the SVG area, the projection and the path generator, we can load the TopoJSON data, convert it to GeoJSON and finally map it to SVG paths.</p>
+
+<pre><code class="language-javascript">// Load shapes of U.S. counties (TopoJSON)
+d3.json(&quot;data/us-10m.json&quot;, function(error, data) {
+
+    // Convert TopoJSON to GeoJSON (target object = &#39;states&#39;)
+    var usa = topojson.feature(data, data.objects.states).features
+    
+    // Render the U.S. by using the path generator
+    svg.selectAll(&quot;path&quot;)
+            .data(usa)
+        .enter().append(&quot;path&quot;)
+            .attr(&quot;d&quot;, path);
+});</code></pre>
+
+<p><em>After setting the fill color with CSS the result looks like this:</em></p>
+
+<p><img src="cs171-us-map.png?raw=true" alt="US Map" title="US Map"></p>
+
+<p>For some maps, the boundaries between the states might not be very accurate. An alternative solution is to explicitly draw the borders (e.g. of US states). For that we can use <strong><em>topojson.mesh</em></strong> to extract separating lines between states from the TopoJSON data.</p>
+
+<pre><code class="language-javascript">svg.append(&quot;path&quot;)
+    .datum(topojson.mesh(data, data.objects.states))
+    .attr(&quot;d&quot;, path)
+    .attr(&quot;class&quot;, &quot;subunit-boundary&quot;);</code></pre>
+
+<p>The accessor for the specific object you want to extract (e.g. <code>data.object.states</code>) is always dependent on your TopoJSON data. In this example we have used the file <em>us-10m.json</em> from Mike Bostock, which contains geographical data for <strong><em>counties</em></strong> and <strong><em>states</em></strong> of the USA. That means we could change <code>data.objects.states</code> to <code>data.objects.counties</code> to go one level deeper and map U.S. counties.</p>
+
+<p><em>Before you start with the next activity we will briefly explain how to load multiple files with D3.</em></p>
+
+<h2 id="toc_14">Loading multiple files with D3</h2>
+
+<p>Until now you have worked only with single external files - one CSV file, one JSON file, etc. - but in the future you will probably have to deal with multiple files. You could merge the files manually and then load it with D3 as a whole bunch of data, but very often you cannot or don&#39;t want to mix everything together in a single file. </p>
+
+<p><em>You can load files separately:</em></p>
+
+<pre><code class="language-javascript">d3.json(&quot;data1.json&quot;, function(data1) { 
+    // Visualize data1 
+}); 
+
+d3.json(&quot;data2.json&quot;, function(data2) { 
+    // Visualize data2 
+});</code></pre>
+
+<p>The files are loaded asynchronously so you can&#39;t predict which one is loaded first. This will affect the rendering order and may cause unwanted side effects.</p>
+
+<p>For example, if you want to render a map with multiple markers and you are using this approach, the script might draw the markers first and then cover them when the map paths are drawn (see Figure).</p>
+
+<p><img src="cs171-map-layers.png?raw=true" alt="Map Layers" title="Map Layers"></p>
+
+<p><em>To solve this problem, you can load the files in series:</em></p>
+
+<pre><code class="language-javascript">d3.json(&quot;data1.json&quot;, function(data1) {
+    d3.json(&quot;data2.json&quot;, function(data2) {
+        // Visualize data1 
+        // Visualize data2 
+    });
+});</code></pre>
+
+<p>The disadvantage with the sequential method is, that the loading of <em>data2.json</em> will only start once the first dataset is loaded completely and this will delay the visualization unnecessary.</p>
+
+<p>You can also load the files in parallel by separating the loading (like in the first example) and then implementing an separate function for the visualization. You will need an extra variable that contains the current state of the loading process for this approach. Every time a file is loaded completely it will check if it was the last file to complete loading, and if so, it will call the function to draw the visualization. </p>
+
+<p>You can implement this on your own or you can use, for example, <strong><em>queue.js</em></strong>, which is another very helpful library from Mike Bostock: <a href="http://d3js.org/queue.v1.min.js">http://d3js.org/queue.v1.min.js</a></p>
+
+<p><em>Queue.js - asynchronous helper library for JavaScript:</em></p>
+
+<pre><code class="language-javascript">// Load data parallel
+queue()
+    .defer(d3.json, &quot;data1.json&quot;)
+    .defer(d3.json, &quot;data2.json&quot;)
+    .await(createVisualization);
+
+function createVisualization(error, data1, data2) {
+    // Visualize data1 and data2
+}</code></pre>
+
+<p><em>In the next activity you will create a geographic map (world atlas) that displays the aiports from Activity I. You will have to load the map data and the airport coordinates, therefore, it is a good opportunity to try queue.js straight away.</em> </p>
 
 <hr>
 
-<h4 id="toc_20">Activity III - Implement Focus+Context</h4>
-
-<p><em>In the next activity you will have to implement a second chart with an interactive brushing component. Most of the parts are already complete but you have to connect the components to each other.</em></p>
+<h4 id="toc_15">Activity II</h4>
 
 <ol>
-<li><p><strong>Create an instace of <code>Timeline</code></strong></p>
-
-<p><em>The result of this lab should be a stacked area chart (focus) linked with a basic area chart (context). To avoid confusion, we will call the basic area chart from now on &ldquo;timeline&rdquo; because it shows the full time period.</em></p>
-
-<p>You can find the implementation of the timeline in <code>js/timeline.js</code>. The self-contained component follows our methodology and can be easily integrated into the system.</p>
-
-<p>→ Open <code>timeline.js</code> and get an overview of the implementation. It is much shorter than the stacked area chart because the area path and the axis is static and we don&rsquo;t need any data wrangling tasks.</p>
-
-<p>→ Create an instance of <code>Timeline</code> and use the constructor to specify the properties (see <em>constructor function</em> in <code>timeline.js</code>). The timeline should not include the detailed layers of our data, but it should indicate the general trend. Therefore, the data <code>allData.years</code> is perfectly suited. </p>
-
-<p>↻ Reload the webpage in your browser. If you have created the instance correctly you should see the timeline below your stacked area chart. Otherwise make sure that you have included the right parameters (container ID, data).</p></li>
-<li><p><strong>Implement the brushing component</strong></p>
-
-<p>You have to extend the timeline and implement the described focus+context approach for the visualization. The prior brushing example should help you to include the necessary pieces of code.</p>
-
-<p>→ Initialize the brushing component in the <code>initVis()</code> function</p>
-
-<p>→ Create a global function <code>brushed</code> in <em>main.js</em></p>
+<li><p><strong>Extend your project from Activity I</strong></p>
 
 <ul>
-<li><p>The implementation in this file acts as a controller and can access both charts. Alternatively, and more important for larger systems, you can include a more sophisticated event handling mechanism. But for this example it is enough to create a global function and link the two visualizations directly.</p></li>
-<li><p>Update the x domain of the stacked area chart every time the <em>brushed</em> event gets triggered. And don&rsquo;t forget to update the chart by calling:</p>
+<li><em>Create an HTML file (<code>map.html</code>) and include a headline, an empty container for the visualization and a reference to the D3 library.</em></li>
+<li><em>Create an empty JS file.</em></li>
+</ul></li>
+<li><p><strong>Download the geographic data (world atlas)</strong></p>
 
-<pre><code class="language-javascript">areachart.wrangleData();</code></pre></li>
-</ul>
+<p><a href="http://www.cs171.org/2016/assets/scripts/lab7/world-110m.json">http://www.cs171.org/2016/assets/scripts/lab7/world-110m.json</a></p>
 
-<p>→ Append the brush component to the <em>timeline</em> SVG </p>
+<p><em>Format: TopoJSON</em></p>
 
-<p>↻ Reload the webpage in your browser. You should be able to choose a specific time period in the timeline (context) and the stacked area chart (focus) will automatically zoom in and will show the details for the selected years.</p>
+<p>The file contains the shapes of all countries in relatively low resolution: <em>&quot;country boundaries at 1:110,000,000 scale (1:110m)&quot;</em>.</p>
 
-<p>But now there is probably an error in the stacked area chart. When you zoom in, the layers will expand and go beyond the y-axis until they reach the end of the SVG container. You should solve the problem by using a rectangle as an overlay and clipping the path:</p>
+<p>This means that one unit of measurement in the file corresponds to 110 million units in the actual, physical world. This scale works fine for a low-detail map of the world. But in the previous map, for example, we wanted to show detailed contours of a specific country, so we have used a very high resolution (1:10m scale).</p></li>
+<li><p><strong>Include the TopoJSON JavaScript library in <code>map.html</code></strong></p>
 
-<p><em>Paste this code snippet after creating the SVG element:</em></p>
+<p><a href="http://d3js.org/topojson.v1.min.js">http://d3js.org/topojson.v1.min.js</a></p>
 
-<pre><code class="language-javascript">vis.svg.append(&quot;defs&quot;).append(&quot;clipPath&quot;)
-    .attr(&quot;id&quot;, &quot;clip&quot;)
-  .append(&quot;rect&quot;)
-    .attr(&quot;width&quot;, vis.width)
-    .attr(&quot;height&quot;, vis.height);</code></pre></li>
-</ol>
+<p><em>As mentioned previously, don&#39;t reference directly to external resources. Otherwise, you cannot be sure that the library is always available in its current state.</em></p>
 
-<hr>
+<pre><code class="language-markup">&lt;!-- BAD --&gt; 
+&lt;script src=&quot;http://d3js.org/topojson.min.js&quot;&gt;&lt;/script&gt;
 
-<h4 id="toc_21">Activity IV - Implement basic tooltips</h4>
+&lt;!-- GOOD --&gt;
+&lt;script src=&quot;js/topojson.min.js&quot;&gt;&lt;/script&gt;</code></pre></li>
+<li><p><strong>Render the map with D3</strong></p>
 
-<p><em>Currently it is not possible to identify layers and to get detailed information for a specific year. All of this would require an advanced tooltip solution.</em></p>
-
-<p>You will implement a lightweight version of these tooltips which should help the user to identify just the category names.</p>
-
-<ol>
-<li><p><strong>Append a tooltip placeholder</strong></p>
-
-<p>Open <code>stackedAreaChart.js</code> and append an empty SVG text element. This element should be created only once. It should be used as a placeholder for the category names and should get updated every time the user hovers over a layer.</p>
-
-<p>Feel free to choose proper coordinates. In the preview the label is positioned in the top left corner of the stacked area chart.</p></li>
-<li><p><strong>Update the tooltip</strong></p>
-
-<p>Create a mouse listener for the <em>SVG path</em> (layer of stacked area chart, in <code>updateVis()</code>) and update the <code>text</code> property of the tooltip-element every time the user hovers over it.</p></li>
-</ol>
-
-<hr>
-
-<h4 id="toc_22">Bonus Activity (optional) - Show details for a specific layer</h4>
-
-<p>Due to the stacked layout it is sometimes difficult to see the exact evolution of a specific layer. An extension which allows the user to click on a category in order to see the details would solve this problem.</p>
-
-<p><img src="cs171-layer-details.gif?raw=true" alt="Layer Details" title="Layer Details"></p>
-
-<p><em>You should implement:</em></p>
+<p><em>In your new JS file:</em></p>
 
 <ul>
-<li>A variable <code>filter</code> that stores the current category (if nothing is selected, the <em>filter</em> variable should be empty)</li>
-<li><p>A click listener for the layers (in addition to the previous mouse hover listener) that triggers the update of the stacked area chart. If the user clicks on the same category again the visualization should jump back to its default state.</p>
+<li>Create an SVG area (width: 1000px, height: 600px)</li>
+<li>Create a <strong><em>mercator</em></strong> projection and specify it in a new geo path generator</li>
+<li>Load the TopoJSON file with D3</li>
+<li>Convert the TopoJSON to GeoJSON</li>
+<li>Render the world atlas by using the path generator</li>
+</ul></li>
+<li><p><strong>Refine the projection</strong></p>
 
-<p><em>Example for a click listener with toggle feature:</em></p>
+<p>If you have used the default projection settings it is likely that the map is getting clipped off. Play around with  parameters like <code>.center()</code> and <code>.scale()</code> to modify the projection. If you have trouble, consult the D3 wiki for further explanations and other parameters: <a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md">https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md</a></p></li>
+<li><p><strong>Change the styles with CSS</strong> (optional)</p></li>
+<li><p><strong>Include the JavaScript library queue.js and load two datasets in parallel</strong></p>
 
-<pre><code class="language-javascript">.on(&quot;click&quot;, function(d) {
-    vis.filter = (vis.filter == d.name) ? &quot;&quot; : d.name;
-    vis.wrangleData();
+<p><em>In the next step you should mark the airports on the map, that means you have to load an additional JSON file with the aiport data and restructure your JS file.</em></p>
+
+<p>Download the library <em>queue.js</em> (<a href="http://d3js.org/queue.v1.min.js">http://d3js.org/queue.v1.min.js</a>) and reference it in <em>map.html</em></p>
+
+<p>Replace <code>d3.json(&quot;...&quot;, function(data) { ... });</code> with the loading sequence from <em>queue.js</em> and create a separate function for the actual rendering of the map (<em>see example above</em>).</p>
+
+<p><em>→ Load both datasets and try to render the world atlas like before, without the airports.</em></p></li>
+<li><p><strong>Create a point on the map for each airport</strong></p>
+
+<p><em>If you have successfully integrated queue.js and loaded the two external JSON files - and the &quot;mercator&quot; projection of the world is still visible in the browser - you are ready to map the airports.</em></p>
+
+<p><strong><em>Draw an SVG circle for each airport.</em></strong></p>
+
+<p>You can specifiy the positions, by using your projection, in the following way:</p>
+
+<pre><code class="language-javascript">.attr(&quot;transform&quot;, function(d) {
+    return &quot;translate(&quot; + projection([d.longitude, d.latitude]) + &quot;)&quot;;
 })</code></pre></li>
-<li><p>A second path generator <em>d3.svg.area()</em> in <code>initVis()</code> for displaying a single layer. You can go to <em>timeline.js</em> to see the path generator for a basic SVG area. (Basically this whole feature you are implementing is just a switch between the stacked area chart and a basic area chart. )</p></li>
-<li><p>An extension of the function <code>wrangleData()</code>. If the user selects a specific layer the <em>display data</em> should be filtered:</p>
+<li><p><strong>Change the geo projection</strong></p>
 
-<pre><code class="language-javascript">.filter(function(d) { return d.name == vis.filter } );</code></pre>
+<p>Create a comment around your current mercator projection and try other D3 geo projections, e.g. <strong><em>d3.geo.orthographic()</em></strong>.</p>
 
-<p>Make sure you add an IF statment and update <code>vis.displayData</code> accordingly.</p></li>
-<li><p>An extension of the &ldquo;domain update&rdquo; for the <strong><em>y-scale</em></strong> (in <code>updateVis()</code>. If you want to display a typical area chart without layers you have a fixed baseline at zero and don&rsquo;t need to consider the <em>y0</em> parameter..</p>
+<p>D3 geo projections: <a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md">https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md</a></p>
 
-<pre><code class="language-javascript">if(vis.filter) {
-    vis.y.domain([0, d3.max(vis.displayData[0].values,
-            function(d) { return d.y; })]);
-} else {
-    ...
-}</code></pre></li>
-<li><p>An IF statement in the <em>update</em> section to switch between the simple path generator (area) and the advanced path generator (stacked area) depending on wether the user has selected a category (in <code>updateVis()</code>):</p>
+<p><em>Note that you can update the projection easily without changing other pieces of code.</em></p></li>
+</ol>
 
-<pre><code class="language-javascript">.attr(&quot;d&quot;, function(d) {
-    if(vis.filter)
-        return ...
-    else
-        return vis.area(d.values);
-})</code></pre></li>
-</ul>
+<p><em>Example with an orthographic projection:</em></p>
 
-<p>Great job, you now have a focus-and-context visualization that even allows you to get details on individually selected categories!</p>
+<p><img src="cs171-activity2-preview.png?raw=true" alt="Activity 2 - Preview" title="Activity 2 - Preview"></p>
 
 <hr>
 
-<h4 id="toc_23">Submission of 1-minute paper</h4>
+<h2 id="toc_16">Choropleth Maps</h2>
+
+<p>In a few weeks you will learn more about interactive maps and how to use map imagery (tiles) instead of vector data (GeoJSON/TopoJSON) to create visualizations.</p>
+
+<p>But there is one type of vector map we would also like to mention in this lab - the <em>choropleth map</em>.</p>
+
+<p><strong>A Choropleth maps shows areas filled with different colors or patterns to reflect associated data values.</strong></p>
+
+<p>In the United States, so-called &quot;red state, blue state&quot; choropleth maps show the Republican and Democratic leanings of each state:</p>
+
+<p><img src="cs171-choropleth-1.png?raw=true" alt="Choropleth - Red and blue states" title="Choropleth - Red and blue states"></p>
+
+<p>Choropleths can be generated from any values, not just political ones, and they become much more powerful if they are interactive and encourage the user to discover the data.</p>
+
+<p><img src="cs171-choropleth-2.gif?raw=true" alt="Interactive Choropleth Map" title="Interactive Choropleth Map"></p>
+
+<blockquote>
+<p>&quot;Altough choropleths can be fantastically useful, keep in mind that they have some inherent perceptual limitations. Because they use <em>area</em> to encode values, large areas with low density (such as the state of Nevada) might by overrepresented visually.&quot; - Scott Murray</p>
+</blockquote>
+
+<hr>
+
+<h4 id="toc_17">Bonus Activity (optional)</h4>
+
+<p><em>Similar to the first activity, now connect the airports with each other. The network data is stored in the file <code>airports.json</code> in the object <code>links</code>. The attributes <code>source</code> and <code>target</code> in each link element specify the index of the corresponding node in the <code>nodes</code> array.</em></p>
+
+<p><strong>→ Create SVG lines between the airports</strong></p>
+
+<p><em>Example with a mercator projection:</em></p>
+
+<p><img src="cs171-bonus-activity-preview.png?raw=true" alt="Bonus Activity - Preview" title="Bonus Activity - Preview"></p>
+
+<hr>
+
+<h4 id="toc_18">Submission of 1-minute paper</h4>
 
 <p>Congratulations, you have now completed the activities of Lab 7! Please submit your 1-minute paper now!</p>
 
-<p><em>See you next week!</em></p>
-
 <hr>
 
-<h4 id="toc_24">Submission of lab (activity I - IV)</h4>
+<h4 id="toc_19">Submission of lab (activity I, and II)</h4>
 
-<p>Please upload the code of your completed lab (the final focus-and-context visualization you created in activities I-IV) on Vocareum! </p>
+<p>Please upload the code of your completed lab (the final force layout and the map visualization of activities I and II) on Vocareum! </p>
 
 <hr>
 
@@ -907,10 +866,13 @@ svg.append(&quot;g&quot;)
 <p><strong>Resources</strong></p>
 
 <ul>
-<li>p. 206-209 in <em>D3 - Interactive Data Visualization for the Web</em> by Scott Murray</li>
-<li><a href="http://javascriptplayground.com/blog/2012/04/javascript-variable-scope-this/">http://javascriptplayground.com/blog/2012/04/javascript-variable-scope-this/</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction<em>to</em>Object-Oriented_JavaScript</a></li>
-<li><a href="http://www.w3schools.com/js/default.asp">http://www.w3schools.com/js/default.asp</a></li>
+<li>Chapter 11 - 12 (p. 201-245) in <em>D3 - Interactive Data Visualization for the Web</em> by Scott Murray</li>
+<li><a href="http://bost.ocks.org/mike/map/">http://bost.ocks.org/mike/map/</a></li>
+<li><a href="https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md">https://github.com/d3/d3-3.x-api-reference/blob/master/Geo-Projections.md</a></li>
+<li><a href="https://github.com/mbostock/topojson">https://github.com/mbostock/topojson</a></li>
+<li><a href="http://bl.ocks.org/mapsam/6090056">http://bl.ocks.org/mapsam/6090056</a></li>
+<li><a href="https://www.jasondavies.com/maps/rotate/">https://www.jasondavies.com/maps/rotate/</a></li>
+<li><a href="http://axismaps.github.io/thematic-cartography/articles/choropleth.html">http://axismaps.github.io/thematic-cartography/articles/choropleth.html</a></li>
 </ul>
 
 
