@@ -1,0 +1,24 @@
+# Site settings
+title: Visualization
+email: staff@cs171.org
+description: "Visualization Class at Harvard University"
+footer: "© Harvard University, 2017/2018"
+baseurl: "/2017"
+url: "http://www.cs171.org/"
+
+
+google_analytics: ""
+
+plugins: ./_plugins
+
+# Build settings
+markdown: kramdown
+kramdown:
+   input: GFM
+
+permalink: pretty
+
+collections:
+ - lectures
+
+highlighter: pygments
