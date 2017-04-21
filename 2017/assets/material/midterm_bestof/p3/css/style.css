@@ -1,0 +1,288 @@
+body {
+  background: #fcfcfa;
+}
+.stroke {
+  fill: none;
+  stroke: #000;
+  stroke-width: 3px;
+}
+
+.graticule {
+  fill: none;
+  stroke: #777;
+  stroke-width: .5px;
+  stroke-opacity: .5;
+}
+.land {
+  fill: #222;
+}
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+path {
+  stroke: white;
+  stroke-width: 1px;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+.city {
+  font: 10px sans-serif;
+  font-weight: bold;
+}
+.legend {
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+div.tooltip {
+  color: #222;
+  background-color: #fff;
+  padding: .5em;
+  text-shadow: #f5f5f5 0 1px 0;
+  border-radius: 2px;
+  opacity: 0.9;
+  position: absolute;
+  text-align: center;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-size: 11px;
+}
+
+.tooltip-circle {
+  fill: #96AB96;
+}
+
+select {
+    display: inline-block;
+    background-color: #fff;
+    border: solid 1px #BBC5CE;
+    margin: 0;
+    padding: 5px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+label {
+  display: inline-block;
+  text-align: right;
+  width: 200px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #333;
+	background-color: #eee;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	margin: 0 0 .5em;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+h1 { font-size: 2.25em; } /* 36px */
+h2 { font-size: 1.75em; } /* 28px */
+h3 { font-size: 1.375em; } /* 22px */
+h4 { font-size: 1.125em; } /* 18px */
+h5 { font-size: 1em; } /* 16px */
+h6 { font-size: .875em; } /* 14px */
+
+p
+{
+	margin: 0 0 1.5em;
+	line-height: 1.5;
+}
+
+
+.container
+{
+	max-width: 50em;
+	margin: 0 auto;
+}
+
+.header
+{
+	color: #fff;
+	background: #555;
+	padding: 1em 1.25em;
+}
+
+.navbar
+{
+	background: #000;
+	padding: 0;
+}
+
+.content
+{
+	padding: 1em 1.25em;
+	background-color: #fff;
+}
+
+.footer
+{
+	color: #fff;
+	background: #000;
+	padding: 1em 1.25em;
+}
+
+/* -----------------------
+Nav
+------------------------*/
+
+.nav
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.nav li
+{
+	display:inline-block;
+	margin: 0;
+  float: left;
+}
+
+.nav a
+{
+	display: block;
+	padding: .7em 1.25em;
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px solid gray;
+}
+
+.nav a:link { color: white; }
+.nav a:visited { color: white; }
+
+.nav a:focus
+{
+	color: black;
+	background-color: white;
+}
+
+.nav a:hover
+{
+	color: white;
+	background-color: green;
+}
+
+.nav a:active
+{
+	color: white;
+	background-color: red;
+}
+
+.lead{
+  text-align: center;
+  padding: 25px;
+}
+
+.info {
+  padding: 25px;
+  text-align: center;
+}
+
+.quote {
+  font-size: 32px;
+}
+
+.img-responsive { max-width: 100%; }
+
+body {
+  text-align: center;
+  font-family: Lato;
+	line-height: 26.4px;
+  padding-top: 5px;
+}
+/*
+ * Image from:
+ * http://www.wired.co.uk/news/archive/2012-06/13/genetically-modified-mosquitoes
+ */
+div.header {
+  background-image: url("../img/msqto_copy.jpg");
+  background-size:cover;
+  height: 500px;
+}
+
+#chart-area, div.imgcontainer, div.imgs, .dl-horizontal,
+#chart-opt1, #chart-opt1, #region-opt {
+  display: inline-block;
+}
+
+p {
+  text-align: center;
+}
+
+.header-heading {
+  margin: 0;
+  font-size: 48px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+  text-align: left;
+  margin-left: -150px;
+}
+
+.moreinfo {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.dl-horizontal {
+  font-size: 28px;
+}
+
+dd {
+  text-align: right;
+}
+
+.country {
+  fill-opacity: .7;
+}
+
+/* -----------------------
+Wide styles
+------------------------*/
+
+@media (min-width: 42em)
+{
+	.header { padding: 1.5em 3em; }
+	.nav-bar { padding: 1em 3em; }
+	.content { padding: 2em 3em; }
+	.footer { padding: 2em 3em; }
+
+	.nav li
+	{
+		display: inline;
+		margin: 0 1em 0 0;
+	}
+
+	.nav a
+	{
+		display: inline;
+		padding: 0;
+		border-bottom: 0;
+	}
+}
