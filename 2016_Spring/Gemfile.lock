@@ -17,7 +17,8 @@ GEM
     execjs (2.6.0)
     fast-stemmer (1.0.2)
     ffi (1.9.10)
-    haml (4.0.7)
+    haml (5.0.0)
+      temple (>= 0.8.0)
       tilt
     jekyll (2.5.3)
       classifier-reborn (~> 2.0)
@@ -75,7 +76,8 @@ GEM
     safe_yaml (1.0.4)
     sass (3.4.19)
     stringex (1.4.0)
-    tilt (2.0.1)
+    temple (0.8.2)
+    tilt (2.0.10)
     toml (0.1.2)
       parslet (~> 1.5.0)
     trollop (2.1.2)
@@ -86,7 +88,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (~> 4.2.9)
-  haml (~> 4.0)
+  haml (~> 5.0)
   jekyll (~> 2.1)
   jekyll-date-format (~> 1.0)
   jekyll-page-hooks (~> 1.2)
