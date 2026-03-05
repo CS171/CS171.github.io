@@ -1,0 +1,32 @@
+country,city,population,x,y,eu
+Austria,Vienna,1826030,386,296,true
+Belgium,Brussels,166497,251,240,true
+Bulgaria,Sofia,1316557,482,385,true
+Croatia,Zagreb,795505,382,337,true
+Cyprus,Nicosia,200452,649,499,true
+Czech Republic,Prague,1259079,360,259,true
+Denmark,Copenhagen,583525,345,162,true
+Estonia,Tallinn,439286,462,89,true
+Finland,Helsinki,620031,458,71,true
+France,Paris,2241346,221,271,true
+Germany,Berlin,3469849,352,215,true
+Greece,Athens,664046,499,472,true
+Hungary,Budapest,1754000,419,305,true
+Ireland,Dublin,527612,147,169,true
+Italy,Rome,2872021,338,407,true
+Japan,Tokyo,9233460,0,0,false
+Latvia,Riga,643368,457,133,true
+Lithuania,Vilnius,532261,478,174,true
+Luxembourg,Luxembourg,107247,267,261,true
+Malta,Valletta,6444,362,518,true
+Netherlands,Amsterdam,809892,260,210,true
+New Zealand,Wellington,398300,0,0,false
+Poland,Warsaw,1735442,434,221,true
+Portugal,Lisbon,509312,30,408,true
+Romania,Bucharest,1883425,516,348,true
+Slovakia,Bratislava,491061,396,293,true
+Slovenia,Ljubljana,277554,364,333,true
+Spain,Madrid,3165235,104,401,true
+Sweden,Stockholm,911989,400,93,true
+United Kingdom,London,8538689,204,219,true
+USA,New York City,8406000,0,0,false
