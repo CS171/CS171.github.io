@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: 25/page
 title: CS171 Visualization - Fall 2025
 menu: Home
 order: 1
